@@ -81,6 +81,28 @@ Modify `.env` as needed. Default settings configure the service on `0.0.0.0:8000
 
 ---
 
+## Ingesting Documentation Corpus
+
+AdaQ-RAG ingests a curated corpus of official scikit-learn documentation covering Supervised Learning, Model Selection/Evaluation, Pipelines, Preprocessing, Common Pitfalls, and Core API References.
+
+Run the ingestion pipeline:
+
+```powershell
+python scripts/ingest_docs.py
+```
+
+- Raw HTML pages are saved under `data/raw/` for offline caching and deterministic re-runs.
+- Cleaned and structured JSON/Markdown documents are written to `data/processed/`.
+- A global summary manifest is saved to `data/processed/corpus_manifest.json`.
+
+To force re-downloading from remote official docs:
+
+```powershell
+python scripts/ingest_docs.py --force
+```
+
+---
+
 ## Running the API
 
 Start the FastAPI development server with Uvicorn:
