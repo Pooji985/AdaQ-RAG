@@ -24,6 +24,10 @@ class StructureAwareChunker(BaseChunker):
         content: str,
     ) -> list[tuple[str, int]]:
         """Split an oversized section into paragraph-aligned chunks."""
+        prefix = "#" * max(1, min(level, 4))
+        header_budget = count_tokens(f"{prefix} {title} (Part 1/1)\n\n")
+        body_max = max(self.min_tokens, self.max_tokens - header_budget)
+
         paragraphs = split_into_paragraphs(content)
         sub_chunks: list[str] = []
         current_blocks: list[str] = []
@@ -38,16 +42,16 @@ class StructureAwareChunker(BaseChunker):
 
         for para in paragraphs:
             para_tokens = count_tokens(para)
-            if para_tokens > self.max_tokens:
+            if para_tokens > body_max:
                 sentences = split_into_sentences(para)
                 for sentence in sentences:
                     s_tokens = count_tokens(sentence)
-                    if current_tokens + s_tokens > self.max_tokens and current_tokens >= self.min_tokens:
+                    if current_tokens + s_tokens > body_max and current_tokens >= self.min_tokens:
                         flush()
                     current_blocks.append(sentence)
                     current_tokens += s_tokens
             else:
-                if current_tokens + para_tokens > self.max_tokens and current_tokens >= self.min_tokens:
+                if current_tokens + para_tokens > body_max and current_tokens >= self.min_tokens:
                     flush()
                 current_blocks.append(para)
                 current_tokens += para_tokens

@@ -45,10 +45,10 @@
       "avg_chars": 1482.43,
       "min_chars": 127,
       "max_chars": 3600,
-      "undersized_count": 4,
-      "undersized_pct": 0.95,
-      "oversized_count": 46,
-      "oversized_pct": 10.98,
+      "undersized_count": 2,
+      "undersized_pct": 0.48,
+      "oversized_count": 10,
+      "oversized_pct": 2.39,
       "metadata_completeness_pct": 100.0
     }
   },
@@ -2430,7 +2430,7 @@
           "matching_chunks_count": 2,
           "best_chunk_id": "supervised_linear_models_struct_0029",
           "best_chunk_section": "1.1.11.3. Solvers",
-          "best_chunk_tokens": 558,
+          "best_chunk_tokens": 549,
           "sample_excerpt": "### 1.1.11.3. Solvers (Part 1/2)\n\nThe solvers implemented in the class `LogisticRegression` are \u201clbfgs\u201d, \u201cliblinear\u201d, \u201cnewton-cg\u201d, \u201cnewton-cholesky\u201d, \u201csag\u201d and \u201csaga\u201d: The following table summarizes the penalties and multinomial multiclass supported by each solver: | | Solvers | ..."
         },
         {
@@ -2502,8 +2502,8 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "api_random_forest_classifier_struct_0005",
           "best_chunk_section": "RandomForestClassifier",
-          "best_chunk_tokens": 545,
-          "sample_excerpt": "# RandomForestClassifier (Part 5/10)\n\nRead more in the User Guide.\n\nAdded in version 1.4. **Attributes :** : **estimator_ DecisionTreeClassifier** : The child estimator template used to create the collection of fitted sub-estimators.\n\nAdded in version 1.2: `base_estimator_` was r..."
+          "best_chunk_tokens": 518,
+          "sample_excerpt": "# RandomForestClassifier (Part 5/10)\n\nChanged in version 1.9: Float `max_samples` is relative to `sample_weight.sum()` instead of `X.shape[0]` for weighted samples. **monotonic_cst array-like of int of shape (n_features,), default=None** : **Indicates the monotonicity constraint ..."
         },
         {
           "question_id": "fact_07",
@@ -2520,7 +2520,7 @@
           "matching_chunks_count": 2,
           "best_chunk_id": "api_standard_scaler_struct_0001",
           "best_chunk_section": "StandardScaler",
-          "best_chunk_tokens": 552,
+          "best_chunk_tokens": 445,
           "sample_excerpt": "# StandardScaler (Part 1/8)\n\n**class sklearn.preprocessing.\n\nStandardScaler ( * , copy = True , with_mean = True , with_std = True )** : Standardize features by removing the mean and scaling to unit variance.\n\nThe standard score of a sample `x` is calculated as: ```python z = (x ..."
         },
         {
@@ -3020,8 +3020,8 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "api_random_forest_classifier_struct_0003",
           "best_chunk_section": "RandomForestClassifier",
-          "best_chunk_tokens": 541,
-          "sample_excerpt": "# RandomForestClassifier (Part 3/10)\n\nThe weighted impurity decrease equation is the following: ```python N_t / N * (impurity - N_t_R / N_t * right_impurity - N_t_L / N_t * left_impurity) ``` where `N` is the total number of samples, `N_t` is the number of samples at the current ..."
+          "best_chunk_tokens": 549,
+          "sample_excerpt": "# RandomForestClassifier (Part 3/10)\n\nIf None then unlimited number of leaf nodes. **min_impurity_decrease float, default=0.0** : A node will be split if this split induces a decrease of the impurity greater than or equal to this value.\n\nThe weighted impurity decrease equation is..."
         },
         {
           "question_id": "param_05",
@@ -3074,7 +3074,7 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "api_pipeline_struct_0001",
           "best_chunk_section": "Pipeline",
-          "best_chunk_tokens": 558,
+          "best_chunk_tokens": 543,
           "sample_excerpt": "# Pipeline (Part 1/9)\n\n**class sklearn.pipeline.\n\nPipeline ( steps , * , transform_input = None , memory = None , verbose = False )** : A sequence of data transformers with an optional final predictor.\n\n`Pipeline` allows you to sequentially apply a list of transformers to preproc..."
         },
         {
@@ -3092,8 +3092,8 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "api_pipeline_struct_0002",
           "best_chunk_section": "Pipeline",
-          "best_chunk_tokens": 550,
-          "sample_excerpt": "# Pipeline (Part 2/9)\n\nEnabling caching triggers a clone of the transformers before fitting.\n\nTherefore, the transformer instance given to the pipeline cannot be inspected directly.\n\nUse the attribute `named_steps` or `steps` to inspect estimators within the pipeline.\n\nCaching th..."
+          "best_chunk_tokens": 549,
+          "sample_excerpt": "# Pipeline (Part 2/9)\n\nIf a string is given, it is the path to the caching directory.\n\nEnabling caching triggers a clone of the transformers before fitting.\n\nTherefore, the transformer instance given to the pipeline cannot be inspected directly.\n\nUse the attribute `named_steps` o..."
         },
         {
           "question_id": "param_09",
@@ -3110,7 +3110,7 @@
           "matching_chunks_count": 2,
           "best_chunk_id": "api_standard_scaler_struct_0001",
           "best_chunk_section": "StandardScaler",
-          "best_chunk_tokens": 552,
+          "best_chunk_tokens": 445,
           "sample_excerpt": "# StandardScaler (Part 1/8)\n\n**class sklearn.preprocessing.\n\nStandardScaler ( * , copy = True , with_mean = True , with_std = True )** : Standardize features by removing the mean and scaling to unit variance.\n\nThe standard score of a sample `x` is calculated as: ```python z = (x ..."
         },
         {
@@ -3299,7 +3299,7 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "supervised_nearest_neighbors_struct_0009",
           "best_chunk_section": "1.6.4.3. Ball Tree",
-          "best_chunk_tokens": 559,
+          "best_chunk_tokens": 509,
           "sample_excerpt": "### 1.6.4.3. Ball Tree (Part 1/4)\n\nTo address the inefficiencies of KD Trees in higher dimensions, the ball tree data structure was developed.\n\nWhere KD trees partition data along Cartesian axes, ball trees partition data in a series of nesting hyper-spheres.\n\nThis makes tree con..."
         },
         {
@@ -3413,7 +3413,7 @@
           "matching_chunks_count": 1,
           "best_chunk_id": "model_selection_metrics_struct_0017",
           "best_chunk_section": "3.4.4.4. Balanced accuracy score",
-          "best_chunk_tokens": 568,
+          "best_chunk_tokens": 514,
           "sample_excerpt": "### 3.4.4.4. Balanced accuracy score (Part 1/2)\n\nThe `balanced_accuracy_score` function computes the balanced accuracy, which avoids inflated performance estimates on imbalanced datasets.\n\nIt is the macro-average of recall scores per class or, equivalently, raw accuracy where eac..."
         },
         {
@@ -3448,7 +3448,7 @@
             "CV"
           ],
           "is_preserved": true,
-          "matching_chunks_count": 5,
+          "matching_chunks_count": 6,
           "best_chunk_id": "best_practices_common_pitfalls_struct_0006",
           "best_chunk_section": "12.3. Controlling randomness",
           "best_chunk_tokens": 215,
@@ -3486,10 +3486,10 @@
           ],
           "is_preserved": true,
           "matching_chunks_count": 1,
-          "best_chunk_id": "api_standard_scaler_struct_0001",
+          "best_chunk_id": "api_standard_scaler_struct_0002",
           "best_chunk_section": "StandardScaler",
-          "best_chunk_tokens": 552,
-          "sample_excerpt": "# StandardScaler (Part 1/8)\n\n**class sklearn.preprocessing.\n\nStandardScaler ( * , copy = True , with_mean = True , with_std = True )** : Standardize features by removing the mean and scaling to unit variance.\n\nThe standard score of a sample `x` is calculated as: ```python z = (x ..."
+          "best_chunk_tokens": 538,
+          "sample_excerpt": "# StandardScaler (Part 2/8)\n\nThis does not work (and will raise an exception) when attempted on sparse matrices, because centering them entails building a dense matrix which in common use cases is likely to be too large to fit in memory. **with_std bool, default=True** : If True,..."
         },
         {
           "question_id": "trouble_10",

@@ -10,8 +10,8 @@ This experiment evaluates three distinct chunking strategies applied to the proc
 | **Mean Tokens / Chunk** | 445.6 | 456.5 | 360.7 |
 | **Token Range (Min - Max)** | 50 - 566 | 84 - 573 | 35 - 1271 |
 | **Mean Characters / Chunk** | 1818.5 | 1845.7 | 1482.4 |
-| **Undersized Chunks (<50 tokens)** | 0.0% | 0.0% | 0.9% |
-| **Oversized Chunks (>550 tokens)** | 0.3% | 0.4% | 11.0% |
+| **Undersized Chunks (<50 tokens)** | 0.0% | 0.0% | 0.5% |
+| **Oversized Chunks (>550 tokens)** | 0.3% | 0.4% | 2.4% |
 | **Metadata Completeness** | 100.0% | 100.0% | 100.0% |
 | **Information Preservation Rate** | **88.3%** | **90.0%** | **96.7%** |
 
