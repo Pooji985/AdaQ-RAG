@@ -17,6 +17,15 @@ class Settings(BaseSettings):
 
     log_level: str = "INFO"
 
+    # Retrieval and Indexing Configuration
+    embedding_model: str = "all-MiniLM-L6-v2"
+    embedding_batch_size: int = 32
+    indexes_dir: str = "indexes"
+    vector_index_file: str = "vector_index.faiss"
+    vector_metadata_file: str = "vector_metadata.json"
+    bm25_index_file: str = "bm25_index.pkl"
+    bm25_metadata_file: str = "bm25_metadata.json"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
