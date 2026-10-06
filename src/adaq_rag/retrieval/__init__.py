@@ -2,9 +2,21 @@
 
 from adaq_rag.retrieval.bm25_index import BM25Index, tokenize_text
 from adaq_rag.retrieval.embeddings import EmbeddingModel
+from adaq_rag.retrieval.decomposition import DecomposedQuery, QueryDecomposer, SubQuery
+from adaq_rag.retrieval.evidence import (
+    ComplexRetrievalResult,
+    EvidenceItem,
+    EvidencePool,
+    EvidenceSufficiencyChecker,
+    SufficiencyResult,
+)
 from adaq_rag.retrieval.fusion import reciprocal_rank_fusion
 from adaq_rag.retrieval.hybrid import HybridRetriever
 from adaq_rag.retrieval.models import RetrievalResult
+from adaq_rag.retrieval.orchestrator import (
+    ComplexRetrievalOrchestrator,
+    MultiStepRetriever,
+)
 from adaq_rag.retrieval.reranker import BaseReranker, CrossEncoderReranker
 from adaq_rag.retrieval.retriever import (
     BaseRetriever,
@@ -28,4 +40,14 @@ __all__ = [
     "BaseReranker",
     "CrossEncoderReranker",
     "HybridRetriever",
+    "SubQuery",
+    "DecomposedQuery",
+    "QueryDecomposer",
+    "EvidenceItem",
+    "EvidencePool",
+    "SufficiencyResult",
+    "ComplexRetrievalResult",
+    "EvidenceSufficiencyChecker",
+    "ComplexRetrievalOrchestrator",
+    "MultiStepRetriever",
 ]

@@ -33,6 +33,15 @@ class Settings(BaseSettings):
     hybrid_candidate_top_k: int = 20
     hybrid_final_top_k: int = 5
 
+    # Complex Retrieval and Orchestration Configuration
+    complex_max_sub_queries: int = 4
+    complex_candidate_top_k: int = 15
+    complex_final_top_k: int = 8
+    complex_max_retrieval_attempts: int = 2
+    sufficiency_min_top_score: float = 0.0
+    sufficiency_min_coverage: float = 0.50
+    sufficiency_min_chunks: int = 2
+
     # LLM and Baseline RAG Configuration
     llm_provider: str = "openai"  # "openai", "gemini", "mock"
     llm_model: str = "gpt-4o-mini"
