@@ -26,6 +26,13 @@ class Settings(BaseSettings):
     bm25_index_file: str = "bm25_index.pkl"
     bm25_metadata_file: str = "bm25_metadata.json"
 
+    # Hybrid Retrieval and Reranking Configuration
+    reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    reranker_batch_size: int = 32
+    hybrid_rrf_k: int = 60
+    hybrid_candidate_top_k: int = 20
+    hybrid_final_top_k: int = 5
+
     # LLM and Baseline RAG Configuration
     llm_provider: str = "openai"  # "openai", "gemini", "mock"
     llm_model: str = "gpt-4o-mini"
