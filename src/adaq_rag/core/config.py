@@ -26,6 +26,15 @@ class Settings(BaseSettings):
     bm25_index_file: str = "bm25_index.pkl"
     bm25_metadata_file: str = "bm25_metadata.json"
 
+    # LLM and Baseline RAG Configuration
+    llm_provider: str = "openai"  # "openai", "gemini", "mock"
+    llm_model: str = "gpt-4o-mini"
+    llm_api_key: str | None = None
+    llm_base_url: str | None = None
+    llm_temperature: float = 0.0
+    llm_max_tokens: int = 1024
+    rag_top_k: int = 5
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

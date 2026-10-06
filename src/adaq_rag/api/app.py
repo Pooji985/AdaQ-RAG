@@ -4,10 +4,13 @@ from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 
 from adaq_rag.api.routes.health import router as health_router
+from adaq_rag.api.routes.rag import router as rag_router
 from adaq_rag.core.config import Settings, get_settings
 from adaq_rag.core.logging import setup_logging
+from adaq_rag.llm.exceptions import LLMConfigurationError, LLMGenerationError
 
 
 @asynccontextmanager
@@ -38,6 +41,22 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     # Register routers
     application.include_router(health_router)
+    application.include_router(rag_router)
+
+    # Register exception handlers
+    @application.exception_handler(LLMConfigurationError)
+    async def llm_config_handler(request, exc: LLMConfigurationError) -> JSONResponse:
+        return JSONResponse(
+            status_code=503,
+            content={"detail": str(exc)},
+        )
+
+    @application.exception_handler(LLMGenerationError)
+    async def llm_generation_handler(request, exc: LLMGenerationError) -> JSONResponse:
+        return JSONResponse(
+            status_code=502,
+            content={"detail": str(exc)},
+        )
 
     return application
 
