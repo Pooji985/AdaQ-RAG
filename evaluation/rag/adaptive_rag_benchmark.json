@@ -1,0 +1,1645 @@
+[
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_02",
+    "query": "Which solver in LogisticRegression supports Elastic-Net regularization penalties?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0029"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "The 'saga' solver is the only solver in LogisticRegression that supports Elastic-Net regularization.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_03",
+    "query": "What attribute of a fitted Pipeline allows accessing individual steps by name?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Pipeline steps can be accessed as a dictionary-like object using the named_steps attribute.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation"
+    ],
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_05",
+    "query": "What criterion formula measures Gini impurity during classification decision tree splitting?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "Gini impurity for node m is calculated as H(X_m) = sum_{k} p_{mk} * (1 - p_{mk}) across all class proportions.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_06",
+    "query": "What attribute stores the impurity-based feature importances in a fitted RandomForestClassifier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_random_forest_classifier_struct_0005"
+    ],
+    "target_doc_ids": [
+      "api_random_forest_classifier"
+    ],
+    "reference_answer": "The impurity-based feature importances are stored in the feature_importances_ ndarray attribute.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_07",
+    "query": "What boolean parameter in StandardScaler controls whether the data is centered before scaling?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_standard_scaler"
+    ],
+    "reference_answer": "The with_mean parameter (default True) controls whether features are centered by subtracting the mean.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_08",
+    "query": "Which parameter controls parallel job execution across CPU cores in GridSearchCV?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0002"
+    ],
+    "target_doc_ids": [
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "The n_jobs parameter controls the number of jobs to run in parallel, where -1 uses all available processors.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_09",
+    "query": "What distance metric is the standard default for nearest neighbors classifiers in scikit-learn?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0001"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "The standard default metric is the Minkowski distance with p=2, which is equivalent to standard Euclidean distance.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_10",
+    "query": "What threshold parameter in HuberRegressor defines whether a residual is treated as an inlier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0043"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "The parameter epsilon (default 1.35) controls the residual threshold relative to the scale |y - Xw| / sigma to qualify as an inlier.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_11",
+    "query": "What default solver is selected in LogisticRegression starting from version 0.22?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0003"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "The default solver in LogisticRegression is 'lbfgs'.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_12",
+    "query": "What parameter in RandomForestClassifier controls the number of trees constructed in the ensemble?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_random_forest_classifier_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_random_forest_classifier"
+    ],
+    "reference_answer": "The n_estimators parameter sets the number of trees in the forest (default is 100).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_13",
+    "query": "What boolean parameter in ColumnTransformer controls whether non-transformed columns are dropped or passed through?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_column_transformer"
+    ],
+    "reference_answer": "The remainder parameter specifies whether remaining columns are 'drop' (default) or 'passthrough'.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_14",
+    "query": "What parameter in Pipeline caches transformer fit calls to disk?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_pipeline_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_pipeline"
+    ],
+    "reference_answer": "The memory parameter accepts a string path or joblib.Memory object to cache transformer fits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_15",
+    "query": "What attribute in a fitted LinearRegression model contains the independent term or intercept?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "The intercept term is stored in the intercept_ attribute (float or ndarray).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_16",
+    "query": "What function computes the area under the receiver operating characteristic curve in scikit-learn?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0055"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "The roc_auc_score function computes Area Under the Receiver Operating Characteristic Curve (ROC AUC).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_17",
+    "query": "What is the default kernel function in scikit-learn's SVC classifier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0007"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "The default kernel is the Radial Basis Function ('rbf') kernel.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_18",
+    "query": "What parameter controls the minimum cost-complexity pruning threshold in DecisionTreeClassifier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0017"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "The ccp_alpha parameter (minimal cost-complexity pruning alpha) controls subtree pruning.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_20",
+    "query": "What attribute in GridSearchCV holds the metric score achieved by the best parameter setting on the held-out validation data?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0004"
+    ],
+    "target_doc_ids": [
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "The best_score_ attribute stores the mean cross-validated score of the best_estimator on the validation splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_02",
+    "query": "How does the kernel trick allow Support Vector Machines to separate non-linearly separable data?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "The kernel trick computes inner products in high-dimensional feature spaces implicitly using kernel functions (such as linear, polynomial, or rbf), enabling linear SVM algorithms to separate non-linearly separable data without explicitly evaluating coordinates in that feature space.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_03",
+    "query": "Why does Lasso regression drive model coefficients to exact zero while Ridge regression does not?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0008"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Lasso adds an L1 penalty (|w|_1) whose diamond-shaped geometry drives non-informative feature weights to exact zeros, producing sparse representations; in contrast, Ridge adds an L2 penalty (||w||_2^2) that shrinks coefficients continuously toward zero without setting them to exact zeros.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_04",
+    "query": "How does out-of-bag (OOB) estimation evaluate generalization in bagging ensembles without separate cross-validation?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0032"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "When oob_score=True, Bagging evaluates generalization using out-of-bag samples: each base estimator is evaluated on the approximately 37% of training samples that were not included in its bootstrap sample, providing an unbiased error estimate without a separate validation set.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_05",
+    "query": "Why does QuantileTransformer map features to a uniform distribution regardless of input distribution shape?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0011"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms"
+    ],
+    "reference_answer": "QuantileTransformer applies a non-parametric transformation based on empirical cumulative distribution functions, mapping feature values to their empirical quantile ranks and spreading them evenly across a uniform distribution [0, 1].",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_curves"
+    ],
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/learning_curve.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_07",
+    "query": "How does nearest neighbors classification predict class probabilities using distance weighting?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "When weights='distance', each neighbor's vote is weighted inversely proportional to its distance from the query point, giving closer neighbors greater influence on the predicted probability.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_08",
+    "query": "How does the ROC AUC score quantify the ranking discrimination of a binary classification model?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0040",
+      "model_selection_metrics_struct_0041"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "ROC AUC computes the area under the True Positive Rate versus False Positive Rate curve across all decision thresholds; it quantifies the probability that the classifier ranks a randomly chosen positive sample higher than a randomly chosen negative sample.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_09",
+    "query": "How does minimal cost-complexity pruning determine which subtrees to prune in a decision tree?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0017"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "Cost-complexity pruning parameterizes the tree loss by R_alpha(T) = R(T) + alpha * |T|, where alpha penalizes leaf count; nodes with the smallest effective alpha (lowest impurity reduction per leaf) are pruned first.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_10",
+    "query": "Why does setting class_weight='balanced' in LogisticRegression adjust optimization penalties across classes?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0002"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "The 'balanced' mode automatically sets sample weights inversely proportional to class frequencies: n_samples / (n_classes * np.bincount(y)), preventing majority classes from dominating the loss function.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_11",
+    "query": "Why does the BallTree spatial algorithm scale better than KDTree in higher-dimensional metric spaces?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "BallTree partitions data into nested hyper-spheres rather than axis-aligned hyper-rectangles (KDTree), preserving distance pruning efficiency even when high dimensionality degrades coordinate-aligned splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_12",
+    "query": "How does HistGradientBoostingClassifier achieve faster training by binning continuous numerical features into integer histograms?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0002",
+      "supervised_ensemble_methods_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "HistGradientBoostingClassifier maps continuous numerical features into integer bins (at most 256 unique values), accelerating split finding from sorting continuous values O(n_samples) to evaluating compact histogram counts, reducing training time by orders of magnitude on large datasets.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_13",
+    "query": "Why does stratified k-fold cross-validation reduce evaluation variance for imbalanced classification tasks compared to standard k-fold?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0009"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "StratifiedKFold ensures each fold has approximately the same target class percentage as the complete dataset, avoiding unrepresentative splits that contain zero or skewed minority class samples.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_14",
+    "query": "Why does performing unsupervised scaling or feature selection on the entire dataset prior to cross-validation cause data leakage?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0002",
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "When transformers fit on the entire dataset, distribution statistics (e.g., mean, variance, or top-k correlated features) absorb information from held-out validation folds, yielding optimistically biased performance metrics.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_15",
+    "query": "How do Pipelines encapsulate transformers and estimators to mathematically guarantee validation isolation during grid search cross-validation?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Pipelines ensure that during each cross-validation split, fit_transform is called exclusively on the training folds and only transform is called on validation folds, preventing test distribution metrics from leaking into estimator parameter estimation.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_02",
+    "query": "How do you display a formatted text representation of a fitted decision tree using export_text?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "Import export_text from sklearn.tree and call print(export_text(decision_tree, feature_names=list(features))).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_03",
+    "query": "How do you instantiate and fit an SVC classifier with an RBF kernel on training vectors X and labels y?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "Import SVC from sklearn.svm, instantiate clf = SVC(kernel='rbf'), and fit the classifier on training vectors with clf.fit(X, y).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_04",
+    "query": "How do you impute missing numerical values with SimpleImputer using the median strategy?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation"
+    ],
+    "reference_answer": "Instantiate imputer = SimpleImputer(strategy='median') and call imputer.fit_transform(X) on the numerical dataset.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_05",
+    "query": "How do you compute a multiclass confusion matrix array using the confusion_matrix function?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0029"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Import confusion_matrix from sklearn.metrics and pass true labels and predicted labels as confusion_matrix(y_true, y_pred).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_06",
+    "query": "How do you configure ColumnTransformer to apply different transformations to numerical and categorical feature subsets?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_column_transformer"
+    ],
+    "reference_answer": "Instantiate ColumnTransformer([('num', StandardScaler(), num_cols), ('cat', OneHotEncoder(), cat_cols)], remainder='drop') and invoke fit_transform(X).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_07",
+    "query": "How do you configure and execute an exhaustive hyperparameter search over C and penalty with GridSearchCV?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_hyperparameter_tuning_struct_0001",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "model_selection_hyperparameter_tuning",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Define param_grid = {'C': [0.1, 1, 10], 'penalty': ['l2']}, instantiate GridSearchCV(estimator, param_grid, cv=5), and call fit(X, y).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/grid_search.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_08",
+    "query": "How do you evaluate an estimator using 5-fold cross-validation with cross_val_score?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Call cross_val_score(estimator, X, y, cv=5, scoring='accuracy'), which returns an array of 5 validation scores.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_09",
+    "query": "How do you construct a VotingClassifier combining a logistic regression and random forest model with soft voting?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0034",
+      "supervised_ensemble_methods_struct_0037"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "Instantiate VotingClassifier(estimators=[('lr', LogisticRegression()), ('rf', RandomForestClassifier())], voting='soft') and call fit(X, y); soft voting predicts class labels based on the argmax of the sums of predicted probabilities.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_10",
+    "query": "How do you transform test data using an already fitted StandardScaler without re-estimating dataset mean or variance?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "Call scaler.transform(X_test) exclusively; never call scaler.fit(X_test) or scaler.fit_transform(X_test) on validation or testing splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_11",
+    "query": "How do you configure KFold with shuffling and a fixed random seed for reproducible cross-validation?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0027"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Instantiate KFold(n_splits=5, shuffle=True, random_state=42) and pass it as the cv parameter to cross_val_score(estimator, X, y, cv=kf), ensuring samples are randomly shuffled before splitting in a reproducible manner.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_12",
+    "query": "How do you set up RandomizedSearchCV to sample hyperparameters from continuous probability distributions?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_hyperparameter_tuning_struct_0003"
+    ],
+    "target_doc_ids": [
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "Pass scipy.stats distribution instances (such as scipy.stats.uniform or expon) in the param_distributions dictionary to RandomizedSearchCV(estimator, param_distributions, n_iter=50).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_13",
+    "query": "How do you compute precision, recall, and F1-score simultaneously using classification_report?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0022"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Call classification_report(y_true, y_pred, target_names=target_names), which outputs a formatted text summary of precision, recall, and F1-score for each class along with macro and weighted averages.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "preprocessing_imputation",
+      "api_standard_scaler"
+    ],
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_15",
+    "query": "How do you configure nested cross-validation using GridSearchCV within cross_val_score to obtain an unbiased generalization error estimate?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0002",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation",
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "Wrap GridSearchCV inside cross_val_score: inner_cv = KFold(n_splits=3); outer_cv = KFold(n_splits=5); clf = GridSearchCV(estimator, param_grid, cv=inner_cv); scores = cross_val_score(clf, X, y, cv=outer_cv).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_02",
+    "query": "How does ExtraTreesClassifier differ from standard RandomForestClassifier in candidate split selection?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0026"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "In ExtraTreesClassifier, randomness goes one step further than standard RandomForest: instead of finding the most discriminative threshold for each candidate feature, thresholds are drawn completely at random and the best of these randomly-generated thresholds is chosen.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_03",
+    "query": "How do Ridge and Lasso regression differ in their regularization penalty formulations and resulting model sparsity?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0010"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Ridge applies an L2 penalty that shrinks weights smoothly toward zero without zeroing them, whereas Lasso applies an L1 penalty that drives non-relevant coefficients to exact zero, creating sparse models.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_04",
+    "query": "When should RobustScaler be selected instead of StandardScaler for feature standardization in scikit-learn?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms"
+    ],
+    "reference_answer": "StandardScaler standardizes using sample mean and variance which are highly sensitive to extreme outliers; RobustScaler should be selected when datasets have significant outliers because it centers with the median and scales using the Interquartile Range (IQR).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_05",
+    "query": "What are the operational trade-offs between exhaustive GridSearchCV and RandomizedSearchCV for hyperparameter optimization?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_hyperparameter_tuning_struct_0001",
+      "model_selection_hyperparameter_tuning_struct_0003"
+    ],
+    "target_doc_ids": [
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "GridSearchCV evaluates every combination in a discrete grid (exponential in parameter count), whereas RandomizedSearchCV evaluates a fixed budget of random configurations from specified distributions, finding good solutions significantly faster in large search spaces.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0045"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_07",
+    "query": "How does LinearSVC compare to SVC with a linear kernel in computational complexity and backend solvers?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0009"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "SVC uses the libsvm solver which scales between O(n_features * n_samples^2) and O(n_features * n_samples^3); LinearSVC uses the liblinear solver which scales almost linearly with millions of samples and features for linear classification.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_08",
+    "query": "How does HistGradientBoostingClassifier achieve faster training than standard GradientBoostingClassifier on large datasets?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0002",
+      "supervised_ensemble_methods_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "HistGradientBoostingClassifier bins continuous values into 256 integer buckets, transforming continuous split sorting into constant-time discrete histogram operations; this makes it significantly faster than standard GradientBoostingClassifier on large datasets.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_09",
+    "query": "What are the algorithmic trade-offs between BallTree and KDTree for nearest neighbors searches in high dimensions?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "KDTree partitions space using axis-aligned orthogonal cuts and suffers severe performance drops above 20 dimensions; BallTree partitions using nested hyperspheres, maintaining superior pruning bounds in high-dimensional or non-Euclidean spaces.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_10",
+    "query": "How does KNNImputer differ from SimpleImputer when filling missing feature values?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "preprocessing_imputation_struct_0008"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation"
+    ],
+    "reference_answer": "SimpleImputer computes static univariate summary statistics (mean/median) across an entire column, whereas KNNImputer uses multivariate Euclidean distance to identify the k-nearest matching samples and imputes weighted neighbor values.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_11",
+    "query": "Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0004",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms"
+    ],
+    "reference_answer": "StandardScaler centers around mean with unit variance (unbounded, highly sensitive to outliers); MinMaxScaler compresses data into fixed [0, 1] bounds (extreme outliers compress inliers into narrow intervals); RobustScaler uses median and IQR, remaining robust to outliers with unbounded output.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0001",
+      "supervised_ensemble_methods_struct_0024"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees",
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html",
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_13",
+    "query": "Compare BaggingClassifier and AdaBoostClassifier in their sequential versus parallel ensemble training paradigms.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0032",
+      "supervised_ensemble_methods_struct_0043"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "Bagging builds independent base estimators in parallel on random bootstrap subsets of the training set to reduce variance; AdaBoost builds base estimators sequentially in series, iteratively re-weighting incorrectly predicted samples to focus subsequent estimators on difficult cases and reduce bias.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_14",
+    "query": "Compare LogisticRegression with L1 regularization versus ElasticNet in their handling of groups of highly correlated features.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0008",
+      "supervised_linear_models_struct_0016"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Pure L1 regularization (Lasso) tends to select one feature arbitrarily from a group of highly correlated predictors and zero out the remainder; ElasticNet combines L1 and L2 penalties via l1_ratio, retaining correlated feature groups together with non-zero weights.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_15",
+    "query": "Compare cross-validation performance estimation using standard KFold versus TimeSeriesSplit on temporal sequential data.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0025"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "KFold randomly shuffles samples across time violating autocorrelation and leaking future data into past training folds; TimeSeriesSplit uses forward rolling walk-forward splits where train folds strictly precede validation folds chronologically.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_02",
+    "query": "How do you fix a ConvergenceWarning in LogisticRegression when the optimization solver exceeds maximum iterations?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0003",
+      "api_logistic_regression_struct_0004"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "ConvergenceWarning indicates that the solver reached max_iter before satisfying convergence tolerance. To fix it, scale features with StandardScaler (solvers like sag, saga, and lbfgs converge faster on normalized data), increase max_iter (e.g., from 100 to 1000), or adjust tol.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_03",
+    "query": "Why is standard classification accuracy misleading on severely imbalanced datasets, and how does balanced_accuracy_score fix it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0017"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Standard accuracy awards 99% accuracy to a trivial model that always predicts the 99% majority class; balanced_accuracy_score computes the unweighted macro-average of recall across each class, scoring 50% for trivial majority-class guessing.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_04",
+    "query": "Why should standard shuffled KFold cross-validation not be used for time series forecasting, and what replaces it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0025"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Shuffled KFold violates temporal sequence by leaking future information into past training folds. It should be replaced with TimeSeriesSplit, which uses fixed chronological walk-forward splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_05",
+    "query": "How do you prevent ValueError crashes caused by unexpected NaN values in test sets during model prediction?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Most scikit-learn estimators raise ValueError when passed arrays containing NaN values; wrapping the estimator in a Pipeline with SimpleImputer ensures that missing values are automatically imputed using training statistics before reaching the estimator.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_06",
+    "query": "Why does centering sparse matrices with StandardScaler raise an exception, and how should with_mean be configured?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_standard_scaler_struct_0002"
+    ],
+    "target_doc_ids": [
+      "api_standard_scaler"
+    ],
+    "reference_answer": "Centering subtracts the mean from zeros, destroying matrix sparsity and causing severe memory exhaustion. For scipy.sparse matrices, pass with_mean=False to scale variances while keeping zero entries intact.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_08",
+    "query": "Why does transforming validation data with a separately fitted scaler cause inconsistent preprocessing, and how do you resolve it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "Calling fit_transform or fit on test/validation data normalizes it using validation mean/variance instead of training mean/variance, misaligning feature spaces; resolve it by calling scaler.fit(X_train) followed only by scaler.transform(X_test), or using a Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_09",
+    "query": "Why does cross-validation with an integer random_state produce identical splits on repeated calls, while a RandomState instance yields successive different splits?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "An integer random_state re-seeds the random number generator to the exact same seed on every split call, producing duplicate splits; a RandomState instance mutates its internal state on each call, producing successive distinct randomized splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_10",
+    "query": "Why does evaluating a pipeline with target encoding outside cross_val_score yield over-optimistic validation metrics, and how is it prevented?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Computing target statistics on the full dataset leaks target labels into feature values; preventing this requires embedding the target encoder as a transformer inside a Pipeline passed directly to cross_val_score so encoders re-fit solely on training folds.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_column_transformer"
+    ],
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_02",
+    "query": "How do StandardScaler and PCA interact in a pipeline to prevent dominant high-variance features from distorting principal components?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "StandardScaler standardizes all features to zero mean and unit variance before PCA, ensuring that features with large numerical scales do not artificially dominate the eigenvectors and explained variance ratio.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_03",
+    "query": "How do SimpleImputer and ColumnTransformer combine to handle missing data across heterogeneous column types?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation",
+      "api_column_transformer"
+    ],
+    "reference_answer": "ColumnTransformer defines separate pipeline branches: numeric columns route to SimpleImputer(strategy='median') followed by scaling, while categorical columns route to SimpleImputer(strategy='most_frequent') followed by one-hot encoding.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_04",
+    "query": "How do GridSearchCV and Pipeline combine parameter names using the double-underscore convention for hyperparameter tuning?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0006",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Parameters of nested estimators within a Pipeline are addressed in GridSearchCV using the double-underscore convention: <step_name>__<parameter_name> (for example, 'clf__C': [0.1, 1.0] and 'scaler__with_mean': [True, False]).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_05",
+    "query": "How do KFold cross-validation, SimpleImputer, and RandomForestClassifier operate jointly inside cross_val_score without leakage?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "model_selection_cross_validation_struct_0002"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Placing SimpleImputer and RandomForestClassifier inside a Pipeline and passing it to cross_val_score(pipeline, X, y, cv=KFold(5)) ensures the imputer computes medians strictly on training folds for each split.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_06",
+    "query": "How do RandomizedSearchCV, StratifiedKFold, and SVC interact during hyperparameter optimization on imbalanced classification datasets?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0009",
+      "model_selection_hyperparameter_tuning_struct_0003"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation",
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "RandomizedSearchCV samples C and gamma distributions while using StratifiedKFold cross-validation splits to preserve minority class ratios, training SVC models and evaluating balanced validation metrics.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_07",
+    "query": "How do FunctionTransformer and Pipeline work together to incorporate custom stateless Python preprocessing functions?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0036",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "FunctionTransformer wraps an arbitrary Python callable into a scikit-learn compatible transformer implementing fit and transform; placing it inside a Pipeline allows custom stateless preprocessing functions (e.g., np.log1p) to execute seamlessly between estimators.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_08",
+    "query": "How do VotingClassifier, cross_val_score, and StandardScaler interact when ensembling heterogeneous estimators?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0034",
+      "model_selection_cross_validation_struct_0002",
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods",
+      "model_selection_cross_validation",
+      "api_standard_scaler"
+    ],
+    "reference_answer": "When building a VotingClassifier with estimators sensitive to scale, wrap each sensitive estimator in a Pipeline with StandardScaler, ensemble them with VotingClassifier(voting='soft'), and evaluate the ensemble via cross_val_score without data leakage.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html",
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "best_practices_common_pitfalls",
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_10",
+    "query": "How do ColumnTransformer, SimpleImputer, StandardScaler, and LogisticRegression coordinate to process mixed tabular datasets with missing values?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "preprocessing_imputation",
+      "api_standard_scaler"
+    ],
+    "reference_answer": "A ColumnTransformer routes numerical columns into a pipeline of SimpleImputer and StandardScaler, categorical columns into an imputer and encoder, stacks the resulting matrices, and feeds them into LogisticRegression.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_11",
+    "query": "Why does pipeline cross-validation produce data leakage when scaling features with StandardScaler before train_test_split, and how does make_pipeline resolve it?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0002",
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Scaling before train_test_split calculates global dataset means and variances, leaking test distributions into the model. Using make_pipeline(StandardScaler(), Estimator()) inside cross-validation fits the scaler strictly on the training partition of each split.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_12",
+    "query": "How do GridSearchCV, Pipeline, and memory caching interact to accelerate hyperparameter search over expensive transformer preprocessing steps?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0008",
+      "api_pipeline_struct_0001",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_pipeline",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Setting memory=tempfile.mkdtemp() in Pipeline caches fitted transformer outputs to disk; when GridSearchCV iterates over different downstream estimator parameters, the cached transformed data is reused instead of re-fitting preprocessing transformers on every grid iteration.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_13",
+    "query": "How do StratifiedKFold, balanced_accuracy_score, and class_weight='balanced' coordinate to train and evaluate classifiers on severely imbalanced datasets?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0009",
+      "model_selection_metrics_struct_0017",
+      "api_logistic_regression_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation",
+      "model_selection_metrics",
+      "api_logistic_regression"
+    ],
+    "reference_answer": "StratifiedKFold maintains minority class proportions across all cross-validation folds, class_weight='balanced' adjusts training loss penalties inversely proportional to class frequencies, and balanced_accuracy_score provides an uninflated macro-averaged evaluation metric.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/model_evaluation.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_14",
+    "query": "How do DecisionTreeClassifier, ccp_alpha pruning, and validation curves interact to systematically identify the optimal tree complexity?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0016",
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees",
+      "model_selection_curves"
+    ],
+    "reference_answer": "DecisionTreeClassifier computes the cost-complexity pruning path providing candidate alpha values; validation_curve then systematically evaluates training and validation scores across these ccp_alpha values, identifying the optimal tree regularization parameter that minimizes test error.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html",
+      "https://scikit-learn.org/stable/modules/learning_curve.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_15",
+    "query": "How do KNNImputer, RobustScaler, and LinearSVC work together in a pipeline to handle noisy, high-dimensional datasets containing missing values and extreme outliers?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0008",
+      "preprocessing_data_transforms_struct_0007",
+      "supervised_support_vector_machines_struct_0009"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation",
+      "preprocessing_data_transforms",
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "In a unified pipeline, KNNImputer imputes missing values using multivariate neighbor distances, RobustScaler standardizes features using median and IQR so extreme outliers do not distort scaling, and LinearSVC scales efficiently O(n_samples) for high-dimensional linear classification.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  }
+]
