@@ -971,7 +971,7 @@
     "expected_complexity": "MEDIUM",
     "expected_strategy": "HYBRID",
     "ground_truth_chunk_ids": [
-      "model_selection_metrics_struct_0045"
+      "model_selection_metrics_struct_0028"
     ],
     "target_doc_ids": [
       "model_selection_metrics"

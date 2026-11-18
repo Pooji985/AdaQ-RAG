@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdaQ-RAG — Adaptive Retrieval-Augmented Generation</title>
+  <meta name="description" content="Intent-aware adaptive retrieval-augmented generation: analyzing query complexity, selecting optimal retrieval strategies, and evaluating quality-efficiency trade-offs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Header & Research Banner -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="brand-mark">AQ</div>
+        <div>
+          <h1 class="brand-title">AdaQ-RAG</h1>
+          <p class="brand-tagline">Retrieval that adapts to the question.</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <span class="status-indicator" id="status-indicator">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="backend-status-text">Connecting to backend...</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+
+    <!-- =========================================================================
+         SECTION A: How it works
+         ========================================================================= -->
+    <section class="research-section" id="section-how-it-works">
+      <div class="section-header">
+        <span class="section-kicker">Architecture & Methodology</span>
+        <h2 class="section-title">The right retrieval strategy for each question.</h2>
+        <p class="section-lead">
+          AdaQ-RAG analyses each question's intent and structural complexity, selects a tailored retrieval approach, gathers supporting documentation evidence, and generates a grounded response while balancing answer quality against computational latency.
+        </p>
+      </div>
+
+      <!-- Interactive Responsive Pipeline Trace Diagram -->
+      <div class="pipeline-container" aria-label="Adaptive RAG Pipeline Architecture Flow">
+        <div class="pipeline-flow-wrapper">
+          <!-- Step 1: Input -->
+          <div class="pipe-node" id="node-input" data-stage="input">
+            <div class="node-badge">1</div>
+            <div class="node-content">
+              <span class="node-title">Inquiry Input</span>
+              <span class="node-detail">User Question</span>
+            </div>
+          </div>
+
+          <div class="pipe-connector" id="conn-1">
+            <svg class="connector-arrow" viewBox="0 0 24 12"><path d="M0 6 H20 M16 2 L22 6 L16 10" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+          </div>
+
+          <!-- Step 2: Analyzer -->
+          <div class="pipe-node" id="node-analyzer" data-stage="analyzer">
+            <div class="node-badge">2</div>
+            <div class="node-content">
+              <span class="node-title">Intent & Complexity</span>
+              <span class="node-detail">Deterministic Classifier</span>
+            </div>
+          </div>
+
+          <div class="pipe-connector" id="conn-2">
+            <svg class="connector-arrow" viewBox="0 0 24 12"><path d="M0 6 H20 M16 2 L22 6 L16 10" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+          </div>
+
+          <!-- Step 3: Router & Strategy Selection -->
+          <div class="pipe-node" id="node-router" data-stage="router">
+            <div class="node-badge">3</div>
+            <div class="node-content">
+              <span class="node-title">Strategy Selection</span>
+              <span class="node-detail" id="trace-strategy-label">Dynamic Routing Rules</span>
+            </div>
+          </div>
+
+          <div class="pipe-connector" id="conn-3">
+            <svg class="connector-arrow" viewBox="0 0 24 12"><path d="M0 6 H20 M16 2 L22 6 L16 10" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+          </div>
+
+          <!-- Step 4: Retrieval Engine (Branching) -->
+          <div class="pipe-node pipe-node-branches" id="node-retrieval" data-stage="retrieval">
+            <div class="node-badge">4</div>
+            <div class="node-content">
+              <span class="node-title">Evidence Retrieval</span>
+              <div class="strategy-branches">
+                <span class="branch-pill" id="branch-dense" title="Single-channel FAISS embedding search">Dense FAISS</span>
+                <span class="branch-pill" id="branch-hybrid" title="Dual FAISS + BM25 with Reciprocal Rank Fusion & Cross-Encoder">Hybrid + Rerank</span>
+                <span class="branch-pill" id="branch-multistep" title="Sub-query decomposition & iterative retrieval">Multi-Step</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pipe-connector" id="conn-4">
+            <svg class="connector-arrow" viewBox="0 0 24 12"><path d="M0 6 H20 M16 2 L22 6 L16 10" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+          </div>
+
+          <!-- Step 5: Sufficiency Assessment -->
+          <div class="pipe-node" id="node-assessment" data-stage="assessment">
+            <div class="node-badge">5</div>
+            <div class="node-content">
+              <span class="node-title">Evidence Assessment</span>
+              <span class="node-detail" id="trace-assessment-label">Sufficiency Verification</span>
+            </div>
+          </div>
+
+          <div class="pipe-connector" id="conn-5">
+            <svg class="connector-arrow" viewBox="0 0 24 12"><path d="M0 6 H20 M16 2 L22 6 L16 10" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+          </div>
+
+          <!-- Step 6: Grounded Generation -->
+          <div class="pipe-node" id="node-generator" data-stage="generator">
+            <div class="node-badge">6</div>
+            <div class="node-content">
+              <span class="node-title">Grounded Answer</span>
+              <span class="node-detail">LLM with Source Citations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pipeline-caption">
+          <span class="caption-icon">ℹ️</span>
+          <span id="pipeline-status-caption">Pipeline ready. Active execution path will be highlighted upon query submission.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION B: Explore example questions
+         ========================================================================= -->
+    <section class="research-section" id="section-examples">
+      <div class="section-header">
+        <span class="section-kicker">Empirical Benchmarks</span>
+        <h2 class="section-title">Explore example questions.</h2>
+        <p class="section-lead">
+          Three representative questions evaluated in the controlled pilot benchmark, covering simple, moderate, and complex technical inquiries from the scikit-learn corpus.
+        </p>
+      </div>
+
+      <div class="examples-grid" id="examples-container">
+        <!-- Card 1: Simple -->
+        <article class="example-card" data-tier="simple" id="example-card-simple">
+          <header class="example-card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="example-body-simple">
+            <div class="example-header-left">
+              <span class="tier-badge tier-simple">1. Simple question</span>
+              <h3 class="example-question-title">What is the default scoring strategy in GridSearchCV if scoring is None?</h3>
+            </div>
+            <div class="example-header-right">
+              <span class="toggle-icon" aria-hidden="true">▾</span>
+            </div>
+          </header>
+          <div class="example-card-body collapsed" id="example-body-simple">
+            <div class="example-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Detected Intent</span>
+                <span class="meta-value font-mono">FACT_LOOKUP</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Detected Complexity</span>
+                <span class="meta-value font-mono">SIMPLE</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Selected Strategy</span>
+                <span class="meta-value font-mono strategy-dense">DENSE (Single-Channel)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pilot Latency</span>
+                <span class="meta-value font-mono">17.1s (1 call)</span>
+              </div>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Routing Rationale</h4>
+              <p class="block-text">Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks satisfy the question without unnecessary multi-channel overhead.</p>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Saved Grounded Answer</h4>
+              <blockquote class="saved-answer-quote">
+                If <code>scoring</code> is set to <code>None</code>, GridSearchCV uses the estimator’s own default scoring method (the estimator’s <code>score</code> function) to evaluate the models. This is the default strategy when no explicit scoring parameter is passed. [Source 1]
+              </blockquote>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Pilot Measured Metrics</h4>
+              <div class="metrics-row">
+                <span class="metric-pill">Answer Quality: <strong>4.0 / 4.0</strong></span>
+                <span class="metric-pill">Retrieval Calls: <strong>1</strong></span>
+                <span class="metric-pill">Top Citations: <code>api_grid_search_cv_struct_0001</code> (0.7711)</span>
+              </div>
+            </div>
+
+            <div class="example-action-row">
+              <button class="btn btn-sm btn-outline load-example-btn" data-qid="rag_fact_01" data-query="What is the default scoring strategy in GridSearchCV if scoring is None?" data-sys="adaptive_rag">
+                Load into workspace &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Moderate -->
+        <article class="example-card" data-tier="moderate" id="example-card-moderate">
+          <header class="example-card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="example-body-moderate">
+            <div class="example-header-left">
+              <span class="tier-badge tier-moderate">2. Moderate question</span>
+              <h3 class="example-question-title">What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?</h3>
+            </div>
+            <div class="example-header-right">
+              <span class="toggle-icon" aria-hidden="true">▾</span>
+            </div>
+          </header>
+          <div class="example-card-body collapsed" id="example-body-moderate">
+            <div class="example-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Detected Intent</span>
+                <span class="meta-value font-mono">COMPARISON</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Detected Complexity</span>
+                <span class="meta-value font-mono">MEDIUM</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Selected Strategy</span>
+                <span class="meta-value font-mono strategy-hybrid">HYBRID + Rerank</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pilot Latency</span>
+                <span class="meta-value font-mono">21.5s (2 calls)</span>
+              </div>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Routing Rationale</h4>
+              <p class="block-text">Entity comparison requires a broader hybrid candidate pool (top-20) combining BM25 keyword matching and FAISS dense vectors, fused via Reciprocal Rank Fusion and CrossEncoder reranking to ensure balanced evidence across all three averaging types.</p>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Saved Grounded Answer</h4>
+              <blockquote class="saved-answer-quote">
+                • <strong>Macro averaging:</strong> Computes metric values for each class independently, then takes the unweighted arithmetic mean; all classes contribute equally regardless of frequency.<br>
+                • <strong>Weighted averaging:</strong> Computes per-class metric values, but weights each class score by its true support (prevalence in ground truth).<br>
+                • <strong>Micro averaging:</strong> Aggregates true positives, false positives, and false negatives globally across all classes first, which mathematically equals overall accuracy in standard multiclass classification. [Source 3] [Source 1]
+              </blockquote>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Pilot Measured Metrics</h4>
+              <div class="metrics-row">
+                <span class="metric-pill">Answer Quality: <strong>3.8 / 4.0</strong></span>
+                <span class="metric-pill">Retrieval Calls: <strong>2</strong></span>
+                <span class="metric-pill">Top Citations: <code>model_selection_metrics_struct_0028</code> (0.8124)</span>
+              </div>
+            </div>
+
+            <div class="example-action-row">
+              <button class="btn btn-sm btn-outline load-example-btn" data-qid="rag_comp_06" data-query="What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?" data-sys="adaptive_rag">
+                Load into workspace &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Complex -->
+        <article class="example-card" data-tier="complex" id="example-card-complex">
+          <header class="example-card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="example-body-complex">
+            <div class="example-header-left">
+              <span class="tier-badge tier-complex">3. Complex question</span>
+              <h3 class="example-question-title">Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.</h3>
+            </div>
+            <div class="example-header-right">
+              <span class="toggle-icon" aria-hidden="true">▾</span>
+            </div>
+          </header>
+          <div class="example-card-body collapsed" id="example-body-complex">
+            <div class="example-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Detected Intent</span>
+                <span class="meta-value font-mono">COMPARISON</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Detected Complexity</span>
+                <span class="meta-value font-mono">COMPLEX</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Selected Strategy</span>
+                <span class="meta-value font-mono strategy-multistep">MULTI_STEP (Orchestrated)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pilot Latency</span>
+                <span class="meta-value font-mono">63.1s (16 calls)</span>
+              </div>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Routing Rationale</h4>
+              <p class="block-text">Multi-aspect comparative query contrasting 3 estimators across 2 distinct dimensions (outliers and bounds). Routed to multi-step retrieval: decomposed into targeted sub-queries, retrieved iteratively, and validated with evidence sufficiency assessment.</p>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Saved Grounded Answer</h4>
+              <blockquote class="saved-answer-quote">
+                • <strong>Sensitivity to outliers:</strong><br>
+                &nbsp;&nbsp;– <em>StandardScaler:</em> Highly sensitive; mean and variance are distorted by extreme values [Source 1].<br>
+                &nbsp;&nbsp;– <em>RobustScaler:</em> Robust; centers on median and scales by Interquartile Range (IQR) [Source 2].<br>
+                &nbsp;&nbsp;– <em>MinMaxScaler:</em> Highly sensitive; extreme values compress typical inliers into a narrow range.<br>
+                • <strong>Output bounds:</strong><br>
+                &nbsp;&nbsp;– <em>StandardScaler:</em> Unbounded (mean 0, unit variance).<br>
+                &nbsp;&nbsp;– <em>RobustScaler:</em> Unbounded.<br>
+                &nbsp;&nbsp;– <em>MinMaxScaler:</em> Strictly bounded to specified range (default [0, 1]).
+              </blockquote>
+            </div>
+
+            <div class="example-section-block">
+              <h4 class="block-title">Pilot Measured Metrics</h4>
+              <div class="metrics-row">
+                <span class="metric-pill">Answer Quality: <strong>3.67 / 4.0</strong></span>
+                <span class="metric-pill">Retrieval Calls: <strong>16</strong></span>
+                <span class="metric-pill">Escalation Events: <strong>1</strong></span>
+              </div>
+            </div>
+
+            <div class="example-action-row">
+              <button class="btn btn-sm btn-outline load-example-btn" data-qid="rag_comp_11" data-query="Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds." data-sys="full_adaq_rag">
+                Load into workspace &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION C: Ask AdaQ-RAG
+         ========================================================================= -->
+    <section class="research-section" id="section-workspace">
+      <div class="section-header">
+        <span class="section-kicker">Interactive Workspace</span>
+        <h2 class="section-title">Ask your own question.</h2>
+        <p class="section-lead">
+          Submit a custom scikit-learn inquiry to observe AdaQ-RAG's dynamic query analysis and retrieval routing, or run all four systems simultaneously to evaluate comparative behavior.
+        </p>
+      </div>
+
+      <div class="workspace-card">
+        <!-- Operating Mode Toggle -->
+        <div class="mode-selector-wrapper">
+          <span class="control-label">Operating Mode</span>
+          <div class="mode-toggle-group" role="radiogroup" aria-label="Query Execution Mode">
+            <label class="mode-tab active" id="mode-tab-adaptive">
+              <input type="radio" name="exec-mode" value="adaptive" checked>
+              <div class="mode-tab-content">
+                <span class="mode-name">Mode 1 — Let AdaQ-RAG decide</span>
+                <span class="mode-desc">Dynamic query analysis &amp; automated strategy routing</span>
+              </div>
+            </label>
+            <label class="mode-tab" id="mode-tab-compare">
+              <input type="radio" name="exec-mode" value="compare">
+              <div class="mode-tab-content">
+                <span class="mode-name">Mode 2 — Compare all four systems</span>
+                <span class="mode-desc">Run Basic, Hybrid, Adaptive, and Full AdaQ on the same query</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- System Selection Sub-Options (Active in Mode 1) -->
+        <div class="system-selection-block" id="system-selection-block">
+          <div class="form-row-header">
+            <span class="control-label">Adaptive Pipeline</span>
+            <span class="control-hint">Adaptive RAG or Full Orchestrator</span>
+          </div>
+          <div class="system-pills-row">
+            <label class="pill-radio active">
+              <input type="radio" name="target-pipeline" value="adaptive_rag" checked>
+              <span>Adaptive RAG (Dynamic Dense/Hybrid)</span>
+            </label>
+            <label class="pill-radio">
+              <input type="radio" name="target-pipeline" value="full_adaq_rag">
+              <span>Full AdaQ-RAG (Orchestrated Multi-Step)</span>
+            </label>
+            <label class="pill-radio">
+              <input type="radio" name="target-pipeline" value="hybrid_rag">
+              <span>Fixed Hybrid Baseline</span>
+            </label>
+            <label class="pill-radio">
+              <input type="radio" name="target-pipeline" value="basic_rag">
+              <span>Fixed Basic Dense Baseline</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Mode 2 Warning Banner (Visible in Mode 2) -->
+        <div class="comparison-warning-banner hidden" id="comparison-warning-banner">
+          <span class="warning-icon">⚖️</span>
+          <div class="warning-text">
+            <strong>Comparative Evaluation Notice:</strong> Running all four systems executes 4 separate LLM generation pipelines sequentially on the same question. This process requires approximately 45–90 seconds. Errors are isolated per system so a failure in one does not erase results from the others.
+          </div>
+        </div>
+
+        <!-- Query Input Textarea -->
+        <div class="query-input-block">
+          <label for="query-textarea" class="control-label">Inquiry Text</label>
+          <textarea id="query-textarea" class="query-textarea" rows="3" placeholder="Enter a scikit-learn technical question (e.g., 'What is the penalty parameter in Ridge regression?' or 'Compare VotingClassifier and StackingClassifier')..."></textarea>
+        </div>
+
+        <!-- Context Depth & Actions -->
+        <div class="workspace-actions-row">
+          <div class="depth-control">
+            <label for="top-k-slider" class="depth-label">
+              <span>Context Chunks (Top-K):</span>
+              <strong id="top-k-display" class="font-mono">5</strong>
+            </label>
+            <input type="range" id="top-k-slider" min="1" max="10" value="5" class="range-slider">
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" id="btn-quick-analyze" title="Inspect intent, complexity, and routing strategy without LLM generation">
+              <span>Inspect Routing Only</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-execute-query">
+              <span class="btn-spinner hidden" id="btn-spinner"></span>
+              <span id="btn-execute-label">Execute Adaptive RAG</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Error Container -->
+        <div class="error-container hidden" id="workspace-error" role="alert">
+          <span class="error-icon">⚠️</span>
+          <span class="error-text" id="workspace-error-msg"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION D: Answer and routing details
+         ========================================================================= -->
+    <section class="research-section" id="section-answer-details">
+      <div class="section-header">
+        <span class="section-kicker">Results & Execution Trace</span>
+        <h2 class="section-title" id="answer-section-title">Answer &amp; routing details.</h2>
+        <p class="section-lead" id="answer-section-lead">
+          Generated grounded response, routing decisions, latency metrics, and retrieved evidence chunks.
+        </p>
+      </div>
+
+      <!-- Idle Placeholder (Visible before execution) -->
+      <div class="idle-state-card" id="idle-workspace-state">
+        <div class="idle-icon">⚡</div>
+        <h3 class="idle-title">Workspace Ready</h3>
+        <p class="idle-text">Enter an inquiry above or load one of the benchmark questions to inspect dynamic intent analysis, routing rationale, and evidence-grounded answers.</p>
+      </div>
+
+      <!-- Execution Progress State (Visible during execution) -->
+      <div class="execution-progress-card hidden" id="execution-progress-state">
+        <div class="progress-spinner"></div>
+        <div class="progress-details">
+          <h3 class="progress-title" id="progress-status-title">Executing RAG Pipeline...</h3>
+          <p class="progress-desc" id="progress-status-desc">Analyzing query intent and complexity, selecting retrieval strategy, and gathering context.</p>
+          <div class="progress-per-system hidden" id="progress-per-system">
+            <div class="system-status-item" id="prog-item-basic"><span class="prog-dot"></span> Basic RAG: <span class="prog-state">Pending</span></div>
+            <div class="system-status-item" id="prog-item-hybrid"><span class="prog-dot"></span> Hybrid RAG: <span class="prog-state">Pending</span></div>
+            <div class="system-status-item" id="prog-item-adaptive"><span class="prog-dot"></span> Adaptive RAG: <span class="prog-state">Pending</span></div>
+            <div class="system-status-item" id="prog-item-full"><span class="prog-dot"></span> Full AdaQ-RAG: <span class="prog-state">Pending</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single System Results View (Mode 1) -->
+      <div class="results-single-container hidden" id="results-single-view">
+        
+        <!-- Grounded Answer Card (Prominently first) -->
+        <article class="answer-card">
+          <header class="answer-card-header">
+            <div class="answer-header-title">
+              <span class="answer-badge">Grounded Answer</span>
+              <span class="system-badge font-mono" id="single-system-label">ADAPTIVE_RAG</span>
+            </div>
+            <div class="answer-meta-items">
+              <span class="meta-tag font-mono" id="single-latency-tag">Latency: -- ms</span>
+              <span class="meta-tag font-mono" id="single-calls-tag">Retrieval Calls: --</span>
+              <span class="meta-tag font-mono" id="single-tokens-tag">Tokens: Not recorded</span>
+            </div>
+          </header>
+          <div class="answer-card-body" id="single-answer-content">
+            <!-- Grounded Answer Content -->
+          </div>
+        </article>
+
+        <!-- Dynamic Visual Routing Trace (Executed Path Breakdown) -->
+        <div class="routing-trace-card" id="single-routing-trace-card">
+          <div class="trace-header">
+            <h3 class="trace-title">Executed Routing Path &amp; Decision Trace</h3>
+            <span class="trace-strategy-badge font-mono" id="single-trace-strategy-badge">STRATEGY: DENSE</span>
+          </div>
+          
+          <div class="trace-grid">
+            <div class="trace-node-box">
+              <span class="box-label">Detected Intent</span>
+              <span class="box-value font-mono" id="single-trace-intent">--</span>
+            </div>
+            <div class="trace-node-box">
+              <span class="box-label">Detected Complexity</span>
+              <span class="box-value font-mono" id="single-trace-complexity">--</span>
+            </div>
+            <div class="trace-node-box">
+              <span class="box-label">Candidate Pool</span>
+              <span class="box-value font-mono" id="single-trace-candidate-k">--</span>
+            </div>
+            <div class="trace-node-box">
+              <span class="box-label">Final Context</span>
+              <span class="box-value font-mono" id="single-trace-final-k">--</span>
+            </div>
+          </div>
+
+          <div class="trace-rationale-box">
+            <span class="rationale-label">Routing Decision Rationale:</span>
+            <p class="rationale-text" id="single-trace-reason">--</p>
+          </div>
+
+          <!-- Decomposed Sub-Queries (Shown when present) -->
+          <div class="subqueries-box hidden" id="single-subqueries-box">
+            <span class="rationale-label">Decomposed Sub-Queries (Multi-Step Orchestrator):</span>
+            <ol class="subqueries-ordered-list" id="single-subqueries-list"></ol>
+          </div>
+
+          <!-- Escalation Notice (Shown when present) -->
+          <div class="escalation-notice hidden" id="single-escalation-notice">
+            <span class="escalation-icon">⚡</span>
+            <span class="escalation-text" id="single-escalation-text">Strategy escalated to multi-step due to insufficient initial evidence coverage.</span>
+          </div>
+        </div>
+
+        <!-- Retrieved Supporting Sources Accordion -->
+        <div class="sources-card">
+          <div class="sources-card-header">
+            <h3 class="sources-title">Retrieved Supporting Documentation Sources</h3>
+            <span class="sources-count-badge font-mono" id="single-sources-count">0 Chunks</span>
+          </div>
+          <div class="sources-accordion-list" id="single-sources-accordion">
+            <!-- Sources rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparative Mode Results View (Mode 2: 4 Systems Grid) -->
+      <div class="results-compare-container hidden" id="results-compare-view">
+        <div class="compare-lead-bar">
+          <span class="compare-lead-text">Comparative Execution across all 4 RAG pipelines on the same query:</span>
+          <span class="compare-lead-query font-mono" id="compare-query-echo">""</span>
+        </div>
+
+        <div class="compare-cards-grid">
+          <!-- Card 1: Basic RAG -->
+          <div class="compare-system-card" id="comp-card-basic">
+            <header class="comp-card-header">
+              <div class="comp-header-top">
+                <span class="system-tier-tag tag-basic">Basic RAG (Dense Baseline)</span>
+                <span class="comp-status-badge status-pending" id="comp-status-basic">Pending</span>
+              </div>
+              <div class="comp-metrics-row font-mono">
+                <span id="comp-lat-basic">Latency: --</span>
+                <span id="comp-calls-basic">Calls: 1</span>
+              </div>
+            </header>
+            <div class="comp-card-body">
+              <div class="comp-answer-text" id="comp-ans-basic">Waiting for execution...</div>
+              <div class="comp-routing-note" id="comp-route-basic">Fixed dense retrieval without query analysis.</div>
+              <div class="comp-sources-toggle" id="comp-sources-toggle-basic">
+                <span class="toggle-link" data-target="comp-sources-basic">View Sources (<span id="comp-src-count-basic">0</span>)</span>
+                <div class="comp-sources-content collapsed" id="comp-sources-basic"></div>
+              </div>
+              <div class="comp-retry-block hidden" id="comp-retry-basic">
+                <button class="btn btn-xs btn-outline retry-sys-btn" data-sys="basic_rag">Retry Basic RAG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Hybrid RAG -->
+          <div class="compare-system-card" id="comp-card-hybrid">
+            <header class="comp-card-header">
+              <div class="comp-header-top">
+                <span class="system-tier-tag tag-hybrid">Hybrid RAG (Dual + Rerank)</span>
+                <span class="comp-status-badge status-pending" id="comp-status-hybrid">Pending</span>
+              </div>
+              <div class="comp-metrics-row font-mono">
+                <span id="comp-lat-hybrid">Latency: --</span>
+                <span id="comp-calls-hybrid">Calls: 2</span>
+              </div>
+            </header>
+            <div class="comp-card-body">
+              <div class="comp-answer-text" id="comp-ans-hybrid">Waiting for execution...</div>
+              <div class="comp-routing-note" id="comp-route-hybrid">Fixed dual-channel BM25 + FAISS fused with RRF and CrossEncoder reranking.</div>
+              <div class="comp-sources-toggle" id="comp-sources-toggle-hybrid">
+                <span class="toggle-link" data-target="comp-sources-hybrid">View Sources (<span id="comp-src-count-hybrid">0</span>)</span>
+                <div class="comp-sources-content collapsed" id="comp-sources-hybrid"></div>
+              </div>
+              <div class="comp-retry-block hidden" id="comp-retry-hybrid">
+                <button class="btn btn-xs btn-outline retry-sys-btn" data-sys="hybrid_rag">Retry Hybrid RAG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Adaptive RAG -->
+          <div class="compare-system-card" id="comp-card-adaptive">
+            <header class="comp-card-header">
+              <div class="comp-header-top">
+                <span class="system-tier-tag tag-adaptive">Adaptive RAG (Dynamic)</span>
+                <span class="comp-status-badge status-pending" id="comp-status-adaptive">Pending</span>
+              </div>
+              <div class="comp-metrics-row font-mono">
+                <span id="comp-lat-adaptive">Latency: --</span>
+                <span id="comp-calls-adaptive">Calls: --</span>
+              </div>
+            </header>
+            <div class="comp-card-body">
+              <div class="comp-answer-text" id="comp-ans-adaptive">Waiting for execution...</div>
+              <div class="comp-routing-note" id="comp-route-adaptive">Dynamic routing based on intent &amp; complexity classification.</div>
+              <div class="comp-sources-toggle" id="comp-sources-toggle-adaptive">
+                <span class="toggle-link" data-target="comp-sources-adaptive">View Sources (<span id="comp-src-count-adaptive">0</span>)</span>
+                <div class="comp-sources-content collapsed" id="comp-sources-adaptive"></div>
+              </div>
+              <div class="comp-retry-block hidden" id="comp-retry-adaptive">
+                <button class="btn btn-xs btn-outline retry-sys-btn" data-sys="adaptive_rag">Retry Adaptive RAG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Full AdaQ-RAG -->
+          <div class="compare-system-card" id="comp-card-full">
+            <header class="comp-card-header">
+              <div class="comp-header-top">
+                <span class="system-tier-tag tag-full">Full AdaQ-RAG (Orchestrated)</span>
+                <span class="comp-status-badge status-pending" id="comp-status-full">Pending</span>
+              </div>
+              <div class="comp-metrics-row font-mono">
+                <span id="comp-lat-full">Latency: --</span>
+                <span id="comp-calls-full">Calls: --</span>
+              </div>
+            </header>
+            <div class="comp-card-body">
+              <div class="comp-answer-text" id="comp-ans-full">Waiting for execution...</div>
+              <div class="comp-routing-note" id="comp-route-full">Multi-step query decomposition and evidence sufficiency assessment.</div>
+              <div class="comp-sources-toggle" id="comp-sources-toggle-full">
+                <span class="toggle-link" data-target="comp-sources-full">View Sources (<span id="comp-src-count-full">0</span>)</span>
+                <div class="comp-sources-content collapsed" id="comp-sources-full"></div>
+              </div>
+              <div class="comp-retry-block hidden" id="comp-retry-full">
+                <button class="btn btn-xs btn-outline retry-sys-btn" data-sys="full_adaq_rag">Retry Full AdaQ-RAG</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION E: Compare systems and explain trade-offs
+         ========================================================================= -->
+    <section class="research-section" id="section-evaluation">
+      <div class="section-header">
+        <span class="section-kicker">Empirical Evaluation &amp; Trade-Off Analysis</span>
+        <h2 class="section-title">How do the systems compare?</h2>
+        <p class="section-lead">
+          Evaluating the trade-off between answer quality, retrieval effectiveness, and computational efficiency across all four architectural approaches.
+        </p>
+      </div>
+
+      <!-- Part 1: Live Comparison Table (Active when Mode 2 is run) -->
+      <div class="eval-subsection hidden" id="subsection-live-comparison">
+        <h3 class="subsection-title">1. Live Query Comparative Summary</h3>
+        <p class="subsection-lead">Direct per-query comparison across all four pipelines executed for the inquiry submitted above.</p>
+        
+        <div class="table-wrapper">
+          <table class="research-table" id="live-compare-table">
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Retrieval Strategy</th>
+                <th>Measured Latency</th>
+                <th>Retrieval Calls</th>
+                <th>Sources Retrieved</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="live-compare-tbody">
+              <!-- Dynamically populated after Mode 2 runs -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Part 2: Benchmark-Level Evaluation -->
+      <div class="eval-subsection" id="subsection-pilot-benchmark">
+        <div class="benchmark-heading-row">
+          <div>
+            <h3 class="subsection-title">2. Controlled 3-Question Pilot Evaluation</h3>
+            <p class="subsection-lead">
+              Empirical measurements across all three complexity tiers (<code>rag_fact_01</code>, <code>rag_comp_06</code>, <code>rag_comp_11</code>) evaluated under identical pipeline configurations (12 total executions).
+            </p>
+          </div>
+          <span class="pilot-scope-badge">Sample Size: N = 3 Pilot Questions</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="research-table" id="pilot-benchmark-table">
+            <thead>
+              <tr>
+                <th>System Architecture</th>
+                <th>Mean Answer Quality<br><span class="col-sub">(0.00 – 4.00 &uarr;)</span></th>
+                <th>Recall@5<br><span class="col-sub">(Context &uarr;)</span></th>
+                <th>MRR<br><span class="col-sub">(First Hit &uarr;)</span></th>
+                <th>Routing Accuracy<br><span class="col-sub">(Expected vs Actual)</span></th>
+                <th>Mean Calls<br><span class="col-sub">(Efficiency &darr;)</span></th>
+                <th>Mean Latency<br><span class="col-sub">(Seconds &darr;)</span></th>
+              </tr>
+            </thead>
+            <tbody id="pilot-table-tbody">
+              <tr>
+                <td><strong class="font-mono system-text-full">Full AdaQ-RAG</strong></td>
+                <td><strong>3.82</strong></td>
+                <td>0.8889</td>
+                <td>0.8333</td>
+                <td><span class="accuracy-tag">100%</span></td>
+                <td>6.33</td>
+                <td>34.1s</td>
+              </tr>
+              <tr>
+                <td><strong class="font-mono system-text-adaptive">Adaptive RAG</strong></td>
+                <td><strong>3.93</strong></td>
+                <td>0.8889</td>
+                <td>0.8333</td>
+                <td><span class="accuracy-tag">100%</span></td>
+                <td>1.67</td>
+                <td>22.3s</td>
+              </tr>
+              <tr>
+                <td><strong class="font-mono system-text-hybrid">Hybrid RAG (Static)</strong></td>
+                <td><strong>3.93</strong></td>
+                <td>0.8889</td>
+                <td>0.8333</td>
+                <td>N/A (Fixed)</td>
+                <td>2.00</td>
+                <td>12.9s</td>
+              </tr>
+              <tr>
+                <td><strong class="font-mono system-text-basic">Basic RAG (Baseline)</strong></td>
+                <td>2.22</td>
+                <td>0.6667</td>
+                <td>0.6667</td>
+                <td>N/A (Fixed)</td>
+                <td>1.00</td>
+                <td>43.9s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Honest Trade-Off Analysis & Hypothesis Evaluation -->
+        <div class="tradeoff-analysis-grid">
+          <div class="tradeoff-card">
+            <h4 class="tradeoff-title">The Efficiency-Quality Trade-Off</h4>
+            <p class="tradeoff-text">
+              <strong>No universal winner exists.</strong> While Hybrid RAG and Adaptive RAG both achieved a top mean answer quality of <strong>3.93 / 4.0</strong>, Hybrid pays the cost of dual retrieval (2 calls) for every query, including simple lookups. Adaptive RAG dynamically conserves compute on simple fact questions (1 call) while selectively scaling to hybrid on comparisons.
+            </p>
+          </div>
+
+          <div class="tradeoff-card">
+            <h4 class="tradeoff-title">Orchestration Overhead &amp; Complex Inquiries</h4>
+            <p class="tradeoff-text">
+              Full AdaQ-RAG provides structural query decomposition and iterative sufficiency verification. On multi-aspect comparisons (e.g., <code>rag_comp_11</code>), this enables thorough evidence collection, but requires up to <strong>16 retrieval calls</strong> and <strong>63.1 seconds</strong> of latency.
+            </p>
+          </div>
+
+          <div class="tradeoff-card">
+            <h4 class="tradeoff-title">Evaluating the Research Hypothesis</h4>
+            <p class="tradeoff-text">
+              The project hypothesis is that <em>adaptive retrieval can balance answer quality and computational efficiency by modulating retrieval depth based on question complexity</em>. The 3-question pilot supports this hypothesis by matching Hybrid quality with lower average retrieval calls, but a full 90-question benchmark will be required for statistical significance across edge cases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>AdaQ-RAG</strong> — Retrieval that adapts to the question.
+      </div>
+      <div class="footer-right">
+        <span>Scikit-Learn Technical Corpus RAG Research Demonstrator</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

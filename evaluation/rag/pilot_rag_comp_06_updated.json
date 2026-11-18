@@ -1,0 +1,358 @@
+[
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 treats every class equally.  \nThe metric (precision, recall, or F\u2011score) is first computed for each class separately and then the arithmetic mean of those per\u2011class values is returned. This gives the same importance to rare and frequent classes [Source 2].\n\n**Weighted** \u2013 gives each class a weight proportional to its prevalence in the true data.  \nThe per\u2011class metric is multiplied by the number of true samples of that class (or its proportion) before averaging, so common classes influence the overall score more than rare ones [Source 2].\n\n**Micro** \u2013 aggregates the contributions of all classes before computing the metric.  \nTrue positives, false positives, and false negatives are summed over all classes (or over all sample\u2011class pairs) and the metric is then calculated from these global counts. In a multiclass setting this is equivalent to computing accuracy, and it gives each sample\u2011class pair equal weight regardless of class frequency [Source 1, Source 2].",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0024",
+      "supervised_ensemble_methods_struct_0037"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0028"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0024",
+        "supervised_ensemble_methods_struct_0037"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0028"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 1.5,
+      "relevance": 3.5,
+      "overall": 2.8333,
+      "reason": "The answer accurately describes macro, micro, and weighted averaging as the reference does, and it directly addresses the question. However, the claims are not supported by the provided evidence snippets, so the faithfulness score is lower."
+    },
+    "efficiency": {
+      "latency_ms": 41126.95,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2440,
+        "completion_tokens": 401,
+        "total_tokens": 2841
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "c58b674089f5cebc7232431eb61a05dcf3b28273cbf7074925037230ec64c44e",
+      "benchmark_fingerprint": "73657f128eefd1ec80e907381f8bfbc2cd3c5ff259974127cb26e21224aaddd0"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 Compute the precision (or recall) for each class separately and then take the arithmetic mean of those values. Every class contributes equally, regardless of how many samples belong to it.  \n*Source: [Source\u202f3]*\n\n**Weighted** \u2013 Compute the precision (or recall) for each class as in macro, but weight each class\u2019s score by the number of true samples of that class (its prevalence). This gives more influence to frequent classes.  \n*Source: [Source\u202f3]*\n\n**Micro** \u2013 Sum the true positives, false positives, and false negatives over all classes first, then compute precision (or recall) from those totals. In effect, each sample\u2011class pair is treated as an individual observation, so the metric is equivalent to overall accuracy when all labels are included.  \n*Source: [Source\u202f3] \u2013 \u201cmicro\u201d gives each sample\u2011class pair an equal contribution; Source\u202f1 \u2013 micro\u2011averaging in a multiclass setting produces precision, recall and F that are all identical to accuracy.*",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0028"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0028"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging in line with the reference answer and the retrieved evidence, and it directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 11115.22,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2575,
+        "completion_tokens": 421,
+        "total_tokens": 2996
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "c58b674089f5cebc7232431eb61a05dcf3b28273cbf7074925037230ec64c44e",
+      "benchmark_fingerprint": "73657f128eefd1ec80e907381f8bfbc2cd3c5ff259974127cb26e21224aaddd0"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 compute the precision (or recall) for each class separately and then take the simple arithmetic mean of those values. Every class contributes equally, regardless of how many samples it contains. [Source\u202f3]\n\n**Weighted** \u2013 compute the per\u2011class precision/recall as in macro, but weight each class\u2019s score by its prevalence (the number of true instances of that class). This gives more influence to frequent classes. [Source\u202f3]\n\n**Micro** \u2013 aggregate the true positives, false positives and false negatives over *all* classes first, then compute precision/recall from those totals. In a multiclass setting this is equivalent to overall accuracy. [Source\u202f3] [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017",
+      "model_selection_metrics_struct_0030"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0028"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017",
+        "model_selection_metrics_struct_0030"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0028"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.9,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging in line with the reference answer and the evidence, with no significant omissions or errors. It is well grounded in the retrieved evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 21478.9,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2706,
+        "completion_tokens": 516,
+        "total_tokens": 3222
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "c58b674089f5cebc7232431eb61a05dcf3b28273cbf7074925037230ec64c44e",
+      "benchmark_fingerprint": "73657f128eefd1ec80e907381f8bfbc2cd3c5ff259974127cb26e21224aaddd0"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 compute the precision (or recall) for each class separately and then take the simple arithmetic mean of those values. Every class contributes equally, regardless of how many samples it contains. [Source\u202f3]\n\n**Weighted** \u2013 compute the per\u2011class precision/recall as in macro, but weight each class\u2019s score by its prevalence (the number of true instances of that class). This gives more influence to frequent classes. [Source\u202f3]\n\n**Micro** \u2013 aggregate the true positives, false positives and false negatives over *all* classes first, then compute precision/recall from those totals. In a multiclass setting this is equivalent to overall accuracy. [Source\u202f3] [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017",
+      "model_selection_metrics_struct_0030"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0028"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017",
+        "model_selection_metrics_struct_0030"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0028"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.9,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging in line with the reference answer and the evidence, with no significant omissions or errors. It is well grounded in the retrieved evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 22455.38,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2706,
+        "completion_tokens": 516,
+        "total_tokens": 3222
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "c58b674089f5cebc7232431eb61a05dcf3b28273cbf7074925037230ec64c44e",
+      "benchmark_fingerprint": "73657f128eefd1ec80e907381f8bfbc2cd3c5ff259974127cb26e21224aaddd0"
+    }
+  }
+]

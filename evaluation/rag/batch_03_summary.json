@@ -1,0 +1,210 @@
+{
+  "basic_rag": {
+    "question_count": 12,
+    "successful_count": 12,
+    "failure_count": 0,
+    "error_rate": 0.0,
+    "errors": [],
+    "judge_successful_count": 12,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.2361,
+      "recall_at_3": 0.4028,
+      "recall_at_5": 0.5278,
+      "recall_at_10": 0.5278,
+      "mrr": 0.4958,
+      "ndcg_at_1": 0.3333,
+      "ndcg_at_3": 0.3658,
+      "ndcg_at_5": 0.4214,
+      "ndcg_at_10": 0.4214
+    },
+    "routing": {
+      "strategy_accuracy": 0.3333,
+      "intent_accuracy": 0.0,
+      "complexity_accuracy": 0.0
+    },
+    "efficiency": {
+      "mean_latency_ms": 22522.17,
+      "total_retrieval_calls": 12,
+      "mean_retrieval_calls": 1.0,
+      "total_chunks_processed": 60,
+      "mean_chunks_processed": 5.0,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 28775,
+        "completion_tokens": 5734,
+        "total_tokens": 34509
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 13545,
+        "completion_tokens": 4051,
+        "total_tokens": 17596
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.0,
+      "mean_faithfulness": 2.4583,
+      "mean_relevance": 3.0417,
+      "mean_overall": 2.8333,
+      "scored_count": 12
+    }
+  },
+  "hybrid_rag": {
+    "question_count": 12,
+    "successful_count": 12,
+    "failure_count": 0,
+    "error_rate": 0.0,
+    "errors": [],
+    "judge_successful_count": 12,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.25,
+      "recall_at_3": 0.5278,
+      "recall_at_5": 0.6111,
+      "recall_at_10": 0.6111,
+      "mrr": 0.5,
+      "ndcg_at_1": 0.3333,
+      "ndcg_at_3": 0.4323,
+      "ndcg_at_5": 0.4763,
+      "ndcg_at_10": 0.4763
+    },
+    "routing": {
+      "strategy_accuracy": 0.3333,
+      "intent_accuracy": 0.0,
+      "complexity_accuracy": 0.0
+    },
+    "efficiency": {
+      "mean_latency_ms": 2529181.72,
+      "total_retrieval_calls": 24,
+      "mean_retrieval_calls": 2.0,
+      "total_chunks_processed": 480,
+      "mean_chunks_processed": 40.0,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 30807,
+        "completion_tokens": 5467,
+        "total_tokens": 36274
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 37127,
+        "completion_tokens": 5275,
+        "total_tokens": 42402
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.2083,
+      "mean_faithfulness": 3.125,
+      "mean_relevance": 3.25,
+      "mean_overall": 3.1944,
+      "scored_count": 12
+    }
+  },
+  "adaptive_rag": {
+    "question_count": 12,
+    "successful_count": 12,
+    "failure_count": 0,
+    "error_rate": 0.0,
+    "errors": [],
+    "judge_successful_count": 12,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.25,
+      "recall_at_3": 0.4028,
+      "recall_at_5": 0.4028,
+      "recall_at_10": 0.4306,
+      "mrr": 0.4444,
+      "ndcg_at_1": 0.3333,
+      "ndcg_at_3": 0.3651,
+      "ndcg_at_5": 0.3651,
+      "ndcg_at_10": 0.379
+    },
+    "routing": {
+      "strategy_accuracy": 0.5833,
+      "intent_accuracy": 0.4167,
+      "complexity_accuracy": 0.5833
+    },
+    "efficiency": {
+      "mean_latency_ms": 27200.55,
+      "total_retrieval_calls": 19,
+      "mean_retrieval_calls": 1.58,
+      "total_chunks_processed": 335,
+      "mean_chunks_processed": 27.92,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 33049,
+        "completion_tokens": 5594,
+        "total_tokens": 38643
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 39140,
+        "completion_tokens": 5321,
+        "total_tokens": 44461
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.0833,
+      "mean_faithfulness": 3.2917,
+      "mean_relevance": 3.25,
+      "mean_overall": 3.2083,
+      "scored_count": 12
+    }
+  },
+  "full_adaq_rag": {
+    "question_count": 12,
+    "successful_count": 12,
+    "failure_count": 0,
+    "error_rate": 0.0,
+    "errors": [],
+    "judge_successful_count": 12,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.25,
+      "recall_at_3": 0.4028,
+      "recall_at_5": 0.4028,
+      "recall_at_10": 0.4028,
+      "mrr": 0.4583,
+      "ndcg_at_1": 0.3333,
+      "ndcg_at_3": 0.3702,
+      "ndcg_at_5": 0.3702,
+      "ndcg_at_10": 0.3702
+    },
+    "routing": {
+      "strategy_accuracy": 0.5833,
+      "intent_accuracy": 0.4167,
+      "complexity_accuracy": 0.5833
+    },
+    "efficiency": {
+      "mean_latency_ms": 25686.07,
+      "total_retrieval_calls": 43,
+      "mean_retrieval_calls": 3.58,
+      "total_chunks_processed": 565,
+      "mean_chunks_processed": 47.08,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 33571,
+        "completion_tokens": 5381,
+        "total_tokens": 38952
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 39847,
+        "completion_tokens": 5044,
+        "total_tokens": 44891
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.25,
+      "mean_faithfulness": 3.2083,
+      "mean_relevance": 3.375,
+      "mean_overall": 3.2778,
+      "scored_count": 12
+    }
+  }
+}

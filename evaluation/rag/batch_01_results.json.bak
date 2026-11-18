@@ -1,0 +1,4192 @@
+[
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "preprocessing_imputation_struct_0010",
+      "preprocessing_imputation_struct_0006",
+      "preprocessing_imputation_struct_0007",
+      "preprocessing_imputation_struct_0003",
+      "preprocessing_imputation_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.25,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.4307,
+        "10": 0.4307
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_imputation_struct_0010",
+        "preprocessing_imputation_struct_0006",
+        "preprocessing_imputation_struct_0007",
+        "preprocessing_imputation_struct_0003",
+        "preprocessing_imputation_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_imputation_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer incorrectly states that the documentation lacks information, whereas the default strategy is known to be 'mean'; it provides no supported evidence and does not address the question."
+    },
+    "efficiency": {
+      "latency_ms": 41529.04,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1905,
+        "completion_tokens": 214,
+        "total_tokens": 2119
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "fe6f9896377d759d7bd45c56b13dd7585550dd12f69cef129259f5b53a7a41d4",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "preprocessing_imputation_struct_0010",
+      "preprocessing_imputation_struct_0005",
+      "preprocessing_imputation_struct_0001",
+      "preprocessing_imputation_struct_0004"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_imputation_struct_0003",
+        "preprocessing_imputation_struct_0010",
+        "preprocessing_imputation_struct_0005",
+        "preprocessing_imputation_struct_0001",
+        "preprocessing_imputation_struct_0004"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_imputation_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer incorrectly states that the documentation is insufficient, whereas the evidence clearly shows that SimpleImputer defaults to the 'mean' strategy. It is therefore inaccurate, unsupported by evidence, and does not address the question."
+    },
+    "efficiency": {
+      "latency_ms": 13748.28,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 304,
+        "total_tokens": 2360
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "fe6f9896377d759d7bd45c56b13dd7585550dd12f69cef129259f5b53a7a41d4",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "preprocessing_imputation_struct_0010",
+      "preprocessing_imputation_struct_0006",
+      "preprocessing_imputation_struct_0007"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_imputation_struct_0010",
+        "preprocessing_imputation_struct_0006",
+        "preprocessing_imputation_struct_0007"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_imputation_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer incorrectly states that the documentation is insufficient, providing no correct information about SimpleImputer\u2019s default strategy, and thus fails to answer the question or cite evidence."
+    },
+    "efficiency": {
+      "latency_ms": 1672.38,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1305,
+        "completion_tokens": 145,
+        "total_tokens": 1450
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "fe6f9896377d759d7bd45c56b13dd7585550dd12f69cef129259f5b53a7a41d4",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "preprocessing_imputation_struct_0010",
+      "preprocessing_imputation_struct_0006",
+      "preprocessing_imputation_struct_0007"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_imputation_struct_0010",
+        "preprocessing_imputation_struct_0006",
+        "preprocessing_imputation_struct_0007"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_imputation_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer incorrectly states that the documentation is insufficient, providing no correct information about SimpleImputer\u2019s default strategy, and thus fails to answer the question, is unsupported by evidence, and is irrelevant."
+    },
+    "efficiency": {
+      "latency_ms": 9999.34,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1305,
+        "completion_tokens": 145,
+        "total_tokens": 1450
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "fe6f9896377d759d7bd45c56b13dd7585550dd12f69cef129259f5b53a7a41d4",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "generated_answer": "The method is `densify`. It converts a sparse coefficient matrix (`coef_`) back to a dense array. [Source\u202f1] [Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0010",
+      "api_logistic_regression_struct_0005",
+      "api_logistic_regression_struct_0001",
+      "api_logistic_regression_struct_0007",
+      "api_random_forest_classifier_struct_0007"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 0.25,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2641,
+        "10": 0.2641
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0010",
+        "api_logistic_regression_struct_0005",
+        "api_logistic_regression_struct_0001",
+        "api_logistic_regression_struct_0007",
+        "api_random_forest_classifier_struct_0007"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_logistic_regression_struct_0004",
+        "api_logistic_regression_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 0.5,
+      "relevance": 4.0,
+      "overall": 2.8333,
+      "reason": "The candidate correctly identifies the densify method, matching the gold answer, and directly addresses the question, but the provided evidence snippets do not mention densify, so the claim is not supported by the evidence."
+    },
+    "efficiency": {
+      "latency_ms": 20980.99,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2550,
+        "completion_tokens": 180,
+        "total_tokens": 2730
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "6366453b929599a6909e6c5a19481be8d339faf3f223a0b5d78be6194f063073",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "generated_answer": "The method is **`densify()`** \u2013 it converts the `coef_` matrix of a fitted `LogisticRegression` back to a dense NumPy array. [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0006",
+      "api_logistic_regression_struct_0009",
+      "preprocessing_data_transforms_struct_0006",
+      "api_random_forest_classifier_struct_0007",
+      "api_logistic_regression_struct_0010"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0006",
+        "api_logistic_regression_struct_0009",
+        "preprocessing_data_transforms_struct_0006",
+        "api_random_forest_classifier_struct_0007",
+        "api_logistic_regression_struct_0010"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_logistic_regression_struct_0004",
+        "api_logistic_regression_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the densify() method, matches the gold reference, is supported by the retrieved evidence, and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 17306.32,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2263,
+        "completion_tokens": 212,
+        "total_tokens": 2475
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "6366453b929599a6909e6c5a19481be8d339faf3f223a0b5d78be6194f063073",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "generated_answer": "The method is `densify`. It converts the sparse coefficient matrix (`coef_`) of a fitted `LogisticRegression` model back to a dense array. [Source 2]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0010",
+      "api_logistic_regression_struct_0005",
+      "api_logistic_regression_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0010",
+        "api_logistic_regression_struct_0005",
+        "api_logistic_regression_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_logistic_regression_struct_0004",
+        "api_logistic_regression_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the densify method, matches the gold reference, and is directly supported by the retrieved evidence. It is concise, accurate, and fully addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 2447.85,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1478,
+        "completion_tokens": 152,
+        "total_tokens": 1630
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "6366453b929599a6909e6c5a19481be8d339faf3f223a0b5d78be6194f063073",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "generated_answer": "The method is `densify`. It converts a sparse coefficient matrix (`coef_`) back to a dense array.  \n[Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0010",
+      "api_logistic_regression_struct_0005",
+      "api_logistic_regression_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0010",
+        "api_logistic_regression_struct_0005",
+        "api_logistic_regression_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_logistic_regression_struct_0004",
+        "api_logistic_regression_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the densify method, matches the gold reference, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 11477.34,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1478,
+        "completion_tokens": 167,
+        "total_tokens": 1645
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "6366453b929599a6909e6c5a19481be8d339faf3f223a0b5d78be6194f063073",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "generated_answer": "Ridge regression adds an L2 penalty to the ordinary least squares objective in order to address some of the problems of OLS, such as sensitivity to collinearity. By penalizing the size of the coefficients, the model shrinks them toward zero, which makes the estimates more robust and reduces over\u2011fitting. This penalty is controlled by the complexity parameter\u202f\u03b1\u202f[Source\u202f1].",
+    "retrieved_chunk_ids": [
+      "supervised_linear_models_struct_0005",
+      "supervised_linear_models_struct_0004",
+      "supervised_linear_models_struct_0007",
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0024"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.25,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.4307,
+        "10": 0.4307
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "supervised_linear_models_struct_0005",
+        "supervised_linear_models_struct_0004",
+        "supervised_linear_models_struct_0007",
+        "supervised_linear_models_struct_0006",
+        "supervised_linear_models_struct_0024"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.8,
+      "relevance": 3.8,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately states the purpose of the L2 penalty\u2014mitigating collinearity, shrinking coefficients, and reducing over\u2011fitting\u2014matching the reference. It is well supported by the retrieved evidence (especially snippet\u202f1) and directly addresses the user\u2019s question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 10276.88,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1890,
+        "completion_tokens": 363,
+        "total_tokens": 2253
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "15869bac9c0fe2e87fb998a7796578c14fd6ce29de1b4bd14aaee86ab3f8b37e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "generated_answer": "Ridge regression adds an L2 penalty to the ordinary least\u2011squares objective in order to mitigate the problems that arise when the design matrix is ill\u2011conditioned or when features are highly correlated. By penalising the size of the coefficients, Ridge shrinks them toward zero, which reduces variance, improves numerical stability, and makes the estimates more robust to multicollinearity. This shrinkage is controlled by the regularisation parameter \\(\\alpha\\) [Source\u202f1]. The motivation is that ordinary least squares can become highly sensitive to random errors when the matrix \\(X\\) is close to singular, leading to large coefficient variance; the L2 penalty alleviates this issue [Source\u202f2].",
+    "retrieved_chunk_ids": [
+      "supervised_linear_models_struct_0005",
+      "supervised_linear_models_struct_0002",
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0007",
+      "api_logistic_regression_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.3333,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "supervised_linear_models_struct_0005",
+        "supervised_linear_models_struct_0002",
+        "supervised_linear_models_struct_0006",
+        "supervised_linear_models_struct_0007",
+        "api_logistic_regression_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.8,
+      "relevance": 3.8,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately states the purpose of the L2 penalty\u2014reducing variance, handling multicollinearity, and improving numerical stability\u2014matching the gold reference. Its claims are fully supported by the retrieved evidence (e.g., Ridge\u2019s robustness to collinearity and variance reduction). The response directly answers the question without unnecessary digression."
+    },
+    "efficiency": {
+      "latency_ms": 11705.16,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2311,
+        "completion_tokens": 455,
+        "total_tokens": 2766
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "15869bac9c0fe2e87fb998a7796578c14fd6ce29de1b4bd14aaee86ab3f8b37e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API call failed: _ssl.c:1001: The handshake operation timed out"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "error": "OpenAI API call failed: _ssl.c:1001: The handshake operation timed out",
+      "previous_errors": [],
+      "question_fingerprint": "15869bac9c0fe2e87fb998a7796578c14fd6ce29de1b4bd14aaee86ab3f8b37e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "generated_answer": "Ridge regression adds an L2 penalty to the ordinary least\u2011squares objective in order to mitigate the problems that arise when the design matrix is ill\u2011conditioned or when features are highly correlated. By penalising the size of the coefficients, Ridge shrinks them toward zero, which reduces variance, improves numerical stability, and makes the estimates more robust to multicollinearity. This shrinkage is controlled by the regularisation parameter \\(\\alpha\\) [Source\u202f1]. The motivation is that ordinary least squares can become highly sensitive to random errors when the matrix \\(X\\) is close to singular, leading to large coefficient variance; the L2 penalty alleviates this issue [Source\u202f2].",
+    "retrieved_chunk_ids": [
+      "supervised_linear_models_struct_0005",
+      "supervised_linear_models_struct_0002",
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0007",
+      "api_logistic_regression_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.3333,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "supervised_linear_models_struct_0005",
+        "supervised_linear_models_struct_0002",
+        "supervised_linear_models_struct_0006",
+        "supervised_linear_models_struct_0007",
+        "api_logistic_regression_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.5,
+      "reason": "The candidate answer accurately reflects the reference answer, citing variance reduction, collinearity mitigation, and robustness to ill\u2011conditioned matrices. It is fully supported by the retrieved evidence and directly addresses the question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 40905.09,
+      "retrieval_calls": 2,
+      "chunks_processed": 30,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2311,
+        "completion_tokens": 455,
+        "total_tokens": 2766
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": "EXPLANATION",
+      "expected_intent": "EXPLANATION",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Conceptual explanation routed to hybrid retrieval (dense semantics + BM25 keyword matching) with reranking; candidate pool of 15 refined to top-5 chunks."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": "EXPLANATION",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "15869bac9c0fe2e87fb998a7796578c14fd6ce29de1b4bd14aaee86ab3f8b37e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "generated_answer": "Validation curves diagnose bias versus variance by comparing the **training** and **validation** scores that are plotted for a range of hyper\u2011parameter values.  \n- **High bias (under\u2011fitting)**: both the training score and the validation score are low across the curve.  \n- **High variance (over\u2011fitting)**: the training score is high while the validation score is low.  \n- **Good fit**: both scores are high and close to each other.  \n\nThus, by inspecting whether the training and validation curves diverge or stay together, one can tell whether the estimator suffers from high bias or high variance. [Source 4]",
+    "retrieved_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0004",
+      "model_selection_cross_validation_struct_0012",
+      "model_selection_curves_struct_0003",
+      "model_selection_cross_validation_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.6131,
+        "10": 0.6131
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0004",
+        "model_selection_cross_validation_struct_0012",
+        "model_selection_curves_struct_0003",
+        "model_selection_cross_validation_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0002"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.5,
+      "reason": "The candidate answer accurately restates the key points from the reference answer\u2014low training and validation scores indicate high bias, while a high training score with a low validation score indicates high variance. It also adds a brief mention of a good fit, which is consistent with the reference. The claims are supported by the retrieved evidence about validation curves and training/validation scores, and the answer directly addresses the user\u2019s question without irrelevant content."
+    },
+    "efficiency": {
+      "latency_ms": 5722.86,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2156,
+        "completion_tokens": 344,
+        "total_tokens": 2500
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "9b4b2ae7ed868ef6dac04e322f844c5e2c34e85659719dbc3af9674200c889bd",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "generated_answer": "Validation curves plot the **training score** and the **validation (cross\u2011validated) score** of an estimator as a function of a single hyper\u2011parameter.  \nBy inspecting the two curves you can tell whether the model is under\u2011 or over\u2011fitting:\n\n* **High bias (under\u2011fitting)** \u2013 both training and validation scores are low and close to each other.  \n* **High variance (over\u2011fitting)** \u2013 the training score is high while the validation score is noticeably lower, creating a large gap between the two curves.  \n\nThus, a validation curve diagnoses bias versus variance by showing how the training and validation performance change together as the hyper\u2011parameter is varied. [Source 4]",
+    "retrieved_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0004",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_curves_struct_0002",
+      "model_selection_cross_validation_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.8772,
+        "10": 0.8772
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0004",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_curves_struct_0002",
+        "model_selection_cross_validation_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0002"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.9,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately restates the key points from the reference answer, correctly describing how training and validation scores indicate bias or variance. It is grounded in the retrieved evidence (Snippet\u00a04) and directly addresses the user\u2019s question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 15257.68,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2888,
+        "completion_tokens": 355,
+        "total_tokens": 3243
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "9b4b2ae7ed868ef6dac04e322f844c5e2c34e85659719dbc3af9674200c889bd",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "generated_answer": "Validation curves plot the **training** and **validation** scores of an estimator as a single hyper\u2011parameter is varied.  \nBy comparing the two curves you can see whether the model is under\u2011 or over\u2011fitting:\n\n* **High bias (under\u2011fitting)** \u2013 both the training and validation scores stay low across the whole range of the hyper\u2011parameter.  \n* **High variance (over\u2011fitting)** \u2013 the training score is high while the validation score is much lower, and the gap between them grows as the hyper\u2011parameter changes.\n\nThus, a validation curve lets you diagnose bias versus variance by looking at the relative positions of the training and validation score curves. [Source 4]",
+    "retrieved_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0004",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_curves_struct_0002",
+      "model_selection_cross_validation_struct_0001",
+      "preprocessing_data_transforms_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.8772,
+        "10": 0.8772
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0004",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_curves_struct_0002",
+        "model_selection_cross_validation_struct_0001",
+        "preprocessing_data_transforms_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0002"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the reference answer, is fully supported by the retrieved evidence, and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 32346.28,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3415,
+        "completion_tokens": 343,
+        "total_tokens": 3758
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "9b4b2ae7ed868ef6dac04e322f844c5e2c34e85659719dbc3af9674200c889bd",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "generated_answer": "Validation curves plot the **training score** and the **validation score** of an estimator as a function of a single hyper\u2011parameter.  \nBy inspecting the two curves you can tell whether the model is under\u2011 or over\u2011fitting:\n\n| Situation | Training score | Validation score | Interpretation |\n|-----------|----------------|------------------|----------------|\n| **High bias** | Low (close to the validation score) | Low | The model cannot fit the training data well; both scores are low and close together. |\n| **High variance** | High | Low (large gap) | The model fits the training data very well but generalises poorly; the training curve is high while the validation curve is low. |\n\nThus, a validation curve diagnoses bias versus variance by comparing how the training and validation scores behave across hyper\u2011parameter values.  \n[Source\u202f4]",
+    "retrieved_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0004",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_curves_struct_0002",
+      "model_selection_cross_validation_struct_0001",
+      "preprocessing_data_transforms_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.8772,
+        "10": 0.8772
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0004",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_curves_struct_0002",
+        "model_selection_cross_validation_struct_0001",
+        "preprocessing_data_transforms_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_curves_struct_0001",
+        "model_selection_curves_struct_0002"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the reference answer, correctly identifies the bias/variance patterns in validation curves, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 29102.94,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3415,
+        "completion_tokens": 430,
+        "total_tokens": 3845
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "EXPLANATION",
+      "intent_match": false,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "EXPLANATION",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "9b4b2ae7ed868ef6dac04e322f844c5e2c34e85659719dbc3af9674200c889bd",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "generated_answer": "KFold simply splits the data into \\(k\\) roughly equal\u2011size folds, ignoring the class labels.  \nStratifiedKFold, on the other hand, partitions the data so that each fold contains approximately the same proportion of each target class as the full dataset, ensuring that every fold is representative of the overall class distribution.  \n\n[Source\u202f1] [Source\u202f3]",
+    "retrieved_chunk_ids": [
+      "model_selection_cross_validation_struct_0016",
+      "model_selection_cross_validation_struct_0020",
+      "model_selection_cross_validation_struct_0015",
+      "model_selection_cross_validation_struct_0017",
+      "model_selection_cross_validation_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.6131,
+        "10": 0.6131
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_cross_validation_struct_0016",
+        "model_selection_cross_validation_struct_0020",
+        "model_selection_cross_validation_struct_0015",
+        "model_selection_cross_validation_struct_0017",
+        "model_selection_cross_validation_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_cross_validation_struct_0008",
+        "model_selection_cross_validation_struct_0016"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 3.5,
+      "relevance": 4.0,
+      "overall": 3.8333,
+      "reason": "The candidate answer accurately states that KFold ignores class proportions while StratifiedKFold preserves them, matching the gold answer. The claim about KFold is widely accepted and indirectly supported by the evidence that StratifiedKFold maintains class balance, so faithfulness is high but not perfect. The answer directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 11174.43,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2210,
+        "completion_tokens": 170,
+        "total_tokens": 2380
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "40d0816da4ac5044081a4cd2d56d855da1b55c83bcc4ebba442a5ed82acf5d13",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "generated_answer": "KFold simply partitions the data into \\(n_{\\text{splits}}\\) folds without regard to the target labels, so each fold can have a very different class mix.  \nStratifiedKFold, on the other hand, performs the split so that each fold contains roughly the same proportion of each class as the full dataset, preserving the class distribution in every train/test split.  \n\nThis stratification is especially important for classification tasks with imbalanced classes, where a non\u2011stratified split could leave some folds with very few or no samples of a minority class.  \n\n[Source\u202f1] [Source\u202f3]",
+    "retrieved_chunk_ids": [
+      "model_selection_cross_validation_struct_0016",
+      "model_selection_cross_validation_struct_0020",
+      "model_selection_cross_validation_struct_0015",
+      "model_selection_cross_validation_struct_0019",
+      "model_selection_cross_validation_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.6131,
+        "10": 0.6131
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_cross_validation_struct_0016",
+        "model_selection_cross_validation_struct_0020",
+        "model_selection_cross_validation_struct_0015",
+        "model_selection_cross_validation_struct_0019",
+        "model_selection_cross_validation_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_cross_validation_struct_0008",
+        "model_selection_cross_validation_struct_0016"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that KFold ignores class proportions while StratifiedKFold preserves them, matching the gold answer. All claims are supported by the retrieved evidence, and the response directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 23977.59,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2578,
+        "completion_tokens": 229,
+        "total_tokens": 2807
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "40d0816da4ac5044081a4cd2d56d855da1b55c83bcc4ebba442a5ed82acf5d13",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "generated_answer": "KFold simply splits the data into \\(k\\) roughly equal\u2011sized folds without regard to the target labels, so the class proportions in each fold can differ from the overall distribution.  \nStratifiedKFold, on the other hand, performs the split so that each fold contains approximately the same percentage of samples from each target class as the full dataset, preserving the class distribution in every train/test split.  \n\n[Source\u202f1] [Source\u202f3]",
+    "retrieved_chunk_ids": [
+      "model_selection_cross_validation_struct_0016",
+      "model_selection_cross_validation_struct_0020",
+      "model_selection_cross_validation_struct_0015",
+      "model_selection_cross_validation_struct_0019",
+      "model_selection_cross_validation_struct_0003",
+      "model_selection_cross_validation_struct_0025",
+      "model_selection_cross_validation_struct_0009",
+      "model_selection_cross_validation_struct_0017"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.6131,
+        "10": 0.6131
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_cross_validation_struct_0016",
+        "model_selection_cross_validation_struct_0020",
+        "model_selection_cross_validation_struct_0015",
+        "model_selection_cross_validation_struct_0019",
+        "model_selection_cross_validation_struct_0003",
+        "model_selection_cross_validation_struct_0025",
+        "model_selection_cross_validation_struct_0009",
+        "model_selection_cross_validation_struct_0017"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_cross_validation_struct_0008",
+        "model_selection_cross_validation_struct_0016"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states the key difference between KFold and StratifiedKFold, matches the gold reference, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 21692.27,
+      "retrieval_calls": 2,
+      "chunks_processed": 50,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3350,
+        "completion_tokens": 222,
+        "total_tokens": 3572
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Complex constrained comparison routed to multi-step retrieval and reranking to contrast multiple estimators under specific dataset conditions (top-25 candidates, top-8 final)."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "40d0816da4ac5044081a4cd2d56d855da1b55c83bcc4ebba442a5ed82acf5d13",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "generated_answer": "KFold simply splits the data into \\(k\\) roughly equal\u2011sized folds without regard to the target labels, so the class proportions in each fold can differ from the overall distribution.  \nStratifiedKFold, on the other hand, performs the split so that each fold contains approximately the same percentage of samples from each target class as the full dataset, preserving the class distribution in every train/test split.  \n\n[Source\u202f1] [Source\u202f3]",
+    "retrieved_chunk_ids": [
+      "model_selection_cross_validation_struct_0016",
+      "model_selection_cross_validation_struct_0020",
+      "model_selection_cross_validation_struct_0015",
+      "model_selection_cross_validation_struct_0019",
+      "model_selection_cross_validation_struct_0003",
+      "model_selection_cross_validation_struct_0025",
+      "model_selection_cross_validation_struct_0009",
+      "model_selection_cross_validation_struct_0017"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.6131,
+        "5": 0.6131,
+        "10": 0.6131
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_cross_validation_struct_0016",
+        "model_selection_cross_validation_struct_0020",
+        "model_selection_cross_validation_struct_0015",
+        "model_selection_cross_validation_struct_0019",
+        "model_selection_cross_validation_struct_0003",
+        "model_selection_cross_validation_struct_0025",
+        "model_selection_cross_validation_struct_0009",
+        "model_selection_cross_validation_struct_0017"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_cross_validation_struct_0008",
+        "model_selection_cross_validation_struct_0016"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states the key difference between KFold and StratifiedKFold, matching the gold reference and supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 25950.29,
+      "retrieval_calls": 6,
+      "chunks_processed": 75,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3350,
+        "completion_tokens": 222,
+        "total_tokens": 3572
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Complex constrained comparison routed to multi-step retrieval and reranking to contrast multiple estimators under specific dataset conditions (top-25 candidates, top-8 final)."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "40d0816da4ac5044081a4cd2d56d855da1b55c83bcc4ebba442a5ed82acf5d13",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "api_random_forest_classifier_struct_0001",
+      "supervised_ensemble_methods_struct_0023",
+      "api_random_forest_classifier_struct_0006",
+      "supervised_decision_trees_struct_0002",
+      "supervised_ensemble_methods_struct_0026"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0001",
+      "supervised_ensemble_methods_struct_0024"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "api_random_forest_classifier_struct_0001",
+        "supervised_ensemble_methods_struct_0023",
+        "api_random_forest_classifier_struct_0006",
+        "supervised_decision_trees_struct_0002",
+        "supervised_ensemble_methods_struct_0026"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_decision_trees_struct_0001",
+        "supervised_ensemble_methods_struct_0024"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer does not provide any comparison between DecisionTreeClassifier and RandomForestClassifier, contradicting the reference answer and failing to address the question."
+    },
+    "efficiency": {
+      "latency_ms": 10464.24,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2188,
+        "completion_tokens": 796,
+        "total_tokens": 2984
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "a6579f4cbd04110797872cbad302b1ce1cef6dd1a131a1a2cd11986be4e8d5eb",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [
+      "supervised_ensemble_methods_struct_0026",
+      "api_random_forest_classifier_struct_0011",
+      "api_random_forest_classifier_struct_0006",
+      "supervised_ensemble_methods_struct_0024",
+      "api_random_forest_classifier_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0001",
+      "supervised_ensemble_methods_struct_0024"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "mrr": 0.25,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2641,
+        "10": 0.2641
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "supervised_ensemble_methods_struct_0026",
+        "api_random_forest_classifier_struct_0011",
+        "api_random_forest_classifier_struct_0006",
+        "supervised_ensemble_methods_struct_0024",
+        "api_random_forest_classifier_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_decision_trees_struct_0001",
+        "supervised_ensemble_methods_struct_0024"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "No candidate answer was provided, so no comparison can be made against the reference answer or evidence."
+    },
+    "efficiency": {
+      "latency_ms": 20476.03,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2548,
+        "completion_tokens": 1024,
+        "total_tokens": 3572
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "a6579f4cbd04110797872cbad302b1ce1cef6dd1a131a1a2cd11986be4e8d5eb",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "supervised_decision_trees_struct_0001",
+        "supervised_ensemble_methods_struct_0024"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API call failed: [WinError 10054] An existing connection was forcibly closed by the remote host"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "error": "OpenAI API call failed: [WinError 10054] An existing connection was forcibly closed by the remote host",
+      "previous_errors": [],
+      "question_fingerprint": "a6579f4cbd04110797872cbad302b1ce1cef6dd1a131a1a2cd11986be4e8d5eb",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "supervised_decision_trees_struct_0001",
+        "supervised_ensemble_methods_struct_0024"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API call failed: [Errno 11001] getaddrinfo failed"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "error": "OpenAI API call failed: [Errno 11001] getaddrinfo failed",
+      "previous_errors": [],
+      "question_fingerprint": "a6579f4cbd04110797872cbad302b1ce1cef6dd1a131a1a2cd11986be4e8d5eb",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API call failed: [Errno 11001] getaddrinfo failed"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "basic_rag",
+      "error": "OpenAI API call failed: [Errno 11001] getaddrinfo failed",
+      "previous_errors": [],
+      "question_fingerprint": "8f7e55df861c412ead4db603df312641e76db28fdda4885a502dfe70a531a86e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "generated_answer": "Use `make_pipeline` by passing the scaler first and the classifier second.  \nExample:\n\n```python\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import make_pipeline\n\npipe = make_pipeline(StandardScaler(), LogisticRegression())\n```\n\nThis creates a pipeline that first standardizes the data and then fits a logistic\u2011regression model.  \n[Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "composite_estimators_pipelines_struct_0003",
+      "api_pipeline_struct_0002",
+      "api_pipeline_struct_0001",
+      "preprocessing_imputation_struct_0011"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "composite_estimators_pipelines_struct_0003",
+        "api_pipeline_struct_0002",
+        "api_pipeline_struct_0001",
+        "preprocessing_imputation_struct_0011"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer exactly matches the reference answer, correctly uses make_pipeline with StandardScaler and LogisticRegression, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 2055220.51,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2191,
+        "completion_tokens": 194,
+        "total_tokens": 2385
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "8f7e55df861c412ead4db603df312641e76db28fdda4885a502dfe70a531a86e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "generated_answer": "Use `make_pipeline` and pass the scaler followed by the classifier:\n\n```python\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import make_pipeline\n\npipe = make_pipeline(StandardScaler(), LogisticRegression())\n```\n\nThis creates a `Pipeline` with the scaler as the first step and the logistic regression as the final estimator. [Source 1]",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "api_pipeline_struct_0001",
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.3333,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "api_pipeline_struct_0001",
+        "composite_estimators_pipelines_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer exactly matches the reference answer, uses the same code snippet, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 48742515.65,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1302,
+        "completion_tokens": 145,
+        "total_tokens": 1447
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "8f7e55df861c412ead4db603df312641e76db28fdda4885a502dfe70a531a86e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "generated_answer": "Use `make_pipeline` and pass the scaler followed by the classifier:\n\n```python\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import make_pipeline\n\npipe = make_pipeline(StandardScaler(), LogisticRegression())\n```\n\nThis creates a `Pipeline` with the scaler as the first step and the logistic regression as the final estimator. [Source 1]",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "api_pipeline_struct_0001",
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.3333,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "api_pipeline_struct_0001",
+        "composite_estimators_pipelines_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0003"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly reproduces the exact code and explanation from the reference answer, matches the evidence snippets, and directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 6914.22,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1302,
+        "completion_tokens": 145,
+        "total_tokens": 1447
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "8f7e55df861c412ead4db603df312641e76db28fdda4885a502dfe70a531a86e",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "api_pipeline_struct_0001",
+      "preprocessing_imputation_struct_0005",
+      "composite_estimators_pipelines_struct_0003",
+      "api_pipeline_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "api_pipeline_struct_0001",
+        "preprocessing_imputation_struct_0005",
+        "composite_estimators_pipelines_struct_0003",
+        "api_pipeline_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "preprocessing_imputation_struct_0003",
+        "api_standard_scaler_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer incorrectly states that the documentation is insufficient, whereas the retrieved evidence clearly shows how to construct a pipeline with imputer, scaler, and LogisticRegression. It neither matches the reference answer nor provides any supported information, making it entirely inaccurate, unfaithful, and irrelevant."
+    },
+    "efficiency": {
+      "latency_ms": 5535.79,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 626,
+        "total_tokens": 2682
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "01d2c05021f3b0c8a45c070938e5207f2f08d0ffba035ca3d0dd23d6d837b1f6",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "generated_answer": "To create an end\u2011to\u2011end pipeline that (1) imputes missing values, (2) scales the features, and (3) fits a `LogisticRegression`, you can chain the three estimators in a `Pipeline` (or use `make_pipeline`).  \nA typical construction is:\n\n```python\n# 1. Impute missing values\nfrom sklearn.impute import SimpleImputer          # or IterativeImputer\n# If using IterativeImputer, enable it first:\n# from sklearn.experimental import enable_iterative_imputer\n# from sklearn.impute import IterativeImputer\n\n# 2. Scale the data\nfrom sklearn.preprocessing import StandardScaler\n\n# 3. Classifier\nfrom sklearn.linear_model import LogisticRegression\n\n# Build the pipeline\npipe = Pipeline(steps=[\n    ('imputer', SimpleImputer()),          # or ('imputer', IterativeImputer())\n    ('scaler', StandardScaler()),\n    ('clf', LogisticRegression())\n])\n\n# Fit and evaluate\npipe.fit(X_train, y_train)\nscore = pipe.score(X_test, y_test)\n```\n\n- `Pipeline` exposes the methods of the last step (`LogisticRegression`), so `pipe.fit` and `pipe.score` work as expected.  \n- `SimpleImputer` (or `IterativeImputer`) can be placed as the first step to handle missing values before scaling.  \n- `StandardScaler` standardizes the features, and `LogisticRegression` trains the model.  \n\nThis follows the pattern described in the documentation: pipelines combine transformers (imputer, scaler) with a predictor (LogisticRegression) and expose the predictor\u2019s API [Source\u202f1], and the example of `StandardScaler` in a pipeline is shown in the docs [Source\u202f3]. The use of `IterativeImputer` is also supported in pipelines as noted in the imputation section [Source\u202f2].",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0005",
+      "preprocessing_data_transforms_struct_0003",
+      "preprocessing_data_transforms_struct_0032",
+      "preprocessing_imputation_struct_0007"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "preprocessing_imputation_struct_0005",
+        "preprocessing_data_transforms_struct_0003",
+        "preprocessing_data_transforms_struct_0032",
+        "preprocessing_imputation_struct_0007"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "preprocessing_imputation_struct_0003",
+        "api_standard_scaler_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer reproduces the exact pipeline structure and code from the reference answer, correctly uses SimpleImputer, StandardScaler, and LogisticRegression, and aligns with the evidence snippets. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 15702.57,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1746,
+        "completion_tokens": 675,
+        "total_tokens": 2421
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "01d2c05021f3b0c8a45c070938e5207f2f08d0ffba035ca3d0dd23d6d837b1f6",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "api_pipeline_struct_0001",
+      "preprocessing_imputation_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "api_pipeline_struct_0001",
+        "preprocessing_imputation_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "preprocessing_imputation_struct_0003",
+        "api_standard_scaler_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer does not provide any correct or relevant information about building the pipeline; it incorrectly states that the documentation is insufficient, which is not true."
+    },
+    "efficiency": {
+      "latency_ms": 18589.44,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1544,
+        "completion_tokens": 158,
+        "total_tokens": 1702
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "01d2c05021f3b0c8a45c070938e5207f2f08d0ffba035ca3d0dd23d6d837b1f6",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "api_pipeline_struct_0001",
+      "preprocessing_imputation_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "api_pipeline_struct_0001",
+        "preprocessing_imputation_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "preprocessing_imputation_struct_0003",
+        "api_standard_scaler_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer does not provide any correct or relevant information about building the pipeline; it incorrectly states that the documentation is insufficient, which is not true."
+    },
+    "efficiency": {
+      "latency_ms": 11612.44,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1544,
+        "completion_tokens": 158,
+        "total_tokens": 1702
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "PROCEDURE",
+      "intent_match": false,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "PROCEDURE",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "01d2c05021f3b0c8a45c070938e5207f2f08d0ffba035ca3d0dd23d6d837b1f6",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "generated_answer": "ColumnTransformer, StandardScaler, and LogisticRegression can be chained in a single `Pipeline` as follows:\n\n1. **ColumnTransformer** \u2013 the first step.  \n   It is a transformer that can apply different preprocessing (e.g., `StandardScaler`) to selected columns of the input data. Because it implements `fit` and `transform`, it satisfies the requirement for all non\u2011last steps in a pipeline [Source\u202f1, Source\u202f2].\n\n2. **StandardScaler** \u2013 used inside the `ColumnTransformer` (or as a separate step before the classifier).  \n   It removes the mean and scales the variance of numeric features and is suitable for early pipeline stages [Source\u202f3].\n\n3. **LogisticRegression** \u2013 the final step.  \n   As a predictor it only needs to implement `fit`; the pipeline will expose its `predict` (and `predict_proba`, etc.) methods, allowing the whole pipeline to be used as a classifier [Source\u202f1, Source\u202f4, Source\u202f5].\n\nA typical construction looks like:\n\n```python\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import Pipeline\n\npipe = Pipeline(steps=[\n    ('preprocess', ColumnTransformer(\n        transformers=[\n            ('num', StandardScaler(), numeric_features),\n            # other transformers can be added here\n        ])),\n    ('clf', LogisticRegression())\n])\n```\n\nWhen `pipe.fit(X, y)` is called, the `ColumnTransformer` first fits and transforms the data (applying `StandardScaler` to the numeric columns), then the transformed data is passed to `LogisticRegression` for fitting. Subsequent calls to `pipe.predict(X_test)` use the same sequence, ensuring no data\u2011leakage and a single, convenient interface.",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "composite_estimators_pipelines_struct_0011",
+      "preprocessing_data_transforms_struct_0003",
+      "api_pipeline_struct_0001",
+      "composite_estimators_pipelines_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "composite_estimators_pipelines_struct_0011",
+        "preprocessing_data_transforms_struct_0003",
+        "api_pipeline_struct_0001",
+        "composite_estimators_pipelines_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0013",
+        "api_column_transformer_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 2.5,
+      "relevance": 3.5,
+      "overall": 3.1667,
+      "reason": "The candidate answer accurately describes how ColumnTransformer, StandardScaler, and LogisticRegression are combined in a Pipeline, matching the reference answer. It is directly relevant to the question. However, it cites non\u2011existent source labels and does not explicitly tie each claim to the provided evidence snippets, slightly reducing faithfulness."
+    },
+    "efficiency": {
+      "latency_ms": 13255.62,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1875,
+        "completion_tokens": 785,
+        "total_tokens": 2660
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "1fc23ca0363b0ee05c595d0825da52fdf484ab1b8a795f1c8adbec0b1f908023",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "generated_answer": "In a single `Pipeline` you can chain the three components as follows:\n\n```python\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import Pipeline\n\nnumeric_cols = ['age', 'income']          # example numeric columns\ncategorical_cols = ['city']               # example categorical column\n\npreprocess = ColumnTransformer(\n    transformers=[\n        ('scale', StandardScaler(), numeric_cols),          # StandardScaler on numerics\n        ('onehot', OneHotEncoder(), categorical_cols)      # (optional) other transforms\n    ],\n    remainder='passthrough'                                 # keep other columns unchanged\n)\n\npipe = Pipeline(steps=[\n    ('preprocess', preprocess),          # first step: ColumnTransformer\n    ('clf', LogisticRegression())        # last step: classifier\n])\n```\n\n**How it works**\n\n1. **`ColumnTransformer`** is the first step in the pipeline.  \n   It receives the raw data, fits each transformer (here `StandardScaler` for numeric columns) independently, and concatenates their outputs into a single feature matrix.  \n   *Source 4*.\n\n2. **`StandardScaler`** is applied inside the `ColumnTransformer` to the selected numeric columns, removing the mean and scaling to unit variance.  \n   *Source 1*.\n\n3. **`LogisticRegression`** is the final step.  \n   After the data has been transformed by the `ColumnTransformer`, the pipeline passes the resulting matrix to `LogisticRegression` for fitting or prediction.  \n   *Source 5*.\n\nThe pipeline exposes the methods of the last estimator (`LogisticRegression`), so you can call `pipe.fit(X, y)`, `pipe.predict(X)`, `pipe.score(X, y)`, etc., while all preprocessing is applied automatically and without data leakage.",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "composite_estimators_pipelines_struct_0011",
+      "composite_estimators_pipelines_struct_0005",
+      "composite_estimators_pipelines_struct_0015",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "composite_estimators_pipelines_struct_0011",
+        "composite_estimators_pipelines_struct_0005",
+        "composite_estimators_pipelines_struct_0015",
+        "composite_estimators_pipelines_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0013",
+        "api_column_transformer_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.8,
+      "relevance": 3.8,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately describes how ColumnTransformer, StandardScaler, and LogisticRegression are combined in a Pipeline, matches the reference answer, cites appropriate evidence snippets, and directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 13713.5,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1849,
+        "completion_tokens": 885,
+        "total_tokens": 2734
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "1fc23ca0363b0ee05c595d0825da52fdf484ab1b8a795f1c8adbec0b1f908023",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "generated_answer": "A single `Pipeline` can chain the three components in the following order:\n\n1. **`ColumnTransformer`** \u2013 selects the columns that need scaling (e.g., all numeric columns) and applies a `StandardScaler` to those columns while optionally passing the remaining columns unchanged.  \n2. **`StandardScaler`** \u2013 is the transformer that actually removes the mean and scales the variance of the selected columns.  \n3. **`LogisticRegression`** \u2013 is the final estimator that receives the fully transformed feature matrix and learns a classification model.\n\n```python\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import Pipeline\nimport numpy as np\n\n# Example: scale all numeric columns, keep others as\u2011is\nnumeric_cols = ['age', 'income']          # columns to scale\nct = ColumnTransformer(\n        transformers=[('scale', StandardScaler(), numeric_cols)],\n        remainder='passthrough')          # keep other columns\n\npipe = Pipeline(steps=[\n        ('preprocess', ct),                # 1. ColumnTransformer\n        ('clf', LogisticRegression())])    # 3. LogisticRegression\n\n# Fit and score\nX, y = np.random.rand(100, 4), np.random.randint(0, 2, 100)\npipe.fit(X, y)\nscore = pipe.score(X, y)\n```\n\n**How it works**\n\n- The `Pipeline` first calls `fit` on the `ColumnTransformer`.  \n  - Inside the transformer, `StandardScaler` is fitted to the selected numeric columns and transforms them; the other columns are passed through unchanged.  \n- The transformed matrix (scaled numeric features + untouched columns) is then passed to the final step, `LogisticRegression`, which is fitted on this data.  \n- During prediction, the same sequence is applied: the new data are first processed by the `ColumnTransformer` (scaling the numeric columns) and then fed to the logistic regression model.\n\nThis arrangement keeps the scaling logic encapsulated within the `ColumnTransformer`, ensuring that the same preprocessing is applied consistently to training and test data, and that the pipeline can be used with tools such as `GridSearchCV` or `cross_val_score`.",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "composite_estimators_pipelines_struct_0011",
+      "composite_estimators_pipelines_struct_0005",
+      "composite_estimators_pipelines_struct_0015",
+      "composite_estimators_pipelines_struct_0001",
+      "api_column_transformer_struct_0001",
+      "composite_estimators_pipelines_struct_0016",
+      "composite_estimators_pipelines_struct_0006",
+      "api_pipeline_struct_0002",
+      "preprocessing_data_transforms_struct_0036"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.5
+      },
+      "mrr": 0.1667,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.2184
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "composite_estimators_pipelines_struct_0011",
+        "composite_estimators_pipelines_struct_0005",
+        "composite_estimators_pipelines_struct_0015",
+        "composite_estimators_pipelines_struct_0001",
+        "api_column_transformer_struct_0001",
+        "composite_estimators_pipelines_struct_0016",
+        "composite_estimators_pipelines_struct_0006",
+        "api_pipeline_struct_0002",
+        "preprocessing_data_transforms_struct_0036"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0013",
+        "api_column_transformer_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 2.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.1667,
+      "reason": "The answer correctly explains how a ColumnTransformer with a StandardScaler feeds into a LogisticRegression within a Pipeline, but it omits the categorical\u2011column encoding part mentioned in the reference. It is fully supported by the evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 23221.25,
+      "retrieval_calls": 2,
+      "chunks_processed": 60,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 4098,
+        "completion_tokens": 649,
+        "total_tokens": 4747
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": "MULTI_CONCEPT",
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Complex multi-concept query routed to deep multi-step retrieval and reranking; top-30 candidate pool synthesized across distinct documentation topics into top-10 chunks."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": "MULTI_CONCEPT",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "1fc23ca0363b0ee05c595d0825da52fdf484ab1b8a795f1c8adbec0b1f908023",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "generated_answer": "A single `Pipeline` can chain a `ColumnTransformer`, a `StandardScaler` (inside that transformer), and a `LogisticRegression` classifier.  \nThe typical flow is:\n\n1. **ColumnTransformer** \u2013 selects the columns that need scaling (e.g., all numeric columns) and applies a `StandardScaler` to them.  \n2. **LogisticRegression** \u2013 receives the transformed feature matrix produced by the `ColumnTransformer`.\n\n```python\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import Pipeline\nimport numpy as np\n\n# Example: scale all numeric columns\nnumeric_cols = ['age', 'income', 'score']          # column names or indices\npreprocess = ColumnTransformer(\n    transformers=[('scale', StandardScaler(), numeric_cols)],\n    remainder='passthrough'                       # keep other columns unchanged\n)\n\npipe = Pipeline(steps=[\n    ('preprocess', preprocess),                  # step 1: ColumnTransformer\n    ('clf', LogisticRegression())                # step 2: LogisticRegression\n])\n\n# fit / predict\npipe.fit(X_train, y_train)\nscore = pipe.score(X_test, y_test)\n```\n\n- The `ColumnTransformer` applies the `StandardScaler` only to the specified columns and concatenates the scaled features with any remaining columns (`remainder='passthrough'` or another estimator).  \n- The `Pipeline` ensures that the same transformations are applied to training and test data, preventing data\u2011leakage.  \n- The last step (`LogisticRegression`) exposes its `predict`/`score` methods through the pipeline, so calling `pipe.predict(X)` or `pipe.score(X, y)` uses the transformed data automatically.  \n\nThis integration follows the scikit\u2011learn design: transformers (including `ColumnTransformer` and `StandardScaler`) are placed before the estimator (`LogisticRegression`) in the pipeline, and the pipeline handles fitting and transforming in order.  \n\nSources: StandardScaler in a pipeline [Source\u202f1]; ColumnTransformer definition and usage [Source\u202f6]; Pipeline composition rules [Source\u202f5].",
+    "retrieved_chunk_ids": [
+      "preprocessing_data_transforms_struct_0003",
+      "composite_estimators_pipelines_struct_0011",
+      "composite_estimators_pipelines_struct_0005",
+      "composite_estimators_pipelines_struct_0015",
+      "composite_estimators_pipelines_struct_0001",
+      "api_column_transformer_struct_0001",
+      "composite_estimators_pipelines_struct_0016",
+      "api_logistic_regression_struct_0001",
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.5
+      },
+      "mrr": 0.1667,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.2184
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "preprocessing_data_transforms_struct_0003",
+        "composite_estimators_pipelines_struct_0011",
+        "composite_estimators_pipelines_struct_0005",
+        "composite_estimators_pipelines_struct_0015",
+        "composite_estimators_pipelines_struct_0001",
+        "api_column_transformer_struct_0001",
+        "composite_estimators_pipelines_struct_0016",
+        "api_logistic_regression_struct_0001",
+        "api_logistic_regression_struct_0004",
+        "api_logistic_regression_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0013",
+        "api_column_transformer_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately describes the integration of ColumnTransformer, StandardScaler, and LogisticRegression within a Pipeline, matching the gold reference and supported by the retrieved evidence. It is concise, directly addresses the question, and contains no unsupported claims."
+    },
+    "efficiency": {
+      "latency_ms": 110299.02,
+      "retrieval_calls": 16,
+      "chunks_processed": 208,
+      "escalation_count": 1,
+      "token_usage": {
+        "prompt_tokens": 4485,
+        "completion_tokens": 606,
+        "total_tokens": 5091
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": "MULTI_CONCEPT",
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Complex multi-concept query routed to deep multi-step retrieval and reranking; top-30 candidate pool synthesized across distinct documentation topics into top-10 chunks."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": "MULTI_CONCEPT",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "1fc23ca0363b0ee05c595d0825da52fdf484ab1b8a795f1c8adbec0b1f908023",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "generated_answer": "Preprocessing, pipelines, and model\u2011selection tools in scikit\u2011learn are designed to keep the training and test data completely separate, so that no information from the test set can influence the model.\n\n1. **Pre\u2011processing must be learned only on the training data**  \n   * Fit\u2011methods (`fit`, `fit_transform`) should never be called on the full dataset or on the test split.  \n   * The same transformation must then be applied to the test data with `transform` (or `fit_transform` on the training set followed by `transform` on the test set) [Source\u202f1, Source\u202f2].\n\n2. **Pipelines enforce the correct order of operations**  \n   * A `Pipeline` chains transformers and a final estimator.  \n   * All intermediate steps implement `fit` and `transform`; the last step only needs `fit`.  \n   * When the pipeline is fitted, each transformer is fitted on the training data only, and the same fitted transformers are used to transform the test data automatically.  \n   * Pipelines also make it easy to include the entire preprocessing + model in cross\u2011validation or hyper\u2011parameter search, preventing accidental leakage of test data into the training process [Source\u202f3, Source\u202f4].\n\n3. **Model selection (cross\u2011validation, grid search, etc.) should be performed on the pipeline**  \n   * By passing the pipeline to `cross_val_score`, `GridSearchCV`, or `RandomizedSearchCV`, the entire preprocessing + estimator chain is evaluated on each fold, ensuring that each fold\u2019s training data is used to fit the transformers and the estimator, and the fold\u2019s test data is only used for scoring.  \n   * This keeps the test data out of the fitting process and yields realistic performance estimates [Source\u202f5].\n\nIn short, fit all preprocessing steps on the training split, wrap them together with the estimator in a `Pipeline`, and run any cross\u2011validation or hyper\u2011parameter tuning on that pipeline. This workflow guarantees that the test data never influences the learned parameters, thereby preventing data leakage.",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0003",
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0001",
+      "api_pipeline_struct_0001",
+      "best_practices_common_pitfalls_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.2961,
+        "5": 0.2961,
+        "10": 0.2961
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0003",
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0001",
+        "api_pipeline_struct_0001",
+        "best_practices_common_pitfalls_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "best_practices_common_pitfalls_struct_0004",
+        "model_selection_hyperparameter_tuning_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 3.0,
+      "relevance": 4.0,
+      "overall": 3.6667,
+      "reason": "The candidate answer accurately describes chaining preprocessing and models in a Pipeline and using model\u2011selection tools to avoid leakage, matching the reference. It is fully relevant to the question. While it cites sources not present in the retrieved evidence, the core claims are supported by the evidence snippets, so faithfulness is high but not perfect."
+    },
+    "efficiency": {
+      "latency_ms": 19076.23,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2432,
+        "completion_tokens": 543,
+        "total_tokens": 2975
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "ac4332057e96d179363fb4f958b315735def1a644d00c59d333a7f5ccd9f5a31",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "generated_answer": "Preprocessing, pipelines, and model\u2011selection tools in scikit\u2011learn are designed to be used together so that every step of a workflow is applied **only to the data that should influence the model** (the training set) and then reused unchanged on the test or validation data. The key ideas are:\n\n| Step | What it does | How it prevents leakage |\n|------|--------------|------------------------|\n| **Split first** | `train_test_split` (or a CV splitter) creates disjoint training and test sets. | Keeps the test data out of any fit operation. |\n| **Preprocess only on training data** | `fit`/`fit_transform` are called on the training set; `transform` is then applied to the test set. | The statistics (means, variances, selected features, etc.) are learned only from the training data, so the test data never influences the preprocessing. |\n| **Use a `Pipeline`** | A `Pipeline` chains transformers and a final estimator. Each step implements `fit` (and `transform` for non\u2011final steps). | When the pipeline\u2019s `fit` is called, it automatically calls `fit` on the first step, then `transform` on the next, and so on, ensuring the same sequence is applied to every split. This eliminates the risk of accidentally applying a transformation to the test set during training. |\n| **Handle heterogeneous data with `ColumnTransformer`** | Different columns can receive different preprocessing (e.g., `OneHotEncoder` for categorical, `StandardScaler` for numeric). | `ColumnTransformer` is itself a transformer that can be inserted into a pipeline, so its fit/transform logic is also confined to the training data. |\n| **Model selection / hyper\u2011parameter tuning** | `GridSearchCV`, `RandomizedSearchCV`, etc. wrap a pipeline and perform cross\u2011validation. | The CV splitter feeds each fold into the pipeline\u2019s `fit`, guaranteeing that every fold\u2019s training data is used to fit the preprocessing steps and that the corresponding test fold is only transformed, not used for fitting. |\n| **Caching (optional)** | `Pipeline(..., memory=\u2026)` caches fitted transformers. | Caching does not change the fact that the transformers are fitted only on the training data; it merely speeds up repeated calls. |\n\n**Putting it together**\n\n1. **Create a pipeline** that contains all preprocessing steps (e.g., `StandardScaler`, `SimpleImputer`, `SelectKBest`, `ColumnTransformer`) followed by the estimator (e.g., `RandomForestClassifier`).  \n2. **Wrap the pipeline in a model\u2011selection object** such as `GridSearchCV`.  \n3. **Fit the model\u2011selection object** on the full dataset. The CV splitter will split the data, the pipeline will fit the preprocessing on each training fold, transform the corresponding test fold, and then fit the estimator.  \n4. **Evaluate** on a held\u2011out test set that was never seen during any fit or transform step.\n\nBecause every transformation is performed inside the pipeline and every fit is confined to the training portion of",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0003",
+      "composite_estimators_pipelines_struct_0013",
+      "best_practices_common_pitfalls_struct_0001",
+      "api_pipeline_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0003",
+        "composite_estimators_pipelines_struct_0013",
+        "best_practices_common_pitfalls_struct_0001",
+        "api_pipeline_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "best_practices_common_pitfalls_struct_0004",
+        "model_selection_hyperparameter_tuning_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.8,
+      "relevance": 3.8,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately reflects the gold reference, correctly describes pipelines, preprocessing, and model selection to avoid leakage, and all claims are supported by the retrieved evidence. It directly addresses the question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 23657.3,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2605,
+        "completion_tokens": 1024,
+        "total_tokens": 3629
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "ac4332057e96d179363fb4f958b315735def1a644d00c59d333a7f5ccd9f5a31",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0003",
+      "composite_estimators_pipelines_struct_0013",
+      "api_pipeline_struct_0002",
+      "best_practices_common_pitfalls_struct_0001",
+      "api_pipeline_struct_0001",
+      "best_practices_common_pitfalls_struct_0005",
+      "preprocessing_data_transforms_struct_0002",
+      "composite_estimators_pipelines_struct_0005",
+      "api_grid_search_cv_struct_0011"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0003",
+        "composite_estimators_pipelines_struct_0013",
+        "api_pipeline_struct_0002",
+        "best_practices_common_pitfalls_struct_0001",
+        "api_pipeline_struct_0001",
+        "best_practices_common_pitfalls_struct_0005",
+        "preprocessing_data_transforms_struct_0002",
+        "composite_estimators_pipelines_struct_0005",
+        "api_grid_search_cv_struct_0011"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "best_practices_common_pitfalls_struct_0004",
+        "model_selection_hyperparameter_tuning_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "No candidate answer was provided, so no comparison can be made."
+    },
+    "efficiency": {
+      "latency_ms": 38701.49,
+      "retrieval_calls": 2,
+      "chunks_processed": 60,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 4684,
+        "completion_tokens": 1024,
+        "total_tokens": 5708
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": true,
+      "predicted_intent": "MULTI_CONCEPT",
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": true,
+      "routing_reason": "Complex multi-concept query routed to deep multi-step retrieval and reranking; top-30 candidate pool synthesized across distinct documentation topics into top-10 chunks."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": "MULTI_CONCEPT",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "ac4332057e96d179363fb4f958b315735def1a644d00c59d333a7f5ccd9f5a31",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "generated_answer": "Preprocessing, pipelines, and model\u2011selection tools in scikit\u2011learn are designed to keep the statistics that are learned from the data (means, variances, feature\u2011selection masks, etc.) **only** from the training portion of the data.  The same fitted transformers are then applied to the test or validation data, which guarantees that no information from the test set leaks into the model.\n\n| Step | What happens | Why it prevents leakage |\n|------|--------------|------------------------|\n| **Split first** | `train_test_split` (or a CV splitter) is called before any preprocessing. | The test set is never seen by any transformer. |\n| **Fit on training data** | `fit` or `fit_transform` is called only on the training split. | The transformer learns statistics (e.g., mean, std, selected features) solely from the training data. |\n| **Transform test data** | `transform` (or `fit_transform` on the training split, then `transform` on the test split) is used. | The same transformation is applied to the test data without re\u2011learning any statistics. |\n| **Pipeline** | A `Pipeline` chains the preprocessing steps and the final estimator. | The pipeline\u2019s `fit` method automatically calls `fit` on each transformer in order, then `transform` on all but the last step, and finally `fit` on the estimator.  This guarantees that each step is applied only to the data that has already been processed by the previous steps, and that the test data is never used to fit any transformer. |\n| **Cross\u2011validation / hyper\u2011parameter search** | `GridSearchCV`, `RandomizedSearchCV`, or `cross_val_score` are run on the pipeline. | During each CV fold the pipeline is re\u2011fitted on the training fold only; the validation fold is transformed with the fitted pipeline, so no leakage occurs. |\n| **ColumnTransformer** | Different columns can be processed with different transformers inside a pipeline. | Each transformer is still fitted only on the training data, and the same fitted transformers are applied to the test data. |\n| **StandardScaler example** | `StandardScaler().fit(X_train)` \u2192 `scaler.transform(X_test)`. | The scaler\u2019s mean and std are computed from `X_train` only, then reused for `X_test`. |\n| **Feature selection example** | `SelectKBest(k=25).fit(X_train, y_train)` \u2192 `X_train_sel = selector.transform(X_train)`; `X_test_sel",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0003",
+      "composite_estimators_pipelines_struct_0013",
+      "api_pipeline_struct_0002",
+      "best_practices_common_pitfalls_struct_0001",
+      "api_pipeline_struct_0001",
+      "preprocessing_data_transforms_struct_0002",
+      "composite_estimators_pipelines_struct_0005",
+      "api_grid_search_cv_struct_0011",
+      "composite_estimators_pipelines_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.3333,
+        "3": 0.3333,
+        "5": 0.3333,
+        "10": 0.3333
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 0.4693,
+        "5": 0.4693,
+        "10": 0.4693
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0003",
+        "composite_estimators_pipelines_struct_0013",
+        "api_pipeline_struct_0002",
+        "best_practices_common_pitfalls_struct_0001",
+        "api_pipeline_struct_0001",
+        "preprocessing_data_transforms_struct_0002",
+        "composite_estimators_pipelines_struct_0005",
+        "api_grid_search_cv_struct_0011",
+        "composite_estimators_pipelines_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0001",
+        "best_practices_common_pitfalls_struct_0004",
+        "model_selection_hyperparameter_tuning_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately describes how preprocessing, pipelines, and model selection work together to prevent data leakage, directly matching the gold reference. It cites all relevant concepts (pipeline, CV, GridSearchCV, ColumnTransformer, StandardScaler, feature selection) that are supported by the retrieved evidence, and it stays focused on the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 42632.84,
+      "retrieval_calls": 8,
+      "chunks_processed": 120,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 4534,
+        "completion_tokens": 1024,
+        "total_tokens": 5558
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": true,
+      "predicted_intent": "MULTI_CONCEPT",
+      "expected_intent": "MULTI_CONCEPT",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": true,
+      "routing_reason": "Complex multi-concept query routed to deep multi-step retrieval and reranking; top-30 candidate pool synthesized across distinct documentation topics into top-10 chunks."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "MULTI_CONCEPT",
+      "actual_intent": "MULTI_CONCEPT",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "ac4332057e96d179363fb4f958b315735def1a644d00c59d333a7f5ccd9f5a31",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "generated_answer": "Leaving `random_state=None` causes the estimator or CV splitter to use the global NumPy random state (`np.random.mtrand._rand`). Each time the object is fitted or split, it draws new random numbers, so the sequence of random choices (e.g., feature subsets, train/test splits) differs from run to run. Consequently, cross\u2011validation results are not reproducible across script executions.  \n- The documentation states that passing `None` (or a `RandomState` instance) makes `fit` and `split` yield different results each time they are called, exploring all sources of entropy [Source\u202f2].  \n- It also recommends removing any use of `random_state=None` to obtain reproducible results across executions [Source\u202f1].",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007",
+      "model_selection_cross_validation_struct_0014",
+      "best_practices_common_pitfalls_struct_0010",
+      "best_practices_common_pitfalls_struct_0013"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0006",
+        "best_practices_common_pitfalls_struct_0007",
+        "model_selection_cross_validation_struct_0014",
+        "best_practices_common_pitfalls_struct_0010",
+        "best_practices_common_pitfalls_struct_0013"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.8,
+      "overall": 3.7667,
+      "reason": "The candidate accurately explains that random_state=None leads to non\u2011deterministic splits via the global NumPy RNG, matching the reference answer. Its claims are supported by the retrieved evidence snippets, and it directly addresses the question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 19567.22,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2086,
+        "completion_tokens": 399,
+        "total_tokens": 2485
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "8a2f29f725d22bccf6eb609161dea79ef931c5d99f40af8461b8984e0b515d64",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "generated_answer": "Leaving `random_state=None` makes the estimator or splitter use the global NumPy random generator (`np.random.mtrand._rand`). Each time the script runs, that generator has a different internal state, so the random draws (e.g., data shuffling, tree feature selection, weight initialization) differ. Consequently, the cross\u2011validation splits and the estimator\u2019s random initialization change on every execution, producing non\u2011reproducible results.  \n\n- `random_state=None` is the default and is equivalent to using the global RNG, which changes each run.  \n- When `None` (or a `RandomState` instance) is passed, `fit` or `split` will yield different results each time they are called, exploring all sources of entropy.  \n\nThus, to obtain reproducible cross\u2011validation results, one must avoid `random_state=None` and instead provide a fixed seed or a `RandomState` instance.  \n\n[Source 1] [Source 3]",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0013",
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007",
+      "best_practices_common_pitfalls_struct_0014",
+      "model_selection_cross_validation_struct_0027"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0013",
+        "best_practices_common_pitfalls_struct_0006",
+        "best_practices_common_pitfalls_struct_0007",
+        "best_practices_common_pitfalls_struct_0014",
+        "model_selection_cross_validation_struct_0027"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.5,
+      "reason": "The candidate answer accurately explains that random_state=None uses the global RNG, leading to different random draws each run, and that fixing the seed yields reproducibility. It aligns with the reference answer and is supported by the retrieved evidence, and it directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 18542.87,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1878,
+        "completion_tokens": 440,
+        "total_tokens": 2318
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "8a2f29f725d22bccf6eb609161dea79ef931c5d99f40af8461b8984e0b515d64",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "generated_answer": "Leaving `random_state=None` makes the estimator or splitter use the global NumPy random generator (`np.random.mtrand._rand`). Each time the script runs, that generator has a different internal state, so the random draws (e.g., data shuffling, tree feature selection, weight initialization) differ. Consequently, the cross\u2011validation splits and the estimator\u2019s random initialization change on every execution, producing non\u2011reproducible results.  \n\n- `random_state=None` (or a `RandomState` instance) causes `fit`/`split` to yield different results each call, exploring all sources of entropy.  \n- Removing `random_state=None` and supplying a fixed `RandomState` or integer seed fixes the random draws, ensuring reproducibility.  \n\n[Source 1] [Source 3]",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0013",
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007",
+      "best_practices_common_pitfalls_struct_0014",
+      "model_selection_cross_validation_struct_0027"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0013",
+        "best_practices_common_pitfalls_struct_0006",
+        "best_practices_common_pitfalls_struct_0007",
+        "best_practices_common_pitfalls_struct_0014",
+        "model_selection_cross_validation_struct_0027"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately explains that random_state=None uses the global NumPy RNG, leading to different random draws on each run, and that providing a fixed seed restores reproducibility. All claims are directly supported by the retrieved evidence, and the answer directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 15809.58,
+      "retrieval_calls": 2,
+      "chunks_processed": 30,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1878,
+        "completion_tokens": 406,
+        "total_tokens": 2284
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "EXPLANATION",
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Conceptual explanation routed to hybrid retrieval (dense semantics + BM25 keyword matching) with reranking; candidate pool of 15 refined to top-5 chunks."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": "EXPLANATION",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "8a2f29f725d22bccf6eb609161dea79ef931c5d99f40af8461b8984e0b515d64",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "generated_answer": "Leaving `random_state=None` means that each estimator or CV splitter uses the global NumPy random state, which is not fixed between runs. According to the documentation, when `random_state` is `None` (or a `RandomState` instance), the `fit` or `split` methods will produce different results each time they are called, exploring all sources of entropy. Consequently, a cross\u2011validation procedure that relies on such objects will yield a different set of splits and model initializations on every script execution, making the results non\u2011reproducible.  \n\n- Source 3: \u201cIf `None` or a `RandomState` instance is passed: `fit` and `split` will yield different results each time they are called.\u201d  \n- Source 1: \u201cIn order to obtain reproducible results across multiple program executions, we need to remove all uses of `random_state=None`.\u201d",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0013",
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007",
+      "best_practices_common_pitfalls_struct_0014",
+      "model_selection_cross_validation_struct_0027"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0013",
+        "best_practices_common_pitfalls_struct_0006",
+        "best_practices_common_pitfalls_struct_0007",
+        "best_practices_common_pitfalls_struct_0014",
+        "model_selection_cross_validation_struct_0027"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0006"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.5,
+      "reason": "The candidate answer accurately explains that random_state=None uses the global RNG, leading to different splits and model initializations on each run, matching the reference answer. It cites evidence snippets that support this claim, so it is well grounded. The answer directly addresses the question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 17731.6,
+      "retrieval_calls": 2,
+      "chunks_processed": 30,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1878,
+        "completion_tokens": 598,
+        "total_tokens": 2476
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "EXPLANATION",
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Conceptual explanation routed to hybrid retrieval (dense semantics + BM25 keyword matching) with reranking; candidate pool of 15 refined to top-5 chunks."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": "EXPLANATION",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "8a2f29f725d22bccf6eb609161dea79ef931c5d99f40af8461b8984e0b515d64",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "generated_answer": "Feature selection performed **before** splitting the data leaks information from the test set into the training process.  \nWhen `SelectKBest` is fit on the entire dataset, it uses the test labels to rank features, so the chosen features are biased toward patterns that also appear in the test set. Consequently, the model trained on those features will appear to perform much better than it truly will on unseen data, leading to a severe under\u2011estimation of the test error (i.e., an overly optimistic accuracy).  \n\nThis is why the correct practice is to split first, then fit the selector only on the training split, and finally transform the test split with the fitted selector.  \n\n[Source\u202f1] and [Source\u202f2] describe this leakage and its effect on accuracy.",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0005",
+      "preprocessing_imputation_struct_0011",
+      "best_practices_common_pitfalls_struct_0009",
+      "model_selection_cross_validation_struct_0019"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0005",
+        "preprocessing_imputation_struct_0011",
+        "best_practices_common_pitfalls_struct_0009",
+        "model_selection_cross_validation_struct_0019"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 3.5,
+      "overall": 3.5,
+      "reason": "The candidate answer accurately explains the data leakage caused by fitting SelectKBest before splitting, aligns with the gold answer, and is supported by the retrieved evidence snippets. It directly addresses the question without unnecessary filler."
+    },
+    "efficiency": {
+      "latency_ms": 5048.99,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2497,
+        "completion_tokens": 395,
+        "total_tokens": 2892
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "311998a9fb5826e50f8f0e5f2aee1b9e786fb3929e1e74ea37d98bfa9c020385",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "generated_answer": "Feature selection performed **before** splitting the data leaks information from the test set into the training process.  \nWhen `SelectKBest` is fit on the entire dataset, it chooses the most predictive features based on the full set of labels, including those that will later be reserved for testing. Consequently, the selected feature subset is biased toward the test samples, and the downstream model is effectively trained on data that already \u201cknows\u201d the test labels. This leakage produces an overly optimistic estimate of performance, so the reported test error is severely underestimated.  \n\nThe correct practice is to split first, then fit `SelectKBest` only on the training portion (or, better, wrap the selection and estimator in a `Pipeline`), ensuring that the test data remain unseen until evaluation.  \n\n[Source\u202f1] and [Source\u202f2] describe this leakage and its effect on accuracy.",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0005",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_cross_validation_struct_0019",
+      "best_practices_common_pitfalls_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0005",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_cross_validation_struct_0019",
+        "best_practices_common_pitfalls_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that fitting SelectKBest on the full dataset leaks test labels, causing optimistic bias and severe underestimation of test error, and recommends splitting first or using a Pipeline. This matches the gold answer and is fully supported by the retrieved evidence."
+    },
+    "efficiency": {
+      "latency_ms": 12123.65,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2996,
+        "completion_tokens": 366,
+        "total_tokens": 3362
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "311998a9fb5826e50f8f0e5f2aee1b9e786fb3929e1e74ea37d98bfa9c020385",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "generated_answer": "Feature selection with `SelectKBest` performed **before** `train_test_split` leaks information from the test set into the training process.  \nWhen `SelectKBest` is fit on the entire dataset, it uses the test labels (and features) to decide which features are \u201cbest.\u201d Those same features are then used to train the model, so the model has already seen patterns that are specific to the test data. As a result, the model is overly optimistic: it appears to perform well on the test set, but this performance is inflated because the test data influenced the feature set. Consequently, the reported test error is severely underestimated.  \n\nThe correct approach is to split first, then fit `SelectKBest` only on the training split and transform the test split with the fitted selector, or to use a `Pipeline` that guarantees this order.  \n\n[Source\u202f1] and [Source\u202f2] describe this leakage and its effect on accuracy.",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0005",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_cross_validation_struct_0019",
+      "best_practices_common_pitfalls_struct_0001",
+      "model_selection_metrics_struct_0075"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0005",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_cross_validation_struct_0019",
+        "best_practices_common_pitfalls_struct_0001",
+        "model_selection_metrics_struct_0075"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that fitting SelectKBest before splitting leaks test labels, leading to overly optimistic performance and underestimated test error, matching the gold reference. It is fully supported by the retrieved evidence snippets that describe the same leakage scenario and the use of pipelines. The answer directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 27893.15,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3571,
+        "completion_tokens": 505,
+        "total_tokens": 4076
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": "TROUBLESHOOTING",
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Troubleshooting query routed to broad hybrid search (top-20) and reranking (top-6) to capture both diagnostic symptoms and resolution steps."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": "TROUBLESHOOTING",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "311998a9fb5826e50f8f0e5f2aee1b9e786fb3929e1e74ea37d98bfa9c020385",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "generated_answer": "Feature selection with `SelectKBest` before calling `train_test_split` leaks information from the test set into the training process.  \n`SelectKBest` ranks features by their relationship with the target `y`. If you run it on the *entire* dataset, it uses the test labels to decide which features are \u201cbest\u201d. When the data are then split, the test set has already influenced the feature set that the model will train on, so the model is effectively trained on data that contains information about the test outcomes. This creates an optimistic bias: the model appears to perform well on the test set, but the reported error is severely underestimated because the test data were already used in feature selection.  \n\nThe correct practice is to split first, then fit `SelectKBest` only on the training data, and transform the test data with the fitted selector (or, even better, wrap the selector and estimator in a `Pipeline`) so that the test data remain unseen until evaluation.  \n\n[Source\u202f1] and [Source\u202f2] demonstrate this leakage and its effect on accuracy.",
+    "retrieved_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "best_practices_common_pitfalls_struct_0005",
+      "model_selection_cross_validation_struct_0011",
+      "model_selection_cross_validation_struct_0019",
+      "best_practices_common_pitfalls_struct_0001",
+      "model_selection_metrics_struct_0075"
+    ],
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004",
+        "best_practices_common_pitfalls_struct_0005",
+        "model_selection_cross_validation_struct_0011",
+        "model_selection_cross_validation_struct_0019",
+        "best_practices_common_pitfalls_struct_0001",
+        "model_selection_metrics_struct_0075"
+      ],
+      "ground_truth_chunk_ids": [
+        "best_practices_common_pitfalls_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that performing SelectKBest before splitting leaks test labels, causing optimistic bias and severe underestimation of test error, and it correctly recommends splitting first or using a Pipeline. This matches the reference answer and is fully supported by the retrieved evidence."
+    },
+    "efficiency": {
+      "latency_ms": 27389.72,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3571,
+        "completion_tokens": 488,
+        "total_tokens": 4059
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": "TROUBLESHOOTING",
+      "expected_intent": "TROUBLESHOOTING",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Troubleshooting query routed to broad hybrid search (top-20) and reranking (top-6) to capture both diagnostic symptoms and resolution steps."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "TROUBLESHOOTING",
+      "actual_intent": "TROUBLESHOOTING",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "311998a9fb5826e50f8f0e5f2aee1b9e786fb3929e1e74ea37d98bfa9c020385",
+      "benchmark_fingerprint": "e26db03273c8c74a71d1d5eb49577be2028de8f8c559b119a0a367456df1ecc7"
+    }
+  }
+]

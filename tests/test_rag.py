@@ -114,20 +114,26 @@ def test_mock_llm_provider() -> None:
 
 def test_missing_llm_configuration_error(monkeypatch: pytest.MonkeyPatch) -> None:
     """Verify that unconfigured LLM providers raise LLMConfigurationError clearly."""
+    from adaq_rag.core.config import get_settings
+
+    monkeypatch.setenv("LLM_API_KEY", "")
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    get_settings.cache_clear()
+    try:
+        settings_openai = Settings(llm_provider="openai", llm_api_key=None)
+        with pytest.raises(LLMConfigurationError, match="OpenAI API key is missing"):
+            get_llm_provider(settings_openai)
 
-    settings_openai = Settings(llm_provider="openai", llm_api_key=None)
-    with pytest.raises(LLMConfigurationError, match="OpenAI API key is missing"):
-        get_llm_provider(settings_openai)
+        settings_gemini = Settings(llm_provider="gemini", llm_api_key=None)
+        with pytest.raises(LLMConfigurationError, match="Gemini API key is missing"):
+            get_llm_provider(settings_gemini)
 
-    settings_gemini = Settings(llm_provider="gemini", llm_api_key=None)
-    with pytest.raises(LLMConfigurationError, match="Gemini API key is missing"):
-        get_llm_provider(settings_gemini)
-
-    settings_invalid = Settings(llm_provider="invalid_provider")
-    with pytest.raises(LLMConfigurationError, match="Unsupported LLM provider"):
-        get_llm_provider(settings_invalid)
+        settings_invalid = Settings(llm_provider="invalid_provider")
+        with pytest.raises(LLMConfigurationError, match="Unsupported LLM provider"):
+            get_llm_provider(settings_invalid)
+    finally:
+        get_settings.cache_clear()
 
 
 def test_rag_pipeline_flow(mock_dense_retriever: DenseRetriever) -> None:
@@ -242,14 +248,21 @@ def test_rag_api_validation(mock_dense_retriever: DenseRetriever) -> None:
 
 def test_rag_api_missing_llm_config(monkeypatch: pytest.MonkeyPatch) -> None:
     """Verify API returns 503 when LLM credentials are not configured."""
+    from adaq_rag.core.config import get_settings
     from adaq_rag.rag.service import reset_rag_pipeline
+
     reset_rag_pipeline()
+    monkeypatch.setenv("LLM_API_KEY", "")
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    get_settings.cache_clear()
+    try:
+        app = create_app()
+        client = TestClient(app)
 
-    app = create_app()
-    client = TestClient(app)
-
-    response = client.post("/api/v1/rag/query", json={"query": "What is Ridge?", "top_k": 2})
-    assert response.status_code == 503
-    assert "API key is missing" in response.json()["detail"]
+        response = client.post("/api/v1/rag/query", json={"query": "What is Ridge?", "top_k": 2})
+        assert response.status_code == 503
+        assert "API key is missing" in response.json()["detail"]
+    finally:
+        get_settings.cache_clear()
+        reset_rag_pipeline()

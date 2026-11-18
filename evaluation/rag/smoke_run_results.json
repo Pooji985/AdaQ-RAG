@@ -1,0 +1,1034 @@
+[
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is left as `None`, `GridSearchCV` uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. This is the default scoring strategy.\u3010Source\u202f1\u3011\u3010Source\u202f4\u3011",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s own score method when scoring is None, matching the gold answer. It cites evidence sources that cover the scoring parameter, and it directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 36877.24,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2763,
+        "completion_tokens": 234,
+        "total_tokens": 2997
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. [Source\u202f1] [Source\u202f4]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "model_selection_hyperparameter_tuning_struct_0014",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "model_selection_hyperparameter_tuning_struct_0014",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s own score method when scoring is None, matching the gold answer and the retrieved evidence. It is fully grounded in the evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 13938.93,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2219,
+        "completion_tokens": 200,
+        "total_tokens": 2419
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default scoring method (i.e., the estimator\u2019s `score` function). This is the default evaluation criterion for the cross\u2011validated model. [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the gold answer, is fully supported by the retrieved evidence, and directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 12112.5,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2041,
+        "completion_tokens": 149,
+        "total_tokens": 2190
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default scoring method (i.e., the estimator\u2019s `score` function) to evaluate the models. This is the default strategy when no explicit scoring is provided. [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the gold answer, is fully supported by the retrieved evidence, and directly addresses the question without unnecessary content."
+    },
+    "efficiency": {
+      "latency_ms": 17815.28,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2041,
+        "completion_tokens": 149,
+        "total_tokens": 2190
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_02",
+    "query": "Which solver in LogisticRegression supports Elastic-Net regularization penalties?",
+    "reference_answer": "The 'saga' solver is the only solver in LogisticRegression that supports Elastic-Net regularization.",
+    "generated_answer": "The only solver that supports Elastic\u2011Net (L1\u202f+\u202fL2) regularization in `LogisticRegression` is **`saga`**.  \n[Source\u202f5] and [Source\u202f2] both state that Elastic\u2011Net is supported only by the `saga` solver.",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0002",
+      "supervised_linear_models_struct_0029",
+      "supervised_linear_models_struct_0026",
+      "supervised_linear_models_struct_0025",
+      "api_logistic_regression_struct_0001"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0029"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0002",
+        "supervised_linear_models_struct_0029",
+        "supervised_linear_models_struct_0026",
+        "supervised_linear_models_struct_0025",
+        "api_logistic_regression_struct_0001"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0029"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 0.5,
+      "relevance": 4.0,
+      "overall": 2.8333,
+      "reason": "The answer correctly identifies 'saga' as the solver that supports Elastic\u2011Net, matching the gold answer. However, the cited evidence does not actually mention saga, so the claim is not grounded in the retrieved snippets, resulting in low faithfulness. The response directly addresses the question, so relevance is high."
+    },
+    "efficiency": {
+      "latency_ms": 23306.17,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2924,
+        "completion_tokens": 147,
+        "total_tokens": 3071
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "34bf854c8998636c121e5f0a86864fa2b258b0e28ef665ab3bd05f02a449595f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_02",
+    "query": "Which solver in LogisticRegression supports Elastic-Net regularization penalties?",
+    "reference_answer": "The 'saga' solver is the only solver in LogisticRegression that supports Elastic-Net regularization.",
+    "generated_answer": "The **`saga`** solver is the only one in `LogisticRegression` that supports Elastic\u2011Net (L1\u202f+\u202fL2) regularization penalties.\u3010Source\u202f1\u3011\u3010Source\u202f2\u3011",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0001",
+      "supervised_linear_models_struct_0029",
+      "api_logistic_regression_struct_0002",
+      "api_logistic_regression_struct_0004",
+      "supervised_linear_models_struct_0032"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0029"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0001",
+        "supervised_linear_models_struct_0029",
+        "api_logistic_regression_struct_0002",
+        "api_logistic_regression_struct_0004",
+        "supervised_linear_models_struct_0032"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0029"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly states that only the saga solver supports Elastic\u2011Net regularization, matching the gold answer and the evidence. It is fully grounded in the retrieved evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 28876.79,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2970,
+        "completion_tokens": 117,
+        "total_tokens": 3087
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "34bf854c8998636c121e5f0a86864fa2b258b0e28ef665ab3bd05f02a449595f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_02",
+    "query": "Which solver in LogisticRegression supports Elastic-Net regularization penalties?",
+    "reference_answer": "The 'saga' solver is the only solver in LogisticRegression that supports Elastic-Net regularization.",
+    "generated_answer": "The only solver in `LogisticRegression` that supports Elastic\u2011Net (L1\u202f+\u202fL2) penalties is **`saga`**.  \n[Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0002",
+      "supervised_linear_models_struct_0029",
+      "supervised_linear_models_struct_0026"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0029"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0002",
+        "supervised_linear_models_struct_0029",
+        "supervised_linear_models_struct_0026"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0029"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies 'saga' as the sole solver supporting Elastic\u2011Net, matches the gold answer, is directly supported by the retrieved evidence, and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 13484.44,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1970,
+        "completion_tokens": 115,
+        "total_tokens": 2085
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "34bf854c8998636c121e5f0a86864fa2b258b0e28ef665ab3bd05f02a449595f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_02",
+    "query": "Which solver in LogisticRegression supports Elastic-Net regularization penalties?",
+    "reference_answer": "The 'saga' solver is the only solver in LogisticRegression that supports Elastic-Net regularization.",
+    "generated_answer": "The only solver that supports Elastic\u2011Net (L1\u202f+\u202fL2) penalties in `LogisticRegression` is **`saga`**.  \n[Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "api_logistic_regression_struct_0002",
+      "supervised_linear_models_struct_0029",
+      "supervised_linear_models_struct_0026"
+    ],
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0029"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.6309,
+        "5": 0.6309,
+        "10": 0.6309
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_logistic_regression_struct_0002",
+        "supervised_linear_models_struct_0029",
+        "supervised_linear_models_struct_0026"
+      ],
+      "ground_truth_chunk_ids": [
+        "supervised_linear_models_struct_0029"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly states that only the 'saga' solver supports Elastic\u2011Net penalties, which matches the gold answer and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 15301.23,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1970,
+        "completion_tokens": 115,
+        "total_tokens": 2085
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "34bf854c8998636c121e5f0a86864fa2b258b0e28ef665ab3bd05f02a449595f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_03",
+    "query": "What attribute of a fitted Pipeline allows accessing individual steps by name?",
+    "reference_answer": "Pipeline steps can be accessed as a dictionary-like object using the named_steps attribute.",
+    "generated_answer": "The fitted `Pipeline` exposes a `named_steps` attribute, which is a `Bunch` that lets you access each step by its name.  \n\n**Answer:** `named_steps` [Source\u202f1][Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004",
+      "api_pipeline_struct_0002",
+      "composite_estimators_pipelines_struct_0005",
+      "api_pipeline_struct_0001",
+      "composite_estimators_pipelines_struct_0002"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004",
+        "api_pipeline_struct_0002",
+        "composite_estimators_pipelines_struct_0005",
+        "api_pipeline_struct_0001",
+        "composite_estimators_pipelines_struct_0002"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 0.5,
+      "relevance": 4.0,
+      "overall": 2.8333,
+      "reason": "The answer correctly identifies the named_steps attribute, matching the gold answer, and directly addresses the question, but the provided evidence snippets do not mention named_steps, so the claim is not supported by the retrieved evidence."
+    },
+    "efficiency": {
+      "latency_ms": 16501.2,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2152,
+        "completion_tokens": 125,
+        "total_tokens": 2277
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "8efbfff1b617c274b7519ef0c5b1d229368a8dab5d007e963cbf474e3a8ad01f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_03",
+    "query": "What attribute of a fitted Pipeline allows accessing individual steps by name?",
+    "reference_answer": "Pipeline steps can be accessed as a dictionary-like object using the named_steps attribute.",
+    "generated_answer": "The fitted `Pipeline` exposes the `named_steps` attribute, which is a read\u2011only mapping that lets you access each step by its name.  \n\n**Answer:** `named_steps`\u3010Source\u202f1\u3011\u3010Source\u202f2\u3011",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004",
+      "api_pipeline_struct_0002",
+      "api_pipeline_struct_0001",
+      "api_pipeline_struct_0005",
+      "composite_estimators_pipelines_struct_0006"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004",
+        "api_pipeline_struct_0002",
+        "api_pipeline_struct_0001",
+        "api_pipeline_struct_0005",
+        "composite_estimators_pipelines_struct_0006"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the `named_steps` attribute, matches the gold answer, and is fully supported by the retrieved evidence. It directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 21554.35,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2516,
+        "completion_tokens": 111,
+        "total_tokens": 2627
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "8efbfff1b617c274b7519ef0c5b1d229368a8dab5d007e963cbf474e3a8ad01f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_03",
+    "query": "What attribute of a fitted Pipeline allows accessing individual steps by name?",
+    "reference_answer": "Pipeline steps can be accessed as a dictionary-like object using the named_steps attribute.",
+    "generated_answer": "The attribute is **`named_steps`**. It stores a mapping from step names to the corresponding estimator objects, allowing you to access any step by its name.  \n\n[Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004",
+      "api_pipeline_struct_0002",
+      "composite_estimators_pipelines_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004",
+        "api_pipeline_struct_0002",
+        "composite_estimators_pipelines_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the `named_steps` attribute, matches the gold reference, and is fully supported by the retrieved evidence. It directly and concisely answers the question."
+    },
+    "efficiency": {
+      "latency_ms": 10938.7,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1286,
+        "completion_tokens": 113,
+        "total_tokens": 1399
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "8efbfff1b617c274b7519ef0c5b1d229368a8dab5d007e963cbf474e3a8ad01f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  },
+  {
+    "question_id": "rag_fact_03",
+    "query": "What attribute of a fitted Pipeline allows accessing individual steps by name?",
+    "reference_answer": "Pipeline steps can be accessed as a dictionary-like object using the named_steps attribute.",
+    "generated_answer": "The attribute is **`named_steps`** \u2013 it is a `Bunch` that lets you access each step by its name.  \n[Source\u202f1] [Source\u202f2]",
+    "retrieved_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004",
+      "api_pipeline_struct_0002",
+      "composite_estimators_pipelines_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0004"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004",
+        "api_pipeline_struct_0002",
+        "composite_estimators_pipelines_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "composite_estimators_pipelines_struct_0004"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer correctly identifies the `named_steps` attribute, matches the gold answer, is fully supported by the retrieved evidence, and directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 9033.13,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1286,
+        "completion_tokens": 114,
+        "total_tokens": 1400
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "8efbfff1b617c274b7519ef0c5b1d229368a8dab5d007e963cbf474e3a8ad01f",
+      "benchmark_fingerprint": "fe34bc165e59abd954f81f846b2b2d7e85c94609fcfece99b61509614d690df7"
+    }
+  }
+]

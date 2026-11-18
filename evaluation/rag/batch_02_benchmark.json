@@ -1,0 +1,221 @@
+[
+  {
+    "question_id": "rag_fact_05",
+    "query": "What criterion formula measures Gini impurity during classification decision tree splitting?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "Gini impurity for node m is calculated as H(X_m) = sum_{k} p_{mk} * (1 - p_{mk}) across all class proportions.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_20",
+    "query": "What attribute in GridSearchCV holds the metric score achieved by the best parameter setting on the held-out validation data?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0004"
+    ],
+    "target_doc_ids": [
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "The best_score_ attribute stores the mean cross-validated score of the best_estimator on the validation splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_02",
+    "query": "How does the kernel trick allow Support Vector Machines to separate non-linearly separable data?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0012"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "The kernel trick computes inner products in high-dimensional feature spaces implicitly using kernel functions (such as linear, polynomial, or rbf), enabling linear SVM algorithms to separate non-linearly separable data without explicitly evaluating coordinates in that feature space.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_14",
+    "query": "Why does performing unsupervised scaling or feature selection on the entire dataset prior to cross-validation cause data leakage?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0002",
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "When transformers fit on the entire dataset, distribution statistics (e.g., mean, variance, or top-k correlated features) absorb information from held-out validation folds, yielding optimistically biased performance metrics.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_02",
+    "query": "How does ExtraTreesClassifier differ from standard RandomForestClassifier in candidate split selection?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0026"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "In ExtraTreesClassifier, randomness goes one step further than standard RandomForest: instead of finding the most discriminative threshold for each candidate feature, thresholds are drawn completely at random and the best of these randomly-generated thresholds is chosen.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_13",
+    "query": "Compare BaggingClassifier and AdaBoostClassifier in their sequential versus parallel ensemble training paradigms.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0032",
+      "supervised_ensemble_methods_struct_0043"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "Bagging builds independent base estimators in parallel on random bootstrap subsets of the training set to reduce variance; AdaBoost builds base estimators sequentially in series, iteratively re-weighting incorrectly predicted samples to focus subsequent estimators on difficult cases and reduce bias.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_02",
+    "query": "How do you display a formatted text representation of a fitted decision tree using export_text?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees"
+    ],
+    "reference_answer": "Import export_text from sklearn.tree and call print(export_text(decision_tree, feature_names=list(features))).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_06",
+    "query": "How do you configure ColumnTransformer to apply different transformations to numerical and categorical feature subsets?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_column_transformer"
+    ],
+    "reference_answer": "Instantiate ColumnTransformer([('num', StandardScaler(), num_cols), ('cat', OneHotEncoder(), cat_cols)], remainder='drop') and invoke fit_transform(X).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_02",
+    "query": "How do StandardScaler and PCA interact in a pipeline to prevent dominant high-variance features from distorting principal components?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "StandardScaler standardizes all features to zero mean and unit variance before PCA, ensuring that features with large numerical scales do not artificially dominate the eigenvectors and explained variance ratio.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_10",
+    "query": "How do ColumnTransformer, SimpleImputer, StandardScaler, and LogisticRegression coordinate to process mixed tabular datasets with missing values?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "preprocessing_imputation",
+      "api_standard_scaler"
+    ],
+    "reference_answer": "A ColumnTransformer routes numerical columns into a pipeline of SimpleImputer and StandardScaler, categorical columns into an imputer and encoder, stacks the resulting matrices, and feeds them into LogisticRegression.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_02",
+    "query": "How do you fix a ConvergenceWarning in LogisticRegression when the optimization solver exceeds maximum iterations?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0003",
+      "api_logistic_regression_struct_0004"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "ConvergenceWarning indicates that the solver reached max_iter before satisfying convergence tolerance. To fix it, scale features with StandardScaler (solvers like sag, saga, and lbfgs converge faster on normalized data), increase max_iter (e.g., from 100 to 1000), or adjust tol.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_08",
+    "query": "Why does transforming validation data with a separately fitted scaler cause inconsistent preprocessing, and how do you resolve it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "Calling fit_transform or fit on test/validation data normalizes it using validation mean/variance instead of training mean/variance, misaligning feature spaces; resolve it by calling scaler.fit(X_train) followed only by scaler.transform(X_test), or using a Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  }
+]

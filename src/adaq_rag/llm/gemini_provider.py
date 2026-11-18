@@ -42,7 +42,6 @@ class GeminiProvider(BaseLLMProvider):
         payload: dict[str, Any] = {
             "contents": contents,
             "generationConfig": {
-                "temperature": self.temperature,
                 "maxOutputTokens": self.max_tokens,
             },
         }

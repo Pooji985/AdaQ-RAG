@@ -172,6 +172,10 @@ class EfficiencyMetrics(BaseModel):
         default=None,
         description="Optional LLM token usage if available; None if unavailable",
     )
+    judge_token_usage: LLMUsage | None = Field(
+        default=None,
+        description="Optional LLM Judge token usage if available; None if unavailable",
+    )
 
 
 class RoutingEvaluation(BaseModel):

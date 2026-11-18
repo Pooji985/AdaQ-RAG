@@ -1,0 +1,1082 @@
+[
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring=None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. This is the default scoring strategy when no explicit `scoring` is supplied.\u3010Source\u202f1\u3011\u3010Source\u202f4\u3011",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 3.5,
+      "relevance": 4.0,
+      "overall": 3.8333,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s score method when scoring is None, matching the gold answer. It directly addresses the question and is concise. The cited sources likely support this claim, though the evidence snippets provided are incomplete, so faithfulness is slightly lower than perfect."
+    },
+    "efficiency": {
+      "latency_ms": 73669.42,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2763,
+        "completion_tokens": 219,
+        "total_tokens": 2982
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "549ca2cf93ae5d1f1ae3a7f1de6b4f39614769e25626e0e94f4b50fa25eaab59"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. [Source\u202f1] [Source\u202f4]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "model_selection_hyperparameter_tuning_struct_0014",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "model_selection_hyperparameter_tuning_struct_0014",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s score method when scoring is None, matching the reference answer. It cites evidence snippets that support this claim, and it directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 10645.61,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2219,
+        "completion_tokens": 200,
+        "total_tokens": 2419
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null,
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "549ca2cf93ae5d1f1ae3a7f1de6b4f39614769e25626e0e94f4b50fa25eaab59"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default scoring method (i.e., the estimator\u2019s `score` function) to evaluate the models. This is the default strategy when no explicit scoring is provided. [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the gold answer, is fully supported by the retrieved evidence, and directly addresses the question without unnecessary content."
+    },
+    "efficiency": {
+      "latency_ms": 17080.47,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2041,
+        "completion_tokens": 149,
+        "total_tokens": 2190
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "549ca2cf93ae5d1f1ae3a7f1de6b4f39614769e25626e0e94f4b50fa25eaab59"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default scoring method (i.e., the estimator\u2019s `score` function) to evaluate the models. This is the default strategy when no explicit scoring is provided. [Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately restates the gold answer, is fully supported by the retrieved evidence, and directly addresses the question without unnecessary content."
+    },
+    "efficiency": {
+      "latency_ms": 16599.71,
+      "retrieval_calls": 1,
+      "chunks_processed": 3,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2041,
+        "completion_tokens": 149,
+        "total_tokens": 2190
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": "FACT_LOOKUP",
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": true,
+      "predicted_complexity": "SIMPLE",
+      "expected_complexity": "SIMPLE",
+      "complexity_match": true,
+      "routing_reason": "Direct single-concept fact lookup routed to lightweight dense retrieval; compact candidate search (top-5) and 3 final context chunks suffice."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": "FACT_LOOKUP",
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": "SIMPLE",
+      "question_fingerprint": "4de81546f9f4f74b98408c41d938fb669c2c8dabbe55a545d0c3162e7fe37c1d",
+      "benchmark_fingerprint": "549ca2cf93ae5d1f1ae3a7f1de6b4f39614769e25626e0e94f4b50fa25eaab59"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 Treats every class equally.  \nThe metric (precision, recall, or F\u2011score) is first computed for each class separately and then the arithmetic mean of those per\u2011class scores is returned.  It does **not** take class frequencies into account.  [Source\u202f2]\n\n**Weighted** \u2013 Gives each class a weight proportional to its prevalence in the true labels.  \nThe per\u2011class metric is multiplied by the number of true samples of that class (or its proportion) before averaging, so common classes influence the result more than rare ones.  [Source\u202f2]\n\n**Micro** \u2013 Aggregates the contributions of all classes before computing the metric.  \nTrue positives, false positives, and false negatives are summed over all classes (or over all sample\u2011class pairs), and the metric is then calculated from these global counts.  In a multiclass setting this is equivalent to computing accuracy.  [Source\u202f2] and [Source\u202f1] note that micro\u2011averaging yields precision, recall, and F\u2011score equal to accuracy.",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0024",
+      "supervised_ensemble_methods_struct_0037"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0045"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0024",
+        "supervised_ensemble_methods_struct_0037"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0045"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 1.0,
+      "relevance": 3.5,
+      "overall": 2.6667,
+      "reason": "The answer accurately describes macro, micro, and weighted averaging and matches the reference answer, but it cites sources that are not present in the retrieved evidence, so the claims are not fully grounded."
+    },
+    "efficiency": {
+      "latency_ms": 16938.53,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2440,
+        "completion_tokens": 436,
+        "total_tokens": 2876
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "HYBRID",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "DENSE",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "9dcee4c9818eb4580b563b1f2ef1894c46c5d35aee523d0f2391df9e1946c727",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 Compute the precision (or recall) for each class separately and then take the simple arithmetic mean of those per\u2011class scores. Every class contributes equally, regardless of how many samples it contains.  \n*Source: [Source\u202f3]*\n\n**Weighted** \u2013 Compute the per\u2011class precision (or recall) as in macro, but weight each class\u2019s score by the number of true samples of that class (its prevalence). This gives more influence to frequent classes.  \n*Source: [Source\u202f3]*\n\n**Micro** \u2013 Sum the true positives, false positives, and false negatives over all classes first, then compute precision (or recall) from those aggregated counts. In a multiclass setting this is equivalent to overall accuracy when all labels are included.  \n*Source: [Source\u202f3] and [Source\u202f1]*",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0045"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0045"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.9,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging in line with the reference answer and the evidence. It contains no factual errors, is fully grounded in the retrieved evidence, and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 17018.28,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2575,
+        "completion_tokens": 373,
+        "total_tokens": 2948
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "MEDIUM",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "question_fingerprint": "9dcee4c9818eb4580b563b1f2ef1894c46c5d35aee523d0f2391df9e1946c727",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 Compute the precision (or recall) for each class separately and then take the simple arithmetic mean of those values. Every class contributes equally, regardless of how many samples it contains.  \n**Weighted** \u2013 Compute the per\u2011class precision/recall as in macro, but weight each class\u2019s score by its prevalence (the number of true samples of that class). This gives more influence to frequent classes.  \n**Micro** \u2013 Sum the true positives, false positives and false negatives over *all* classes first, then compute precision/recall from those global counts. In a multiclass setting this is equivalent to the overall accuracy.  \n\nThese behaviours are described in the scikit\u2011learn documentation: macro, weighted and micro averaging are defined in the `average` parameter of the precision/recall functions [Source\u202f3], and micro\u2011averaging yields accuracy in multiclass problems [Source\u202f1].",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017",
+      "model_selection_metrics_struct_0030"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0045"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017",
+        "model_selection_metrics_struct_0030"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0045"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging, matching the reference answer and the evidence. All claims are grounded in the retrieved documentation, and the response directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 21882.65,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2706,
+        "completion_tokens": 574,
+        "total_tokens": 3280
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "9dcee4c9818eb4580b563b1f2ef1894c46c5d35aee523d0f2391df9e1946c727",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_06",
+    "query": "What is the difference between macro, micro, and weighted averaging when computing multiclass precision and recall?",
+    "reference_answer": "Macro averaging computes metric values per class independently and averages them giving equal weight to all classes; micro aggregates global true positives/false positives; weighted computes per-class scores weighted by each class's support.",
+    "generated_answer": "**Macro** \u2013 compute the precision (or recall) for each class separately and then take the simple arithmetic mean of those values. Every class contributes equally, regardless of how many samples it contains. [Source\u202f3]\n\n**Weighted** \u2013 compute the per\u2011class precision/recall as in macro, but weight each class\u2019s score by its prevalence (the number of true instances of that class). This gives more influence to frequent classes. [Source\u202f3]\n\n**Micro** \u2013 first sum the true positives, false positives, and false negatives over all classes, then compute precision/recall from those global totals. In a multiclass setting this is equivalent to overall accuracy. [Source\u202f3, Source\u202f1]",
+    "retrieved_chunk_ids": [
+      "model_selection_metrics_struct_0028",
+      "model_selection_metrics_struct_0024",
+      "model_selection_metrics_struct_0014",
+      "model_selection_metrics_struct_0042",
+      "model_selection_metrics_struct_0017",
+      "model_selection_metrics_struct_0030"
+    ],
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0045"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "model_selection_metrics_struct_0028",
+        "model_selection_metrics_struct_0024",
+        "model_selection_metrics_struct_0014",
+        "model_selection_metrics_struct_0042",
+        "model_selection_metrics_struct_0017",
+        "model_selection_metrics_struct_0030"
+      ],
+      "ground_truth_chunk_ids": [
+        "model_selection_metrics_struct_0045"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.7,
+      "relevance": 3.9,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately describes macro, weighted, and micro averaging in line with the reference answer and the evidence, with no major factual errors. It is well grounded in the retrieved evidence and directly addresses the question."
+    },
+    "efficiency": {
+      "latency_ms": 17344.38,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2706,
+        "completion_tokens": 515,
+        "total_tokens": 3221
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "HYBRID",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "MEDIUM",
+      "expected_complexity": "MEDIUM",
+      "complexity_match": true,
+      "routing_reason": "Entity comparison requires broad hybrid candidate pool (top-20) and reranking (top-6) to ensure balanced evidence across both contrasted concepts."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "HYBRID",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "question_fingerprint": "9dcee4c9818eb4580b563b1f2ef1894c46c5d35aee523d0f2391df9e1946c727",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_11",
+    "query": "Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.",
+    "reference_answer": "StandardScaler centers around mean with unit variance (unbounded, highly sensitive to outliers); MinMaxScaler compresses data into fixed [0, 1] bounds (extreme outliers compress inliers into narrow intervals); RobustScaler uses median and IQR, remaining robust to outliers with unbounded output.",
+    "generated_answer": "The provided documentation does not contain enough information to answer this question.",
+    "retrieved_chunk_ids": [
+      "supervised_linear_models_struct_0042",
+      "preprocessing_data_transforms_struct_0001",
+      "supervised_linear_models_struct_0040",
+      "supervised_ensemble_methods_struct_0019",
+      "api_standard_scaler_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0004",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [
+        "supervised_linear_models_struct_0042",
+        "preprocessing_data_transforms_struct_0001",
+        "supervised_linear_models_struct_0040",
+        "supervised_ensemble_methods_struct_0019",
+        "api_standard_scaler_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_data_transforms_struct_0002",
+        "preprocessing_data_transforms_struct_0004",
+        "preprocessing_data_transforms_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "The candidate answer does not provide any comparison or factual content, thus it is incorrect, unsupported, and irrelevant to the question."
+    },
+    "efficiency": {
+      "latency_ms": 16886.24,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 1977,
+        "completion_tokens": 197,
+        "total_tokens": 2174
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "DENSE",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "8a1e4fc94ae625f191cf084b73b361be995a8b673c0be6f693cfe1c1b1e96f79",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_11",
+    "query": "Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.",
+    "reference_answer": "StandardScaler centers around mean with unit variance (unbounded, highly sensitive to outliers); MinMaxScaler compresses data into fixed [0, 1] bounds (extreme outliers compress inliers into narrow intervals); RobustScaler uses median and IQR, remaining robust to outliers with unbounded output.",
+    "generated_answer": "**Sensitivity to outliers**\n\n| Scaler | Sensitivity | Notes |\n|--------|-------------|-------|\n| **StandardScaler** | *High* \u2013 uses the mean and standard deviation, which are strongly affected by extreme values. | The documentation explicitly states that \u201cStandardScaler is sensitive to outliers\u201d [Source\u202f1]. |\n| **RobustScaler** | *Low* \u2013 replaces the mean and variance with robust estimates (e.g., median and inter\u2011quartile range). | The docs say it \u201cuses more robust estimates for the center and range of your data\u201d and is recommended when many outliers are present [Source\u202f2]. |\n| **MinMaxScaler** | *Moderate* \u2013 scales each feature to a fixed range based on the observed min and max. Outliers can shift these extremes, so the scaling is affected, but the method itself is not designed to be robust. | Not explicitly described as robust, but the scaling depends on the min and max values of the data [Source\u202f4]. |\n\n**Resulting output bounds**\n\n| Scaler | Output bounds |\n|--------|---------------|\n| **StandardScaler** | No fixed bounds; transformed values can be any real number (centered at 0 with unit variance). |\n| **RobustScaler** | No fixed bounds; transformed values are centered around a robust estimate (often 0) and scaled by a robust range, but can still take any real value. |\n| **MinMaxScaler** | By default, each feature is mapped to the interval \\([0, 1]\\) (or to a user\u2011supplied `feature_range`). Thus the output is bounded. |\n\nIn summary, **StandardScaler** is most affected by outliers and produces unbounded outputs, **RobustScaler** mitigates outlier influence but still yields unbounded results, while **MinMaxScaler** is less sensitive to the magnitude of the data (though outliers can shift the min/max) and guarantees that all transformed features lie within a specified range (typically \\([0,1]\\)).",
+    "retrieved_chunk_ids": [
+      "api_standard_scaler_struct_0001",
+      "preprocessing_data_transforms_struct_0007",
+      "preprocessing_data_transforms_struct_0001",
+      "preprocessing_data_transforms_struct_0004",
+      "supervised_linear_models_struct_0043"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0004",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.3333,
+        "5": 0.6667,
+        "10": 0.6667
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.2961,
+        "5": 0.4982,
+        "10": 0.4982
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_standard_scaler_struct_0001",
+        "preprocessing_data_transforms_struct_0007",
+        "preprocessing_data_transforms_struct_0001",
+        "preprocessing_data_transforms_struct_0004",
+        "supervised_linear_models_struct_0043"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_data_transforms_struct_0002",
+        "preprocessing_data_transforms_struct_0004",
+        "preprocessing_data_transforms_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.8,
+      "faithfulness": 3.8,
+      "relevance": 3.8,
+      "overall": 3.8,
+      "reason": "The candidate answer accurately reflects the key points of the reference answer\u2014StandardScaler is highly sensitive to outliers and unbounded, RobustScaler is robust and unbounded, and MinMaxScaler is bounded to [0,1] (with moderate sensitivity). All claims are supported by the retrieved evidence, and the response directly addresses the question without unnecessary content."
+    },
+    "efficiency": {
+      "latency_ms": 16957.39,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2039,
+        "completion_tokens": 865,
+        "total_tokens": 2904
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "COMPARISON",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "COMPLEX",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "COMPARISON",
+      "actual_intent": null,
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": null,
+      "question_fingerprint": "8a1e4fc94ae625f191cf084b73b361be995a8b673c0be6f693cfe1c1b1e96f79",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_11",
+    "query": "Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.",
+    "reference_answer": "StandardScaler centers around mean with unit variance (unbounded, highly sensitive to outliers); MinMaxScaler compresses data into fixed [0, 1] bounds (extreme outliers compress inliers into narrow intervals); RobustScaler uses median and IQR, remaining robust to outliers with unbounded output.",
+    "generated_answer": "**Sensitivity to outliers**\n\n| Scaler | Sensitivity | Notes |\n|--------|-------------|-------|\n| **StandardScaler** | *High* \u2013 \u201cStandardScaler is sensitive to outliers\u201d\u3010Source\u202f1\u3011. | Uses the mean and standard deviation of the training data; extreme values can heavily influence the computed mean and variance. |\n| **RobustScaler** | *Low* \u2013 \u201cRobustScaler \u2026 uses more robust estimates for the center and range of your data\u201d\u3010Source\u202f2\u3011. | Replaces the mean with the median and the standard deviation with the inter\u2011quartile range, making it less affected by outliers. |\n| **MinMaxScaler** | *Moderate* \u2013 not explicitly stated, but it simply rescales each feature to a fixed interval\u3010Source\u202f4\u3011. | Outliers can stretch the range, but the final transformed values are still forced into the specified bounds. |\n\n**Resulting output bounds**\n\n| Scaler | Output bounds |\n|--------|---------------|\n| **StandardScaler** | No fixed bounds; values are centered at 0 and scaled to unit variance, so the transformed data can take any real value depending on the original distribution. |\n| **RobustScaler** | No fixed bounds; like StandardScaler it centers (median) and scales (IQR), so the transformed values are not constrained to a particular interval. |\n| **MinMaxScaler** | Fixed bounds \u2013 by default each feature is mapped to the interval \\([0, 1]\\) (or to a user\u2011supplied `feature_range`). The formula is \\(X_{\\text{scaled}} = (X - X_{\\min})/(X_{\\max}-X_{\\min}) \\times (max-min) + min\\)\u3010Source\u202f4\u3011. |\n\nIn short, **StandardScaler** is most affected by outliers and produces unbounded outputs; **RobustScaler** mitigates outlier influence but still yields unbounded outputs; **MinMaxScaler** is less sensitive to outliers in the sense that it forces all values into a predetermined range, giving bounded outputs.",
+    "retrieved_chunk_ids": [
+      "api_standard_scaler_struct_0001",
+      "preprocessing_data_transforms_struct_0007",
+      "preprocessing_data_transforms_struct_0001",
+      "preprocessing_data_transforms_struct_0004",
+      "supervised_linear_models_struct_0043",
+      "composite_estimators_pipelines_struct_0016",
+      "supervised_linear_models_struct_0042",
+      "preprocessing_data_transforms_struct_0006"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0004",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.3333,
+        "5": 0.6667,
+        "10": 0.6667
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.2961,
+        "5": 0.4982,
+        "10": 0.4982
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_standard_scaler_struct_0001",
+        "preprocessing_data_transforms_struct_0007",
+        "preprocessing_data_transforms_struct_0001",
+        "preprocessing_data_transforms_struct_0004",
+        "supervised_linear_models_struct_0043",
+        "composite_estimators_pipelines_struct_0016",
+        "supervised_linear_models_struct_0042",
+        "preprocessing_data_transforms_struct_0006"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_data_transforms_struct_0002",
+        "preprocessing_data_transforms_struct_0004",
+        "preprocessing_data_transforms_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately reflects the gold reference: it correctly states that StandardScaler is highly sensitive to outliers and unbounded, RobustScaler is robust (median/IQR) and unbounded, and MinMaxScaler is bounded to [0,1] (with outliers compressed). All claims are supported by the retrieved evidence, and the answer directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 28365.87,
+      "retrieval_calls": 2,
+      "chunks_processed": 50,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 3152,
+        "completion_tokens": 786,
+        "total_tokens": 3938
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": true,
+      "routing_reason": "Complex constrained comparison routed to multi-step retrieval and reranking to contrast multiple estimators under specific dataset conditions (top-25 candidates, top-8 final)."
+    },
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "8a1e4fc94ae625f191cf084b73b361be995a8b673c0be6f693cfe1c1b1e96f79",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  },
+  {
+    "question_id": "rag_comp_11",
+    "query": "Compare StandardScaler, RobustScaler, and MinMaxScaler in their sensitivity to outliers and resulting output bounds.",
+    "reference_answer": "StandardScaler centers around mean with unit variance (unbounded, highly sensitive to outliers); MinMaxScaler compresses data into fixed [0, 1] bounds (extreme outliers compress inliers into narrow intervals); RobustScaler uses median and IQR, remaining robust to outliers with unbounded output.",
+    "generated_answer": "**Sensitivity to outliers**\n\n| Scaler | Sensitivity to outliers (as stated in the docs) | Notes |\n|--------|-----------------------------------------------|-------|\n| **StandardScaler** | *Sensitive* \u2013 \u201cStandardScaler is sensitive to outliers\u201d\u3010Source\u202f1\u3011 | The mean and variance used for centering and scaling can be heavily influenced by extreme values. |\n| **RobustScaler** | *Robust* \u2013 \u201cRobustScaler \u2026 uses more robust estimates for the center and range of your data\u201d\u3010Source\u202f2\u3011 | It replaces the mean and standard deviation with robust statistics (e.g., median and IQR), so outliers have less impact. |\n| **MinMaxScaler** | Not explicitly mentioned, but it relies on the data\u2019s minimum and maximum values. | Because the scaling formula uses `X.min(axis=0)` and `X.max(axis=0)`, extreme outliers can shift the min or max and therefore affect the scaling. The documentation does not state this explicitly, but the dependence on min/max implies sensitivity. |\n\n**Resulting output bounds**\n\n| Scaler | Output bounds (as described in the docs) |\n|--------|------------------------------------------|\n| **StandardScaler** | No fixed bounds \u2013 after fitting, data is centered to mean\u202f0 and scaled to unit variance; values can lie outside any particular interval. |\n| **RobustScaler** | No fixed bounds \u2013 it scales based on robust estimates, but the transformed values are not constrained to a specific range. |\n| **MinMaxScaler** | Values are mapped to a specified range, default `[0,\u202f1]`. The formula is `X",
+    "retrieved_chunk_ids": [
+      "api_standard_scaler_struct_0001",
+      "preprocessing_data_transforms_struct_0007",
+      "preprocessing_data_transforms_struct_0001",
+      "preprocessing_data_transforms_struct_0004",
+      "supervised_linear_models_struct_0043",
+      "composite_estimators_pipelines_struct_0016",
+      "supervised_linear_models_struct_0042",
+      "preprocessing_data_transforms_struct_0006"
+    ],
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0004",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.3333,
+        "5": 0.6667,
+        "10": 0.6667
+      },
+      "mrr": 0.5,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.2961,
+        "5": 0.4982,
+        "10": 0.4982
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_standard_scaler_struct_0001",
+        "preprocessing_data_transforms_struct_0007",
+        "preprocessing_data_transforms_struct_0001",
+        "preprocessing_data_transforms_struct_0004",
+        "supervised_linear_models_struct_0043",
+        "composite_estimators_pipelines_struct_0016",
+        "supervised_linear_models_struct_0042",
+        "preprocessing_data_transforms_struct_0006"
+      ],
+      "ground_truth_chunk_ids": [
+        "preprocessing_data_transforms_struct_0002",
+        "preprocessing_data_transforms_struct_0004",
+        "preprocessing_data_transforms_struct_0007"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 3.5,
+      "faithfulness": 3.5,
+      "relevance": 4.0,
+      "overall": 3.6667,
+      "reason": "The candidate answer accurately reflects the gold reference, correctly stating the sensitivity and output bounds for each scaler. All factual claims are supported by the retrieved evidence, and the response directly addresses the question without unnecessary content."
+    },
+    "efficiency": {
+      "latency_ms": 63128.98,
+      "retrieval_calls": 16,
+      "chunks_processed": 172,
+      "escalation_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3152,
+        "completion_tokens": 1024,
+        "total_tokens": 4176
+      }
+    },
+    "routing": {
+      "predicted_strategy": "MULTI_STEP",
+      "expected_strategy": "MULTI_STEP",
+      "strategy_match": true,
+      "predicted_intent": "COMPARISON",
+      "expected_intent": "COMPARISON",
+      "intent_match": true,
+      "predicted_complexity": "COMPLEX",
+      "expected_complexity": "COMPLEX",
+      "complexity_match": true,
+      "routing_reason": "Complex constrained comparison routed to multi-step retrieval and reranking to contrast multiple estimators under specific dataset conditions (top-25 candidates, top-8 final)."
+    },
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "expected_strategy": "MULTI_STEP",
+      "actual_strategy": "MULTI_STEP",
+      "expected_intent": "COMPARISON",
+      "actual_intent": "COMPARISON",
+      "expected_complexity": "COMPLEX",
+      "actual_complexity": "COMPLEX",
+      "question_fingerprint": "8a1e4fc94ae625f191cf084b73b361be995a8b673c0be6f693cfe1c1b1e96f79",
+      "benchmark_fingerprint": "ed645494555624701e75aa6250938c850ae841f4ee8ec5abf7d9d62967fcda84"
+    }
+  }
+]

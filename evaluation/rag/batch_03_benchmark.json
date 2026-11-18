@@ -1,0 +1,223 @@
+[
+  {
+    "question_id": "rag_fact_06",
+    "query": "What attribute stores the impurity-based feature importances in a fitted RandomForestClassifier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_random_forest_classifier_struct_0005"
+    ],
+    "target_doc_ids": [
+      "api_random_forest_classifier"
+    ],
+    "reference_answer": "The impurity-based feature importances are stored in the feature_importances_ ndarray attribute.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_07",
+    "query": "What boolean parameter in StandardScaler controls whether the data is centered before scaling?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "api_standard_scaler"
+    ],
+    "reference_answer": "The with_mean parameter (default True) controls whether features are centered by subtracting the mean.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_03",
+    "query": "Why does Lasso regression drive model coefficients to exact zero while Ridge regression does not?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0008"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Lasso adds an L1 penalty (|w|_1) whose diamond-shaped geometry drives non-informative feature weights to exact zeros, producing sparse representations; in contrast, Ridge adds an L2 penalty (||w||_2^2) that shrinks coefficients continuously toward zero without setting them to exact zeros.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_15",
+    "query": "How do Pipelines encapsulate transformers and estimators to mathematically guarantee validation isolation during grid search cross-validation?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Pipelines ensure that during each cross-validation split, fit_transform is called exclusively on the training folds and only transform is called on validation folds, preventing test distribution metrics from leaking into estimator parameter estimation.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_03",
+    "query": "How do you instantiate and fit an SVC classifier with an RBF kernel on training vectors X and labels y?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "Import SVC from sklearn.svm, instantiate clf = SVC(kernel='rbf'), and fit the classifier on training vectors with clf.fit(X, y).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_07",
+    "query": "How do you configure and execute an exhaustive hyperparameter search over C and penalty with GridSearchCV?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_hyperparameter_tuning_struct_0001",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "model_selection_hyperparameter_tuning",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Define param_grid = {'C': [0.1, 1, 10], 'penalty': ['l2']}, instantiate GridSearchCV(estimator, param_grid, cv=5), and call fit(X, y).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/grid_search.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_03",
+    "query": "How do Ridge and Lasso regression differ in their regularization penalty formulations and resulting model sparsity?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006",
+      "supervised_linear_models_struct_0010"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Ridge applies an L2 penalty that shrinks weights smoothly toward zero without zeroing them, whereas Lasso applies an L1 penalty that drives non-relevant coefficients to exact zero, creating sparse models.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_14",
+    "query": "Compare LogisticRegression with L1 regularization versus ElasticNet in their handling of groups of highly correlated features.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0008",
+      "supervised_linear_models_struct_0016"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Pure L1 regularization (Lasso) tends to select one feature arbitrarily from a group of highly correlated predictors and zero out the remainder; ElasticNet combines L1 and L2 penalties via l1_ratio, retaining correlated feature groups together with non-zero weights.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_03",
+    "query": "How do SimpleImputer and ColumnTransformer combine to handle missing data across heterogeneous column types?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation",
+      "api_column_transformer"
+    ],
+    "reference_answer": "ColumnTransformer defines separate pipeline branches: numeric columns route to SimpleImputer(strategy='median') followed by scaling, while categorical columns route to SimpleImputer(strategy='most_frequent') followed by one-hot encoding.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_11",
+    "query": "Why does pipeline cross-validation produce data leakage when scaling features with StandardScaler before train_test_split, and how does make_pipeline resolve it?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0002",
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Scaling before train_test_split calculates global dataset means and variances, leaking test distributions into the model. Using make_pipeline(StandardScaler(), Estimator()) inside cross-validation fits the scaler strictly on the training partition of each split.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_03",
+    "query": "Why is standard classification accuracy misleading on severely imbalanced datasets, and how does balanced_accuracy_score fix it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0017"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Standard accuracy awards 99% accuracy to a trivial model that always predicts the 99% majority class; balanced_accuracy_score computes the unweighted macro-average of recall across each class, scoring 50% for trivial majority-class guessing.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_09",
+    "query": "Why does cross-validation with an integer random_state produce identical splits on repeated calls, while a RandomState instance yields successive different splits?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006",
+      "best_practices_common_pitfalls_struct_0007"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "An integer random_state re-seeds the random number generator to the exact same seed on every split call, producing duplicate splits; a RandomState instance mutates its internal state on each call, producing successive distinct randomized splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  }
+]

@@ -1,0 +1,216 @@
+{
+  "basic_rag": {
+    "question_count": 12,
+    "successful_count": 12,
+    "failure_count": 0,
+    "error_rate": 0.0,
+    "errors": [],
+    "judge_successful_count": 12,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.2361,
+      "recall_at_3": 0.3611,
+      "recall_at_5": 0.6528,
+      "recall_at_10": 0.6528,
+      "mrr": 0.4667,
+      "ndcg_at_1": 0.3333,
+      "ndcg_at_3": 0.3417,
+      "ndcg_at_5": 0.4582,
+      "ndcg_at_10": 0.4582
+    },
+    "routing": {
+      "strategy_accuracy": 0.3333,
+      "intent_accuracy": 0.0,
+      "complexity_accuracy": 0.0
+    },
+    "efficiency": {
+      "mean_latency_ms": 270745.28,
+      "total_retrieval_calls": 12,
+      "mean_retrieval_calls": 1.0,
+      "total_chunks_processed": 60,
+      "mean_chunks_processed": 5.0,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 28177,
+        "completion_tokens": 6683,
+        "total_tokens": 34860
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 14596,
+        "completion_tokens": 5731,
+        "total_tokens": 20327
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.4667,
+      "mean_faithfulness": 2.5917,
+      "mean_relevance": 3.725,
+      "mean_overall": 3.2611,
+      "scored_count": 12
+    }
+  },
+  "hybrid_rag": {
+    "question_count": 12,
+    "successful_count": 11,
+    "failure_count": 1,
+    "error_rate": 0.0833,
+    "errors": [
+      "OpenAI API returned error status 429 (TPD quota exhausted): {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198717, Requested 3975. Please try again in 19m22.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    ],
+    "judge_successful_count": 11,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.3636,
+      "recall_at_3": 0.3636,
+      "recall_at_5": 0.3636,
+      "recall_at_10": 0.3636,
+      "mrr": 0.4545,
+      "ndcg_at_1": 0.4545,
+      "ndcg_at_3": 0.3842,
+      "ndcg_at_5": 0.3842,
+      "ndcg_at_10": 0.3842
+    },
+    "routing": {
+      "strategy_accuracy": 0.6364,
+      "intent_accuracy": 0.0,
+      "complexity_accuracy": 0.0
+    },
+    "efficiency": {
+      "mean_latency_ms": 18071.67,
+      "total_retrieval_calls": 22,
+      "mean_retrieval_calls": 2.0,
+      "total_chunks_processed": 440,
+      "mean_chunks_processed": 40.0,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 28990,
+        "completion_tokens": 4622,
+        "total_tokens": 33612
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 34600,
+        "completion_tokens": 5180,
+        "total_tokens": 39780
+      }
+    },
+    "quality": {
+      "mean_correctness": 3.1273,
+      "mean_faithfulness": 3.2545,
+      "mean_relevance": 3.4182,
+      "mean_overall": 3.2667,
+      "scored_count": 11
+    }
+  },
+  "adaptive_rag": {
+    "question_count": 12,
+    "successful_count": 11,
+    "failure_count": 1,
+    "error_rate": 0.0833,
+    "errors": [
+      "OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199112, Requested 1780. Please try again in 6m25.344s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    ],
+    "judge_successful_count": 11,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.3182,
+      "recall_at_3": 0.3636,
+      "recall_at_5": 0.3636,
+      "recall_at_10": 0.4091,
+      "mrr": 0.4091,
+      "ndcg_at_1": 0.3636,
+      "ndcg_at_3": 0.3636,
+      "ndcg_at_5": 0.3636,
+      "ndcg_at_10": 0.3822
+    },
+    "routing": {
+      "strategy_accuracy": 0.5455,
+      "intent_accuracy": 0.7273,
+      "complexity_accuracy": 0.5455
+    },
+    "efficiency": {
+      "mean_latency_ms": 19449.32,
+      "total_retrieval_calls": 17,
+      "mean_retrieval_calls": 1.55,
+      "total_chunks_processed": 275,
+      "mean_chunks_processed": 25.0,
+      "total_escalations": 0,
+      "token_usage": {
+        "prompt_tokens": 27462,
+        "completion_tokens": 4863,
+        "total_tokens": 32325
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 33187,
+        "completion_tokens": 4301,
+        "total_tokens": 37488
+      }
+    },
+    "quality": {
+      "mean_correctness": 2.8,
+      "mean_faithfulness": 3.0273,
+      "mean_relevance": 3.0727,
+      "mean_overall": 2.9667,
+      "scored_count": 11
+    }
+  },
+  "full_adaq_rag": {
+    "question_count": 12,
+    "successful_count": 11,
+    "failure_count": 1,
+    "error_rate": 0.0833,
+    "errors": [
+      "OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198770, Requested 1725. Please try again in 3m33.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    ],
+    "judge_successful_count": 11,
+    "judge_failure_count": 0,
+    "judge_error_rate": 0.0,
+    "judge_errors": [],
+    "retrieval": {
+      "recall_at_1": 0.3182,
+      "recall_at_3": 0.3636,
+      "recall_at_5": 0.3636,
+      "recall_at_10": 0.4091,
+      "mrr": 0.4091,
+      "ndcg_at_1": 0.3636,
+      "ndcg_at_3": 0.3636,
+      "ndcg_at_5": 0.3636,
+      "ndcg_at_10": 0.3822
+    },
+    "routing": {
+      "strategy_accuracy": 0.5455,
+      "intent_accuracy": 0.7273,
+      "complexity_accuracy": 0.5455
+    },
+    "efficiency": {
+      "mean_latency_ms": 19829.39,
+      "total_retrieval_calls": 37,
+      "mean_retrieval_calls": 3.36,
+      "total_chunks_processed": 457,
+      "mean_chunks_processed": 41.55,
+      "total_escalations": 1,
+      "token_usage": {
+        "prompt_tokens": 27707,
+        "completion_tokens": 5046,
+        "total_tokens": 32753
+      },
+      "judge_token_usage": {
+        "prompt_tokens": 33608,
+        "completion_tokens": 4354,
+        "total_tokens": 37962
+      }
+    },
+    "quality": {
+      "mean_correctness": 2.8727,
+      "mean_faithfulness": 3.0182,
+      "mean_relevance": 3.1091,
+      "mean_overall": 3.0,
+      "scored_count": 11
+    }
+  }
+}

@@ -1,0 +1,278 @@
+[
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring=None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. This is the default scoring strategy.\u3010Source\u202f1\u3011\u3010Source\u202f4\u3011",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 3.5,
+      "relevance": 4.0,
+      "overall": 3.8333,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s score method when scoring is None, matching the gold answer. It is directly relevant to the question and cites sources that likely contain the same information, though the evidence snippets do not explicitly quote the statement, so faithfulness is slightly lower than perfect."
+    },
+    "efficiency": {
+      "latency_ms": 40419.18,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2763,
+        "completion_tokens": 227,
+        "total_tokens": 2990
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring` is set to `None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. [Source\u202f1] [Source\u202f4]",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "model_selection_hyperparameter_tuning_struct_0014",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0003"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "model_selection_hyperparameter_tuning_struct_0014",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0003"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 4.0,
+      "relevance": 4.0,
+      "overall": 4.0,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s score method when scoring is None, matching the reference answer. It cites evidence snippets that support this claim, and it directly addresses the question without extraneous content."
+    },
+    "efficiency": {
+      "latency_ms": 11377.2,
+      "retrieval_calls": 2,
+      "chunks_processed": 40,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2219,
+        "completion_tokens": 200,
+        "total_tokens": 2419
+      }
+    },
+    "routing": {
+      "predicted_strategy": "HYBRID",
+      "expected_strategy": "DENSE",
+      "strategy_match": false,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed hybrid retrieval with cross-encoder reranking."
+    },
+    "metadata": {
+      "system_name": "hybrid_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "HYBRID",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7353, Requested 2261. Please try again in 12.105s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "adaptive_rag",
+      "error": "OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7353, Requested 2261. Please try again in 12.105s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    }
+  },
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "",
+    "retrieved_chunk_ids": [],
+    "ground_truth_chunk_ids": [],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit_at_k": {
+        "1": false,
+        "3": false,
+        "5": false,
+        "10": false
+      },
+      "retrieved_chunk_ids": [],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "overall": 0.0,
+      "reason": "Evaluation execution failure: OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7189, Requested 2379. Please try again in 11.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "efficiency": {
+      "latency_ms": 0.0,
+      "retrieval_calls": 0,
+      "chunks_processed": 0,
+      "escalation_count": 0,
+      "token_usage": null
+    },
+    "routing": null,
+    "metadata": {
+      "system_name": "full_adaq_rag",
+      "error": "OpenAI API returned error status 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kevfgwxhee3r5ywc2p7xyf6m` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7189, Requested 2379. Please try again in 11.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    }
+  }
+]

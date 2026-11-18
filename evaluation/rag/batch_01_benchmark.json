@@ -1,0 +1,227 @@
+[
+  {
+    "question_id": "rag_fact_04",
+    "query": "What default strategy does SimpleImputer use for replacing missing values?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation"
+    ],
+    "reference_answer": "By default, SimpleImputer uses the 'mean' strategy along each column for numerical missing values.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_19",
+    "query": "What method converts the sparse coefficient matrix of a fitted LogisticRegression model back to a dense array?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0004",
+      "api_logistic_regression_struct_0007"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "The densify() method converts the coef_ member back to a numpy ndarray from a scipy sparse matrix format.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_01",
+    "query": "Why does Ridge regression add an L2 penalty to the ordinary least squares objective?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0006"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "Ridge regression adds an L2 penalty on coefficient magnitudes (alpha * ||w||_2^2) to minimize variance, mitigate collinearity, and prevent overfitting.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_06",
+    "query": "How do validation curves diagnose whether a machine learning estimator is suffering from high bias versus high variance?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_curves_struct_0001",
+      "model_selection_curves_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_curves"
+    ],
+    "reference_answer": "Validation curves plot training and test scores against a hyperparameter: if both scores are low the model has high bias (underfitting); if training score is high but validation score is substantially lower, the model has high variance (overfitting).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/learning_curve.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_01",
+    "query": "What is the key difference between KFold and StratifiedKFold cross-validation for classification tasks?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0016"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "KFold divides samples into k folds without regard to target class proportions, whereas StratifiedKFold preserves the percentage of samples for each class in every fold, preventing unrepresentative class distributions in classification tasks.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_12",
+    "query": "Compare DecisionTreeClassifier and RandomForestClassifier regarding bias, variance, and interpretability trade-offs.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "supervised_decision_trees_struct_0001",
+      "supervised_ensemble_methods_struct_0024"
+    ],
+    "target_doc_ids": [
+      "supervised_decision_trees",
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "DecisionTreeClassifier provides white-box interpretability and simple visualizable rules but often suffers from high variance and overfitting; RandomForestClassifier ensembles multiple de-correlated trees to drastically reduce variance and improve generalization error at the cost of white-box transparency.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/tree.html",
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_01",
+    "query": "How do you construct a pipeline shorthand using make_pipeline with a scaler and classifier?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0003"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Call make_pipeline(StandardScaler(), LogisticRegression()), which automatically names steps after their lowercase class names without requiring explicit name-estimator tuples.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_14",
+    "query": "How do you build a complete end-to-end composite pipeline that imputes missing values, scales features, and trains a LogisticRegression estimator?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "preprocessing_imputation_struct_0003",
+      "api_standard_scaler_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "preprocessing_imputation",
+      "api_standard_scaler"
+    ],
+    "reference_answer": "Chain estimators sequentially: Pipeline([('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler()), ('clf', LogisticRegression())]) and call pipeline.fit(X_train, y_train).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_01",
+    "query": "How do ColumnTransformer, StandardScaler, and LogisticRegression integrate inside a single pipeline?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0013",
+      "api_column_transformer_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_column_transformer"
+    ],
+    "reference_answer": "ColumnTransformer groups numeric columns into a StandardScaler step and categorical columns into an encoder, and feeds the concatenated feature output directly into a LogisticRegression estimator inside a Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_09",
+    "query": "How do preprocessing, pipelines, and model selection work together to build leak-free machine learning workflows in scikit-learn?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "best_practices_common_pitfalls_struct_0004",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "best_practices_common_pitfalls",
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "Preprocessing transformers (scalers, encoders, imputers) and models are chained in a Pipeline, and the entire pipeline is passed to model selection tools (GridSearchCV or cross_val_score); this ensures preprocessing parameters are estimated solely on training splits, eliminating data leakage.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_01",
+    "query": "Why does leaving random_state=None produce non-reproducible cross-validation results across multiple script executions?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0006"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "When random_state=None (or np.random), cross-validation splitters and random estimators seed from system clock entropy, generating different random splits and parameter weights on every run. Fixing random_state to an integer ensures deterministic reproducibility.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_07",
+    "query": "Why does feature selection with SelectKBest prior to train_test_split cause severe test error underestimation?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls"
+    ],
+    "reference_answer": "Selecting features using targets from the whole dataset exposes the selector to test labels, selecting spurious features correlated with test targets and causing severe data leakage; feature selection must be fitted only on training folds via Pipeline.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ]
+  }
+]

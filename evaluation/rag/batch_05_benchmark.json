@@ -1,0 +1,220 @@
+[
+  {
+    "question_id": "rag_fact_10",
+    "query": "What threshold parameter in HuberRegressor defines whether a residual is treated as an inlier?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_linear_models_struct_0043"
+    ],
+    "target_doc_ids": [
+      "supervised_linear_models"
+    ],
+    "reference_answer": "The parameter epsilon (default 1.35) controls the residual threshold relative to the scale |y - Xw| / sigma to qualify as an inlier.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/linear_model.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_11",
+    "query": "What default solver is selected in LogisticRegression starting from version 0.22?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_logistic_regression_struct_0003"
+    ],
+    "target_doc_ids": [
+      "api_logistic_regression"
+    ],
+    "reference_answer": "The default solver in LogisticRegression is 'lbfgs'.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_05",
+    "query": "Why does QuantileTransformer map features to a uniform distribution regardless of input distribution shape?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0011"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms"
+    ],
+    "reference_answer": "QuantileTransformer applies a non-parametric transformation based on empirical cumulative distribution functions, mapping feature values to their empirical quantile ranks and spreading them evenly across a uniform distribution [0, 1].",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_08",
+    "query": "How does the ROC AUC score quantify the ranking discrimination of a binary classification model?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0040",
+      "model_selection_metrics_struct_0041"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "ROC AUC computes the area under the True Positive Rate versus False Positive Rate curve across all decision thresholds; it quantifies the probability that the classifier ranks a randomly chosen positive sample higher than a randomly chosen negative sample.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_05",
+    "query": "How do you compute a multiclass confusion matrix array using the confusion_matrix function?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "model_selection_metrics_struct_0029"
+    ],
+    "target_doc_ids": [
+      "model_selection_metrics"
+    ],
+    "reference_answer": "Import confusion_matrix from sklearn.metrics and pass true labels and predicted labels as confusion_matrix(y_true, y_pred).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_08",
+    "query": "How do you evaluate an estimator using 5-fold cross-validation with cross_val_score?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Call cross_val_score(estimator, X, y, cv=5, scoring='accuracy'), which returns an array of 5 validation scores.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_05",
+    "query": "What are the operational trade-offs between exhaustive GridSearchCV and RandomizedSearchCV for hyperparameter optimization?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_hyperparameter_tuning_struct_0001",
+      "model_selection_hyperparameter_tuning_struct_0003"
+    ],
+    "target_doc_ids": [
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "GridSearchCV evaluates every combination in a discrete grid (exponential in parameter count), whereas RandomizedSearchCV evaluates a fixed budget of random configurations from specified distributions, finding good solutions significantly faster in large search spaces.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_07",
+    "query": "How does LinearSVC compare to SVC with a linear kernel in computational complexity and backend solvers?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_support_vector_machines_struct_0009"
+    ],
+    "target_doc_ids": [
+      "supervised_support_vector_machines"
+    ],
+    "reference_answer": "SVC uses the libsvm solver which scales between O(n_features * n_samples^2) and O(n_features * n_samples^3); LinearSVC uses the liblinear solver which scales almost linearly with millions of samples and features for linear classification.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/svm.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_05",
+    "query": "How do you prevent ValueError crashes caused by unexpected NaN values in test sets during model prediction?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Most scikit-learn estimators raise ValueError when passed arrays containing NaN values; wrapping the estimator in a Pipeline with SimpleImputer ensures that missing values are automatically imputed using training statistics before reaching the estimator.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_06",
+    "query": "Why does centering sparse matrices with StandardScaler raise an exception, and how should with_mean be configured?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "api_standard_scaler_struct_0002"
+    ],
+    "target_doc_ids": [
+      "api_standard_scaler"
+    ],
+    "reference_answer": "Centering subtracts the mean from zeros, destroying matrix sparsity and causing severe memory exhaustion. For scipy.sparse matrices, pass with_mean=False to scale variances while keeping zero entries intact.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_05",
+    "query": "How do KFold cross-validation, SimpleImputer, and RandomForestClassifier operate jointly inside cross_val_score without leakage?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0001",
+      "model_selection_cross_validation_struct_0002"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Placing SimpleImputer and RandomForestClassifier inside a Pipeline and passing it to cross_val_score(pipeline, X, y, cv=KFold(5)) ensures the imputer computes medians strictly on training folds for each split.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_13",
+    "query": "How do StratifiedKFold, balanced_accuracy_score, and class_weight='balanced' coordinate to train and evaluate classifiers on severely imbalanced datasets?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0009",
+      "model_selection_metrics_struct_0017",
+      "api_logistic_regression_struct_0002"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation",
+      "model_selection_metrics",
+      "api_logistic_regression"
+    ],
+    "reference_answer": "StratifiedKFold maintains minority class proportions across all cross-validation folds, class_weight='balanced' adjusts training loss penalties inversely proportional to class frequencies, and balanced_accuracy_score provides an uninflated macro-averaged evaluation metric.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/model_evaluation.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"
+    ]
+  }
+]

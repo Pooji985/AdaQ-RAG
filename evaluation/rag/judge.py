@@ -18,6 +18,7 @@ from typing import Any, Callable, Sequence
 
 from adaq_rag.llm.base import BaseLLMProvider
 from adaq_rag.llm.factory import get_llm_provider
+from adaq_rag.llm.models import LLMUsage
 from evaluation.rag.models import AnswerQualityScores
 
 logger = logging.getLogger("adaq_rag.evaluation.judge")
@@ -111,6 +112,8 @@ def format_evidence(evidence: str | Sequence[str]) -> str:
 class BaseJudge(ABC):
     """Abstract interface for answer-quality evaluation judges."""
 
+    last_token_usage: LLMUsage | None = None
+
     @abstractmethod
     def evaluate(
         self,
@@ -133,6 +136,22 @@ class BaseJudge(ABC):
             AnswerQualityScores: Graded scores (0-4) with short reason.
         """
 
+    def evaluate_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
+        """Evaluate candidate answer and return scores along with measured judge token usage."""
+        scores = self.evaluate(
+            question=question,
+            reference_answer=reference_answer,
+            retrieved_evidence=retrieved_evidence,
+            generated_answer=generated_answer,
+        )
+        return scores, self.last_token_usage
+
     @abstractmethod
     async def evaluate_async(
         self,
@@ -145,6 +164,22 @@ class BaseJudge(ABC):
 
         NOTE: The system name MUST NOT be passed to this function.
         """
+
+    async def evaluate_async_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
+        """Evaluate candidate answer asynchronously and return scores along with measured judge token usage."""
+        scores = await self.evaluate_async(
+            question=question,
+            reference_answer=reference_answer,
+            retrieved_evidence=retrieved_evidence,
+            generated_answer=generated_answer,
+        )
+        return scores, self.last_token_usage
 
 
 class LLMJudge(BaseJudge):
@@ -217,6 +252,21 @@ class LLMJudge(BaseJudge):
                 reason=f"Failed to parse judge output: {err}",
             )
 
+    def evaluate_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
+        prompt = self._build_prompt(
+            question, reference_answer, retrieved_evidence, generated_answer
+        )
+        response = self.provider.generate(prompt=prompt, system_prompt=JUDGE_SYSTEM_PROMPT)
+        self.last_token_usage = response.usage
+        scores = self._parse_response(response.content)
+        return scores, response.usage
+
     def evaluate(
         self,
         question: str,
@@ -224,11 +274,27 @@ class LLMJudge(BaseJudge):
         retrieved_evidence: str | Sequence[str],
         generated_answer: str,
     ) -> AnswerQualityScores:
+        scores, _ = self.evaluate_with_usage(
+            question, reference_answer, retrieved_evidence, generated_answer
+        )
+        return scores
+
+    async def evaluate_async_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
         prompt = self._build_prompt(
             question, reference_answer, retrieved_evidence, generated_answer
         )
-        response = self.provider.generate(prompt=prompt, system_prompt=JUDGE_SYSTEM_PROMPT)
-        return self._parse_response(response.content)
+        response = await self.provider.generate_async(
+            prompt=prompt, system_prompt=JUDGE_SYSTEM_PROMPT
+        )
+        self.last_token_usage = response.usage
+        scores = self._parse_response(response.content)
+        return scores, response.usage
 
     async def evaluate_async(
         self,
@@ -237,13 +303,10 @@ class LLMJudge(BaseJudge):
         retrieved_evidence: str | Sequence[str],
         generated_answer: str,
     ) -> AnswerQualityScores:
-        prompt = self._build_prompt(
+        scores, _ = await self.evaluate_async_with_usage(
             question, reference_answer, retrieved_evidence, generated_answer
         )
-        response = await self.provider.generate_async(
-            prompt=prompt, system_prompt=JUDGE_SYSTEM_PROMPT
-        )
-        return self._parse_response(response.content)
+        return scores
 
 
 class MockJudge(BaseJudge):
@@ -259,6 +322,7 @@ class MockJudge(BaseJudge):
         scoring_fn: (
             Callable[[str, str, str | Sequence[str], str], AnswerQualityScores] | None
         ) = None,
+        default_token_usage: LLMUsage | None = None,
     ) -> None:
         """Initialize MockJudge.
 
@@ -266,9 +330,12 @@ class MockJudge(BaseJudge):
             default_scores: Fixed scores to return on evaluate calls.
             scoring_fn: Callable receiving (question, reference_answer, evidence, answer)
                 and returning AnswerQualityScores.
+            default_token_usage: Optional LLMUsage to return for judge token tracking tests.
         """
         self.default_scores = default_scores
         self.scoring_fn = scoring_fn
+        self.default_token_usage = default_token_usage
+        self.last_token_usage = default_token_usage
         self.call_history: list[dict[str, Any]] = []
 
     def _evaluate_impl(
@@ -324,6 +391,21 @@ class MockJudge(BaseJudge):
             question, reference_answer, retrieved_evidence, generated_answer
         )
 
+    def evaluate_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
+        scores = self.evaluate(
+            question=question,
+            reference_answer=reference_answer,
+            retrieved_evidence=retrieved_evidence,
+            generated_answer=generated_answer,
+        )
+        return scores, self.last_token_usage
+
     async def evaluate_async(
         self,
         question: str,
@@ -334,3 +416,18 @@ class MockJudge(BaseJudge):
         return self._evaluate_impl(
             question, reference_answer, retrieved_evidence, generated_answer
         )
+
+    async def evaluate_async_with_usage(
+        self,
+        question: str,
+        reference_answer: str,
+        retrieved_evidence: str | Sequence[str],
+        generated_answer: str,
+    ) -> tuple[AnswerQualityScores, LLMUsage | None]:
+        scores = await self.evaluate_async(
+            question=question,
+            reference_answer=reference_answer,
+            retrieved_evidence=retrieved_evidence,
+            generated_answer=generated_answer,
+        )
+        return scores, self.last_token_usage

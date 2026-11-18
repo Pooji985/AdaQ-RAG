@@ -1,0 +1,223 @@
+[
+  {
+    "question_id": "rag_fact_08",
+    "query": "Which parameter controls parallel job execution across CPU cores in GridSearchCV?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0002"
+    ],
+    "target_doc_ids": [
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "The n_jobs parameter controls the number of jobs to run in parallel, where -1 uses all available processors.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_fact_09",
+    "query": "What distance metric is the standard default for nearest neighbors classifiers in scikit-learn?",
+    "expected_intent": "FACT_LOOKUP",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0001"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "The standard default metric is the Minkowski distance with p=2, which is equivalent to standard Euclidean distance.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_04",
+    "query": "How does out-of-bag (OOB) estimation evaluate generalization in bagging ensembles without separate cross-validation?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "supervised_ensemble_methods_struct_0032"
+    ],
+    "target_doc_ids": [
+      "supervised_ensemble_methods"
+    ],
+    "reference_answer": "When oob_score=True, Bagging evaluates generalization using out-of-bag samples: each base estimator is evaluated on the approximately 37% of training samples that were not included in its bootstrap sample, providing an unbiased error estimate without a separate validation set.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/ensemble.html"
+    ]
+  },
+  {
+    "question_id": "rag_expl_07",
+    "query": "How does nearest neighbors classification predict class probabilities using distance weighting?",
+    "expected_intent": "EXPLANATION",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "supervised_nearest_neighbors_struct_0002"
+    ],
+    "target_doc_ids": [
+      "supervised_nearest_neighbors"
+    ],
+    "reference_answer": "When weights='distance', each neighbor's vote is weighted inversely proportional to its distance from the query point, giving closer neighbors greater influence on the predicted probability.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/neighbors.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_04",
+    "query": "How do you impute missing numerical values with SimpleImputer using the median strategy?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "SIMPLE",
+    "expected_strategy": "DENSE",
+    "ground_truth_chunk_ids": [
+      "preprocessing_imputation_struct_0003"
+    ],
+    "target_doc_ids": [
+      "preprocessing_imputation"
+    ],
+    "reference_answer": "Instantiate imputer = SimpleImputer(strategy='median') and call imputer.fit_transform(X) on the numerical dataset.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/impute.html"
+    ]
+  },
+  {
+    "question_id": "rag_proc_15",
+    "query": "How do you configure nested cross-validation using GridSearchCV within cross_val_score to obtain an unbiased generalization error estimate?",
+    "expected_intent": "PROCEDURE",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0002",
+      "model_selection_hyperparameter_tuning_struct_0001"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation",
+      "model_selection_hyperparameter_tuning"
+    ],
+    "reference_answer": "Wrap GridSearchCV inside cross_val_score: inner_cv = KFold(n_splits=3); outer_cv = KFold(n_splits=5); clf = GridSearchCV(estimator, param_grid, cv=inner_cv); scores = cross_val_score(clf, X, y, cv=outer_cv).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "https://scikit-learn.org/stable/modules/grid_search.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_04",
+    "query": "When should RobustScaler be selected instead of StandardScaler for feature standardization in scikit-learn?",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "preprocessing_data_transforms_struct_0002",
+      "preprocessing_data_transforms_struct_0007"
+    ],
+    "target_doc_ids": [
+      "preprocessing_data_transforms"
+    ],
+    "reference_answer": "StandardScaler standardizes using sample mean and variance which are highly sensitive to extreme outliers; RobustScaler should be selected when datasets have significant outliers because it centers with the median and scales using the Interquartile Range (IQR).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/preprocessing.html"
+    ]
+  },
+  {
+    "question_id": "rag_comp_15",
+    "query": "Compare cross-validation performance estimation using standard KFold versus TimeSeriesSplit on temporal sequential data.",
+    "expected_intent": "COMPARISON",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0008",
+      "model_selection_cross_validation_struct_0025"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "KFold randomly shuffles samples across time violating autocorrelation and leaking future data into past training folds; TimeSeriesSplit uses forward rolling walk-forward splits where train folds strictly precede validation folds chronologically.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_04",
+    "query": "Why should standard shuffled KFold cross-validation not be used for time series forecasting, and what replaces it?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "model_selection_cross_validation_struct_0025"
+    ],
+    "target_doc_ids": [
+      "model_selection_cross_validation"
+    ],
+    "reference_answer": "Shuffled KFold violates temporal sequence by leaking future information into past training folds. It should be replaced with TimeSeriesSplit, which uses fixed chronological walk-forward splits.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ]
+  },
+  {
+    "question_id": "rag_trouble_10",
+    "query": "Why does evaluating a pipeline with target encoding outside cross_val_score yield over-optimistic validation metrics, and how is it prevented?",
+    "expected_intent": "TROUBLESHOOTING",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "best_practices_common_pitfalls_struct_0004",
+      "composite_estimators_pipelines_struct_0001"
+    ],
+    "target_doc_ids": [
+      "best_practices_common_pitfalls",
+      "composite_estimators_pipelines"
+    ],
+    "reference_answer": "Computing target statistics on the full dataset leaks target labels into feature values; preventing this requires embedding the target encoder as a transformer inside a Pipeline passed directly to cross_val_score so encoders re-fit solely on training folds.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/common_pitfalls.html",
+      "https://scikit-learn.org/stable/modules/compose.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_04",
+    "query": "How do GridSearchCV and Pipeline combine parameter names using the double-underscore convention for hyperparameter tuning?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "MEDIUM",
+    "expected_strategy": "HYBRID",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0006",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Parameters of nested estimators within a Pipeline are addressed in GridSearchCV using the double-underscore convention: <step_name>__<parameter_name> (for example, 'clf__C': [0.1, 1.0] and 'scaler__with_mean': [True, False]).",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  },
+  {
+    "question_id": "rag_multi_12",
+    "query": "How do GridSearchCV, Pipeline, and memory caching interact to accelerate hyperparameter search over expensive transformer preprocessing steps?",
+    "expected_intent": "MULTI_CONCEPT",
+    "expected_complexity": "COMPLEX",
+    "expected_strategy": "MULTI_STEP",
+    "ground_truth_chunk_ids": [
+      "composite_estimators_pipelines_struct_0008",
+      "api_pipeline_struct_0001",
+      "api_grid_search_cv_struct_0001"
+    ],
+    "target_doc_ids": [
+      "composite_estimators_pipelines",
+      "api_pipeline",
+      "api_grid_search_cv"
+    ],
+    "reference_answer": "Setting memory=tempfile.mkdtemp() in Pipeline caches fitted transformer outputs to disk; when GridSearchCV iterates over different downstream estimator parameters, the cached transformed data is reused instead of re-fitting preprocessing transformers on every grid iteration.",
+    "source_urls": [
+      "https://scikit-learn.org/stable/modules/compose.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html",
+      "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"
+    ]
+  }
+]

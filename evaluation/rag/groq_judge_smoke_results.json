@@ -1,0 +1,88 @@
+[
+  {
+    "question_id": "rag_fact_01",
+    "query": "What is the default scoring strategy in GridSearchCV if scoring is None?",
+    "reference_answer": "If scoring is None, GridSearchCV uses the default score method of the underlying estimator.",
+    "generated_answer": "If `scoring=None`, GridSearchCV uses the estimator\u2019s own default evaluation criterion \u2013 i.e., the metric implemented in the estimator\u2019s `score` method. This is the default scoring strategy when no explicit `scoring` is supplied.\u3010Source\u202f1\u3011",
+    "retrieved_chunk_ids": [
+      "api_grid_search_cv_struct_0001",
+      "api_grid_search_cv_struct_0002",
+      "api_grid_search_cv_struct_0005",
+      "model_selection_metrics_struct_0005",
+      "api_grid_search_cv_struct_0009"
+    ],
+    "ground_truth_chunk_ids": [
+      "api_grid_search_cv_struct_0001"
+    ],
+    "retrieval_metrics": {
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "ndcg_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit_at_k": {
+        "1": true,
+        "3": true,
+        "5": true,
+        "10": true
+      },
+      "retrieved_chunk_ids": [
+        "api_grid_search_cv_struct_0001",
+        "api_grid_search_cv_struct_0002",
+        "api_grid_search_cv_struct_0005",
+        "model_selection_metrics_struct_0005",
+        "api_grid_search_cv_struct_0009"
+      ],
+      "ground_truth_chunk_ids": [
+        "api_grid_search_cv_struct_0001"
+      ]
+    },
+    "answer_scores": {
+      "correctness": 4.0,
+      "faithfulness": 3.0,
+      "relevance": 4.0,
+      "overall": 3.6667,
+      "reason": "The candidate answer accurately states that GridSearchCV defaults to the estimator\u2019s score method when scoring is None, matching the gold answer. It is directly relevant to the question. While the evidence snippets do not explicitly quote the default behavior, the claim is supported by the documented signature and typical usage, so faithfulness is high but not perfect."
+    },
+    "efficiency": {
+      "latency_ms": 53909.72,
+      "retrieval_calls": 1,
+      "chunks_processed": 5,
+      "escalation_count": 0,
+      "token_usage": {
+        "prompt_tokens": 2763,
+        "completion_tokens": 215,
+        "total_tokens": 2978
+      }
+    },
+    "routing": {
+      "predicted_strategy": "DENSE",
+      "expected_strategy": "DENSE",
+      "strategy_match": true,
+      "predicted_intent": null,
+      "expected_intent": "FACT_LOOKUP",
+      "intent_match": false,
+      "predicted_complexity": null,
+      "expected_complexity": "SIMPLE",
+      "complexity_match": false,
+      "routing_reason": "Fixed dense retrieval baseline."
+    },
+    "metadata": {
+      "system_name": "basic_rag",
+      "expected_strategy": "DENSE",
+      "actual_strategy": "DENSE",
+      "expected_intent": "FACT_LOOKUP",
+      "actual_intent": null,
+      "expected_complexity": "SIMPLE",
+      "actual_complexity": null
+    }
+  }
+]
